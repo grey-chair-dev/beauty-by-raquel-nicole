@@ -44,6 +44,13 @@ beauty-by-raquel-nicole/
 │   ├── app/                 # Next.js App Router
 │   │   ├── layout.tsx      # Root layout with SEO
 │   │   ├── page.tsx        # Homepage
+│   │   ├── about/page.tsx  # About page
+│   │   ├── book/page.tsx   # Booking page
+│   │   ├── bridal/page.tsx # Bridal services page
+│   │   ├── contact/page.tsx # Contact page
+│   │   ├── gallery/page.tsx # Gallery page
+│   │   ├── services/page.tsx # Services page
+│   │   ├── sitemap.ts      # XML sitemap generator
 │   │   └── globals.css     # Global styles
 │   ├── components/          # Reusable UI components
 │   │   ├── Header.tsx      # Navigation header
@@ -52,8 +59,19 @@ beauty-by-raquel-nicole/
 │   │   ├── Gallery.tsx     # Before/after gallery
 │   │   ├── Testimonials.tsx # Client reviews
 │   │   ├── About.tsx       # About section
-│   │   ├── Contact.tsx     # Contact information
-│   │   └── Footer.tsx      # Site footer
+│   │   ├── Footer.tsx      # Site footer
+│   │   ├── BookingForm.tsx # Booking form component
+│   │   ├── BookingTabs.tsx # Booking tab navigation
+│   │   ├── BridalForm.tsx  # Bridal booking form
+│   │   ├── SquareBooking.tsx # Square POS integration
+│   │   ├── ServiceFilter.tsx # Service filtering component
+│   │   ├── ReviewCarousel.tsx # Reviews carousel
+│   │   ├── TrustBadges.tsx # Trust signals and badges
+│   │   ├── SmartCTA.tsx    # Smart call-to-action component
+│   │   ├── MobileCTA.tsx   # Mobile-specific CTA
+│   │   ├── InstagramEmbed.tsx # Instagram integration
+│   │   ├── Map.tsx         # Location map component
+│   │   └── AvailabilityPreview.tsx # Availability display
 │   ├── lib/                # Utilities and helpers
 │   └── types/              # TypeScript definitions
 ├── public/                 # Static assets
