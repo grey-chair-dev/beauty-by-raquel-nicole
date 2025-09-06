@@ -1,0 +1,41 @@
+# Beauty by Raquel Nicole Website Rebuild Project
+
+## Project Context
+This is a comprehensive website rebuild for Beauty by Raquel Nicole, a boutique beauty studio specializing in lash extensions and brow treatments. The project involves migrating from a basic Square site to a modern, SEO-optimized platform.
+
+## Key Business Information
+- **Business Type:** Boutique beauty studio offering lash extensions, brow treatments, and beauty enhancements
+- **Target Audience:** Women aged 18-45 seeking personalized beauty services
+- **USP:** Owner-led, high-quality, natural enhancement focus with personalized care
+- **Current Issues:** Poor website performance (Lighthouse 11/100), no SEO presence, basic Square template
+
+## Project Goals
+- Build modern, fast-loading, mobile-first website (target: Lighthouse 90+)
+- Increase local search visibility and Google Maps presence
+- Improve brand perception through professional design and testimonials
+- Implement marketing automation for repeat bookings
+
+## Technical Stack
+- **Frontend:** Next.js with React, TailwindCSS
+- **Backend:** Node.js with Express
+- **Database:** PostgreSQL with Prisma ORM
+- **Hosting:** Vercel (frontend) + AWS/Heroku (backend)
+- **Integrations:** Square POS API for bookings/payments
+
+## Brand Identity
+- **Colors:** Blush Pink (#F9E6E6), Warm Beige (#F3D7C6), Charcoal Gray (#3C3C3C), Off-White (#FFF8F5), Rose Gold (#C2876C)
+- **Typography:** Playfair Display (headers), Lato (body), Montserrat (buttons)
+- **Tone:** Confident yet approachable, emphasizing personalized care and natural beauty enhancement
+
+## Reference Documents
+- Business Overview: [prompt0.md](mdc:inputs/prompt0.md)
+- Digital Audit: [prompt1.md](mdc:inputs/prompt1.md)
+- Website Strategy: [prompt3.md](mdc:inputs/prompt3.md)
+- UX Research: [prompt6.md](mdc:inputs/prompt6.md)
+- Technical Specs: [prompt9.md](mdc:inputs/prompt9.md)
+- Brand Identity: [prompt7.md](mdc:inputs/prompt7.md)
+- Design System: [prompt8.md](mdc:inputs/prompt8.md)
+description:
+globs:
+alwaysApply: false
+---

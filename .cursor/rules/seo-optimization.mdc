@@ -1,0 +1,64 @@
+# SEO Optimization for Beauty by Raquel Nicole
+
+## Local SEO Requirements
+- **Google Business Profile:** Complete profile with services, hours, photos, reviews
+- **Local Keywords:** "lash extensions [city]", "brow services [city]", "beauty salon [city]"
+- **NAP Consistency:** Name, Address, Phone consistent across all platforms
+- **Local Citations:** Submit to beauty directories and local listings
+
+## On-Page SEO Standards
+- **Title Tags:** Include service name and location (e.g., "Lash Extensions Cincinnati | Beauty by Raquel Nicole")
+- **Meta Descriptions:** Compelling 155-160 character descriptions with CTAs
+- **Header Structure:** H1 for page title, H2-H3 for service sections
+- **Alt Text:** Descriptive alt text for all images, especially before/after photos
+- **Internal Linking:** Link between services, blog posts, and booking pages
+
+## Content Strategy
+- **Service Pages:** Individual pages for each service with detailed descriptions
+- **Blog Content:** Weekly posts targeting local search and beauty education
+- **FAQ Sections:** Address common questions for featured snippets
+- **Before/After Galleries:** Optimized images with descriptive alt text
+
+## Technical SEO
+- **Structured Data:** Implement schema markup for:
+  - Local Business
+  - Service offerings
+  - Reviews and ratings
+  - Appointment booking
+- **XML Sitemap:** Auto-generated sitemap with all pages
+- **Robots.txt:** Proper crawling directives
+- **Core Web Vitals:** Optimize for LCP, TBT, CLS
+
+## Keyword Strategy
+- **Primary Keywords:**
+  - "lash extensions [city]"
+  - "brow shaping [city]"
+  - "beauty salon [city]"
+  - "lash fill [city]"
+- **Long-tail Keywords:**
+  - "how long do lash extensions last"
+  - "best lash studio near me"
+  - "brow microblading [city]"
+- **Local Intent:** Include location-specific terms and landmarks
+
+## Content Optimization
+- **Service Descriptions:** 300-500 words with natural keyword integration
+- **Blog Posts:** 800-1200 words targeting local and educational keywords
+- **Image Optimization:** Compressed images with descriptive filenames
+- **Video Content:** Optimized for YouTube and social sharing
+
+## Link Building Strategy
+- **Local Partnerships:** Collaborate with local influencers and beauty bloggers
+- **Directory Submissions:** Submit to beauty and local business directories
+- **Review Management:** Encourage Google and social media reviews
+- **Social Signals:** Active Instagram presence with website links
+
+## Performance Monitoring
+- **Google Search Console:** Monitor indexing and search performance
+- **Analytics Tracking:** Track organic traffic and conversion rates
+- **Ranking Monitoring:** Track target keyword positions
+- **Local Pack Optimization:** Monitor Google Maps and local search presence
+description:
+globs:
+alwaysApply: false
+---

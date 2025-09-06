@@ -1,0 +1,57 @@
+# UX Requirements for Beauty by Raquel Nicole
+
+## User Personas
+1. **Beauty Enthusiast (Primary):** Female, 22-35, seeks regular lash/brow maintenance
+2. **Busy Professional:** Female, 30-45, values efficiency and recurring appointments
+3. **First-Time Visitor:** Female, 18-25, trying services for the first time
+4. **Returning Loyalist:** Female, 25-40, existing client seeking loyalty perks
+
+## User Journey Optimization
+- **Awareness:** Google search, Instagram discovery, word-of-mouth
+- **Research:** Service pages, pricing, before/after galleries, reviews
+- **Booking:** One-click appointment scheduling with clear CTAs
+- **Service Experience:** Quality service with follow-up marketing
+- **Retention:** Membership programs, automated reminders, referral rewards
+
+## Key UX Pain Points to Address
+- **Slow Page Speed:** Target < 1 second load time
+- **Poor Navigation:** Clear service organization and booking flow
+- **No Trust Signals:** Testimonials, reviews, before/after galleries
+- **Booking Friction:** Streamlined booking with automated reminders
+- **Mobile Optimization:** Responsive design with touch-friendly elements
+
+## Conversion Optimization
+- **Hero Section:** Immediate "Book Now" CTA with service highlights
+- **Service Cards:** Clear pricing, descriptions, and booking buttons
+- **Trust Building:** Testimonials slider, client gallery, review integration
+- **Membership Promotion:** Highlight loyalty programs and referral rewards
+- **Mobile Booking:** Optimized for quick mobile appointment scheduling
+
+## Accessibility Standards
+- **WCAG 2.1 AA Compliance:** Proper contrast ratios and focus states
+- **Keyboard Navigation:** Full keyboard accessibility
+- **Screen Reader Support:** Semantic HTML and ARIA labels
+- **Touch Targets:** Minimum 44px for mobile interactions
+- **Loading States:** Clear feedback for all user actions
+
+## Content Strategy
+- **Service Pages:** Detailed descriptions, pricing, FAQs, before/after photos
+- **Blog Content:** Educational posts on lash care, brow styling, beauty trends
+- **Local SEO:** Location-specific content and Google Business Profile integration
+- **Social Proof:** Client testimonials, reviews, transformation galleries
+
+## Performance Requirements
+- **Core Web Vitals:** LCP < 1s, TBT < 100ms, CLS < 0.1
+- **Mobile-First:** Optimized layouts for mobile booking
+- **Image Optimization:** WebP format, lazy loading, proper sizing
+- **Caching:** CDN implementation for faster asset delivery
+
+## Booking Experience
+- **Square Integration:** Real-time availability and secure payments
+- **Automated Reminders:** Email/SMS confirmations and follow-ups
+- **Membership Management:** Loyalty program dashboard for returning clients
+- **Referral System:** Automated rewards for new client acquisition
+description:
+globs:
+alwaysApply: false
+---
