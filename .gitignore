@@ -141,4 +141,25 @@ prisma/migrations/
 # Playwright
 /test-results/
 /playwright-report/
-/blob-report/ 
+/blob-report/
+
+# Performance reports and analytics
+lighthouse-*.json
+*.lighthouse.json
+
+# Temporary content files
+captions.txt
+temp-*.txt
+
+# IDE specific files
+.cursor/
+.vscode/
+.idea/
+
+# Deployment specific
+.vercel/
+.netlify/
+
+# Logs and reports
+*.log
+reports/ 
