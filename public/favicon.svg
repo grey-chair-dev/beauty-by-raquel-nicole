@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#F4D1C7"/>
-  <!-- Bold B: stem + two bowls -->
-  <path fill="#D96B3B" d="M10 7h5c3 0 5 2 5 5s-2 5-5 5h-2v10H10V7zm2 2v7h3c1.5 0 2.5-1 2.5-2.5S16.5 11 15 11h-3zm0 9h3c1.5 0 2.5 1 2.5 2.5S16.5 23 15 23h-3v-5z"/>
+  <rect width="32" height="32" rx="8" fill="#F4D1C7"/>
+  <g transform="translate(16 16) scale(0.85) translate(-12 -12)">
+    <path fill="#D96B3B" d="M12 2L13.5 10.5L22 12L13.5 13.5L12 22L10.5 13.5L2 12L10.5 10.5L12 2Z"/>
+  </g>
 </svg>
