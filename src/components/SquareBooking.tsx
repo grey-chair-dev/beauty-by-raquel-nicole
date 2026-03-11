@@ -33,8 +33,8 @@ const SquareBooking = ({ className = '', selectedService }: SquareBookingProps) 
         const config: any = {
           selector: '#square-booking-widget',
           locationId: 'L81AYV9NYYW19',
-          buttonTextColor: '000000',
-          color: 'e8b4b8',
+          buttonTextColor: 'FFFFFF',
+          color: 'D96B3B',
           locale: 'en',
           referrer: 'so'
         };

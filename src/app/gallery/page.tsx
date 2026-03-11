@@ -4,6 +4,8 @@ import Gallery from '@/components/Gallery';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
 
+import { SITE_URL } from '@/lib/constants';
+
 export const metadata: Metadata = {
   title: 'Hair Transformations Gallery | Before After Hair Color Results Milford OH',
   description: 'View stunning before and after hair transformations from Beauty by Raquel Nicole in Milford, OH. See real balayage, highlights, and hair color results from our professional hair services.',
@@ -18,9 +20,11 @@ export const metadata: Metadata = {
     'hair color transformations',
     'hair extensions before after'
   ],
+  alternates: { canonical: `${SITE_URL}/gallery` },
   openGraph: {
     title: 'Hair Transformations Gallery | Before After Hair Color Results Milford OH',
-    description: 'View stunning before and after hair transformations from Beauty by Raquel Nicole in Milford, OH. See real balayage, highlights, and hair color results.',
+    description: 'View stunning before and after hair transformations from Beauty by Raquel Nicole in Milford, OH. Real balayage, highlights, and hair color results.',
+    url: `${SITE_URL}/gallery`,
   },
 };
 

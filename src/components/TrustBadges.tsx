@@ -17,7 +17,7 @@ const TrustBadges = ({ variant = 'detailed', className = '' }: TrustBadgesProps)
     },
     {
       icon: Award,
-      title: '6+ Years Experience',
+      title: '7+ Years Experience',
       description: 'Expert hair transformations',
       color: 'text-accent'
     },
@@ -37,11 +37,11 @@ const TrustBadges = ({ variant = 'detailed', className = '' }: TrustBadgesProps)
 
   if (variant === 'compact') {
     return (
-      <div className={`flex flex-wrap justify-center gap-4 ${className}`}>
+      <div className={`flex flex-wrap justify-center gap-2 sm:gap-4 ${className}`}>
         {badges.map((badge, index) => (
-          <div key={index} className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-3 py-2">
-            <badge.icon className={`w-4 h-4 ${badge.color}`} />
-            <span className="text-small font-medium text-text">{badge.title}</span>
+          <div key={index} className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-3 py-2 min-h-[40px]">
+            <badge.icon className={`w-4 h-4 flex-shrink-0 ${badge.color}`} />
+            <span className="text-small font-medium text-text whitespace-nowrap">{badge.title}</span>
           </div>
         ))}
       </div>

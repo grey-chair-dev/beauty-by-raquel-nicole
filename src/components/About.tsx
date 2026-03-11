@@ -1,50 +1,48 @@
 import Image from 'next/image';
 import { Award, Heart, Shield, Users } from 'lucide-react';
+import WavyDivider from './WavyDivider';
 
 const About = () => {
   const stats = [
     { icon: Users, value: '500+', label: 'Happy Clients' },
-    { icon: Award, value: '6+', label: 'Years Experience' },
+    { icon: Award, value: '7+', label: 'Years Experience' },
     { icon: Heart, value: '100%', label: 'Satisfaction Rate' },
     { icon: Shield, value: 'Licensed', label: 'Professional' },
   ];
 
   return (
-    <section id="about" className="py-20 bg-seamless section-transition">
-      <div className="section-divider"></div>
+    <section id="about" className="py-12 sm:py-16 md:py-20 pb-24 sm:pb-28 md:pb-32 bg-seamless section-transition relative">
+      <div className="section-divider" />
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           <div>
-            <h2 className="text-heading text-h2 font-bold text-text mb-6">
+            {/* Personal intro - "Hey, I'm Raquel" */}
+            <p className="text-display text-2xl sm:text-3xl md:text-4xl font-bold text-text mb-1 sm:mb-2">
+              Hey, I&apos;m Raquel.
+            </p>
+            <p className="text-script text-xl sm:text-2xl md:text-3xl text-accent mb-4 sm:mb-6">
+              Here to help you look and feel your best.
+            </p>
+
+            <h2 className="text-heading text-h2 font-bold text-text mb-6 sr-only">
               About Beauty by Raquel Nicole
             </h2>
-            
-            <div className="space-y-6 text-body text-body-mobile md:text-body text-text/80">
+
+            <div className="space-y-4 sm:space-y-6 text-body text-[15px] sm:text-body-mobile md:text-body text-text/80 leading-relaxed">
               <p>
-                Welcome to Beauty by Raquel Nicole, where I specialize in creating 
-                beautiful hair transformations. Located in downtown Milford, OH, I offer 
-                a personalized experience for every client, focusing on blonding, 
-                dimensional color, vivids, and hand-tied weft extensions.
+                When you sit in my chair, it&apos;s more than just a hair appointment — it&apos;s a relaxing, judgment-free space where you can unwind, chat, and feel cared for.
               </p>
-              
+
               <p>
-                With years of experience in the beauty industry, I specialize in 
-                creating stunning hair transformations that enhance your unique features. 
-                From face-framing highlights to full color transformations, every service 
-                is tailored to your individual needs and preferences.
+                As a strong advocate for mental health, I truly embrace being your &quot;hairapist,&quot; offering not just great hair, but a supportive space where you can talk about anything and leave feeling refreshed inside and out ❤️.
               </p>
-              
+
               <p>
-                Our commitment to quality, attention to detail, and personalized care 
-                has made us a trusted name in Milford&apos;s beauty community. I use 
-                only the highest quality products and maintain the strictest hygiene 
-                standards for your safety and satisfaction.
+                Outside the salon you&apos;ll usually find me reading📖, practicing yoga🧘‍♀️, crocheting, thrifting, tending to my plant children🪴, or couch rotting with my fiancé📺.
               </p>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-6 mt-8">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="flex justify-center mb-2">
@@ -61,43 +59,29 @@ const About = () => {
             </div>
           </div>
 
-          {/* Raquel's Photo */}
           <div className="relative floating-element">
             <div className="seamless-card rounded-2xl overflow-hidden">
               <div className="relative">
-                <Image 
-                  src="/images/raquel/raquel-profile.jpg" 
+                <Image
+                  src="/images/raquel/raquel-profile.jpg"
                   alt="Raquel Schmid - Licensed Hairstylist"
                   width={400}
                   height={384}
-                  className="w-full h-96 object-cover object-top -translate-y-10"
+                  className="w-full h-64 sm:h-80 md:h-96 object-cover object-top -translate-y-6 md:-translate-y-10"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center hidden">
-                  <div className="text-center p-8">
-                    <div className="w-32 h-32 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-3xl">👩‍🎨</span>
-                    </div>
-                    <h3 className="text-heading text-xl font-semibold text-text mb-2">
-                      Meet Raquel Schmid
-                    </h3>
-                    <p className="text-body text-text/70">
-                      Licensed Hairstylist
-                    </p>
-                  </div>
-                </div>
               </div>
-              
-              <div className="p-6">
-                <div className="text-center mb-6">
-                  <h3 className="text-heading text-xl font-semibold text-text mb-2">
+
+              <div className="p-4 sm:p-6">
+                <div className="text-center mb-4 sm:mb-6">
+                  <h3 className="text-heading text-lg sm:text-xl font-semibold text-text mb-1 sm:mb-2">
                     Meet Raquel Schmid
                   </h3>
-                  <p className="text-body text-text/70">
+                  <p className="text-body text-text/70 text-sm sm:text-base">
                     Licensed Hairstylist
                   </p>
                 </div>
-                
-                <div className="space-y-4 text-body text-small text-text/80">
+
+                <div className="space-y-3 sm:space-y-4 text-body text-small text-text/80">
                   <div className="flex items-start space-x-3">
                     <Award className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                     <div>
@@ -105,7 +89,7 @@ const About = () => {
                       <p>Licensed and certified in hair styling and color services</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start space-x-3">
                     <Heart className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                     <div>
@@ -113,7 +97,7 @@ const About = () => {
                       <p>Every service is customized to your unique hair type and preferences</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start space-x-3">
                     <Shield className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                     <div>
@@ -127,8 +111,17 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      {/* Wavy stripe - horizontal bands peach/pink/orange (Sawdust & Stain style) */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 overflow-hidden pointer-events-none" aria-hidden>
+        <svg className="absolute bottom-0 w-full h-20" viewBox="0 0 1200 80" preserveAspectRatio="none">
+          <path d="M0 40 Q300 20 600 40 T1200 40 L1200 80 L0 80 Z" fill="#F4D1C7" />
+          <path d="M0 55 Q400 30 800 55 T1200 55 L1200 80 L0 80 Z" fill="#E8B4B8" />
+          <path d="M0 68 Q350 45 1200 68 L1200 80 L0 80 Z" fill="#D96B3B" opacity="0.85" />
+        </svg>
+      </div>
     </section>
   );
 };
 
-export default About; 
+export default About;

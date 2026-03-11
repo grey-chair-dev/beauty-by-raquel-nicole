@@ -4,9 +4,11 @@ import Footer from '@/components/Footer';
 import BridalForm from '@/components/BridalForm';
 import MobileCTA from '@/components/MobileCTA';
 
+import { SITE_URL } from '@/lib/constants';
+
 export const metadata: Metadata = {
   title: 'Bridal Hair Services Milford OH | Wedding Hair Styling',
-  description: 'Professional bridal hair services in Milford, OH. Specializing in wedding hair styling for brides, bridesmaids, and flower girls. Book your wedding hair appointment today.',
+  description: 'Professional bridal hair services in Milford, OH. Wedding hair styling for brides, bridesmaids, and flower girls. Book your wedding hair appointment with Raquel Nicole today.',
   keywords: [
     'bridal hair Milford OH',
     'wedding hair styling',
@@ -17,9 +19,11 @@ export const metadata: Metadata = {
     'bridal hair consultation',
     'wedding hair stylist Milford'
   ],
+  alternates: { canonical: `${SITE_URL}/bridal` },
   openGraph: {
     title: 'Bridal Hair Services Milford OH | Wedding Hair Styling',
-    description: 'Professional bridal hair services in Milford, OH. Specializing in wedding hair styling for brides, bridesmaids, and flower girls.',
+    description: 'Professional bridal hair services in Milford, OH. Wedding hair for brides, bridesmaids, and flower girls. Book with Raquel Nicole.',
+    url: `${SITE_URL}/bridal`,
   },
 };
 

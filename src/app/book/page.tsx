@@ -4,6 +4,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SquareBooking from '@/components/SquareBooking';
 
+import { SITE_URL } from '@/lib/constants';
+
 export const metadata: Metadata = {
   title: 'Book Hair Appointment Online | Balayage & Highlights Milford OH',
   description: 'Book your hair appointment online with Beauty by Raquel Nicole in Milford, OH. Schedule balayage, highlights, hand-tied extensions, and hair color services. Professional hair colorist available for consultations.',
@@ -18,9 +20,11 @@ export const metadata: Metadata = {
     'hair color consultation booking',
     'professional hair colorist appointment'
   ],
+  alternates: { canonical: `${SITE_URL}/book` },
   openGraph: {
     title: 'Book Hair Appointment Online | Balayage & Highlights Milford OH',
-    description: 'Book your hair appointment online with Beauty by Raquel Nicole in Milford, OH. Schedule balayage, highlights, hand-tied extensions, and hair color services.',
+    description: 'Book your hair appointment online with Beauty by Raquel Nicole in Milford, OH. Schedule balayage, highlights, extensions, and hair color.',
+    url: `${SITE_URL}/book`,
   },
 };
 
