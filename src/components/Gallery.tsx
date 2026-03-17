@@ -53,7 +53,7 @@ const galleryItems = [
     title: 'Womens Haircut',
     description: 'Professional women\'s haircut and styling',
     imageUrl: '/gallery/womens-haircut/womens-haircut.png',
-    category: 'extensions'
+    category: 'styling'
   }
 ];
 
@@ -84,7 +84,7 @@ const Gallery = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`min-h-[44px] px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeCategory === category.id
                     ? 'bg-accent text-white shadow-lg'
                     : 'bg-gray-100 text-text hover:bg-gray-200'
@@ -111,6 +111,7 @@ const Gallery = () => {
                   alt={`${item.title} transformation`}
                   width={400}
                   height={400}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center hidden">
@@ -156,7 +157,7 @@ const Gallery = () => {
               href="https://www.instagram.com/beauty_by_raquel_nicole/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-accent font-bold px-8 py-3 rounded-lg inline-block hover:bg-accent hover:text-white transition-all duration-300"
+              className="min-h-[44px] inline-flex items-center justify-center bg-white text-accent font-bold px-8 py-3 rounded-lg hover:bg-accent hover:text-white transition-all duration-300 touch-manipulation"
             >
               Follow @beauty_by_raquel_nicole
             </a>

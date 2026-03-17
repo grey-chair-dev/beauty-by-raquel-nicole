@@ -1,5 +1,5 @@
 import { MapPin, Clock, Phone, MessageCircle } from 'lucide-react';
-import { INSTAGRAM_URL, BOOK_URL } from '@/lib/constants';
+import { INSTAGRAM_URL, BOOK_URL, BUSINESS_HOURS } from '@/lib/constants';
 
 const Map = () => {
   return (
@@ -45,9 +45,9 @@ const Map = () => {
                   <div>
                     <h4 className="text-heading font-semibold text-text mb-1">Hours</h4>
                     <div className="text-body text-text/70 space-y-1">
-                      <p>Tuesday - Friday: 9:00 AM - 6:00 PM</p>
-                      <p>Saturday: 9:00 AM - 4:00 PM</p>
-                      <p>Sunday - Monday: Closed</p>
+                      <p>{BUSINESS_HOURS.weekdaysLabel}: {BUSINESS_HOURS.weekdays}</p>
+                      <p>{BUSINESS_HOURS.saturdayLabel}: {BUSINESS_HOURS.saturday}</p>
+                      <p>{BUSINESS_HOURS.closed}</p>
                     </div>
                   </div>
                 </div>

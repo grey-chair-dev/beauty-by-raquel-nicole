@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Instagram, Facebook, Clock, Calendar, MessageCircle } from 'lucide-react';
 import WavyDivider from './WavyDivider';
-import { BOOK_URL, INSTAGRAM_URL } from '@/lib/constants';
+import { BOOK_URL, INSTAGRAM_URL, BUSINESS_HOURS } from '@/lib/constants';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -34,11 +34,11 @@ const Footer = () => {
               DM me on Instagram
             </a>
             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-              <a href="tel:+15133302277" className="flex items-center space-x-3 py-2 -mx-1 rounded-lg active:bg-white/10 touch-manipulation">
+              <a href="tel:+15133302277" className="flex items-center space-x-3 min-h-[44px] py-2 -mx-1 rounded-lg active:bg-white/10 touch-manipulation">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0" />
                 <span className="text-white">(513) 330-2277</span>
               </a>
-              <a href="mailto:beautybyraquelnicole@gmail.com" className="flex items-center space-x-3 py-2 -mx-1 rounded-lg active:bg-white/10 touch-manipulation break-all">
+              <a href="mailto:beautybyraquelnicole@gmail.com" className="flex items-center space-x-3 min-h-[44px] py-2 -mx-1 rounded-lg active:bg-white/10 touch-manipulation break-all">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0" />
                 <span className="text-white">beautybyraquelnicole@gmail.com</span>
               </a>
@@ -56,12 +56,12 @@ const Footer = () => {
               </h4>
               <div className="space-y-1 text-body text-white">
                 <div className="flex justify-between">
-                  <span>Tuesday - Friday</span>
-                  <span>10:00 AM - 6:00 PM</span>
+                  <span>{BUSINESS_HOURS.weekdaysLabel}</span>
+                  <span>{BUSINESS_HOURS.weekdays}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span>10:00 AM - 4:00 PM</span>
+                  <span>{BUSINESS_HOURS.saturdayLabel}</span>
+                  <span>{BUSINESS_HOURS.saturday}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday - Monday</span>
@@ -136,21 +136,21 @@ const Footer = () => {
             <h4 className="text-heading font-semibold mb-4">Services</h4>
             <ul className="space-y-1 sm:space-y-2 text-body text-white/80">
               <li>
-                <Link href="/services#haircuts" className="block py-2 sm:py-1 hover:text-white transition-colors touch-manipulation">
+                <Link href="/services#haircuts" className="block py-3 min-h-[44px] flex items-center hover:text-white transition-colors touch-manipulation">
                   Haircuts
                 </Link>
               </li>
               <li>
-                <Link href="/services#color" className="block py-2 sm:py-1 hover:text-white transition-colors touch-manipulation">Color</Link>
+                <Link href="/services#color" className="block py-3 min-h-[44px] flex items-center hover:text-white transition-colors touch-manipulation">Color</Link>
               </li>
               <li>
-                <Link href="/services#extensions" className="block py-2 sm:py-1 hover:text-white transition-colors touch-manipulation">Extensions</Link>
+                <Link href="/services#extensions" className="block py-3 min-h-[44px] flex items-center hover:text-white transition-colors touch-manipulation">Extensions</Link>
               </li>
               <li>
-                <Link href="/services#styling" className="block py-2 sm:py-1 hover:text-white transition-colors touch-manipulation">Styling</Link>
+                <Link href="/services#styling" className="block py-3 min-h-[44px] flex items-center hover:text-white transition-colors touch-manipulation">Styling</Link>
               </li>
               <li>
-                <Link href="/services#treatments" className="block py-2 sm:py-1 hover:text-white transition-colors touch-manipulation">Treatments</Link>
+                <Link href="/services#treatments" className="block py-3 min-h-[44px] flex items-center hover:text-white transition-colors touch-manipulation">Treatments</Link>
               </li>
             </ul>
           </div>
@@ -160,22 +160,22 @@ const Footer = () => {
             <h4 className="text-heading font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-1 sm:space-y-2 text-body text-white/80">
               <li>
-                <Link href="/" className="block py-2 sm:py-1 hover:text-white transition-colors touch-manipulation">Home</Link>
+                <Link href="/" className="block py-3 min-h-[44px] flex items-center hover:text-white transition-colors touch-manipulation">Home</Link>
               </li>
               <li>
-                <Link href="/about" className="block py-2 sm:py-1 hover:text-white transition-colors touch-manipulation">About</Link>
+                <Link href="/about" className="block py-3 min-h-[44px] flex items-center hover:text-white transition-colors touch-manipulation">About</Link>
               </li>
               <li>
-                <Link href="/gallery" className="block py-2 sm:py-1 hover:text-white transition-colors touch-manipulation">Gallery</Link>
+                <Link href="/gallery" className="block py-3 min-h-[44px] flex items-center hover:text-white transition-colors touch-manipulation">Gallery</Link>
               </li>
               <li>
-                <Link href="/bridal" className="block py-2 sm:py-1 hover:text-white transition-colors touch-manipulation">Bridal Hair</Link>
+                <Link href="/bridal" className="block py-3 min-h-[44px] flex items-center hover:text-white transition-colors touch-manipulation">Bridal Hair</Link>
               </li>
               <li>
-                <Link href="/contact" className="block py-2 sm:py-1 hover:text-white transition-colors touch-manipulation">Contact</Link>
+                <Link href="/contact" className="block py-3 min-h-[44px] flex items-center hover:text-white transition-colors touch-manipulation">Contact</Link>
               </li>
               <li>
-                <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="block py-2 sm:py-1 hover:text-white transition-colors touch-manipulation">Book Appointment</a>
+                <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="block py-3 min-h-[44px] flex items-center hover:text-white transition-colors touch-manipulation">Book Appointment</a>
               </li>
             </ul>
           </div>

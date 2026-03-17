@@ -5,6 +5,7 @@ import Testimonials from '@/components/Testimonials';
 import TrustBadges from '@/components/TrustBadges';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 import { SITE_URL } from '@/lib/constants';
 
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]} />
       <Header />
       <main className="min-h-screen">
         {/* Hero Section for About */}

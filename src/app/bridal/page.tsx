@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BridalForm from '@/components/BridalForm';
 import MobileCTA from '@/components/MobileCTA';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 import { SITE_URL } from '@/lib/constants';
 
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
 export default function BridalPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Bridal Hair', path: '/bridal' }]} />
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}

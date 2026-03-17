@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { ArrowRight, Phone, Calendar, Star } from 'lucide-react';
-import { BOOK_URL } from '@/lib/constants';
+import { BOOK_URL, CLIENT_COUNT } from '@/lib/constants';
 
 interface SmartCTAProps {
   variant?: 'primary' | 'secondary' | 'urgent';
@@ -54,7 +54,7 @@ const SmartCTA = ({ variant = 'primary', context = 'hero', className = '' }: Sma
       
       case 'testimonials':
         return {
-          text: 'Join 500+ Happy Clients',
+          text: `Join ${CLIENT_COUNT}+ Happy Clients`,
           icon: <Star className="w-4 h-4" />,
           url: BOOK_URL
         };

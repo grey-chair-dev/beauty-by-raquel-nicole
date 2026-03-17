@@ -1,7 +1,7 @@
 # SEO Audit — Prioritized Action Plan
 
 **Site:** Beauty by Raquel Nicole (https://beautybyraquelnicole.com)  
-**Audit:** Full SEO audit (codebase); overall score 76/100.
+**Audit:** Full SEO audit (codebase, site 503); overall score **77/100**.
 
 ---
 
@@ -18,10 +18,11 @@
 
 | # | Action | Where | Notes |
 |---|--------|--------|------|
-| 1 | Add OG image file | `public/og-image.jpg` | 1200×630, branded (logo + “Milford, OH”). Referenced in layout; currently 404. |
-| 2 | Align trust numbers | `src/lib/constants.ts`, layout (schema), TrustBadges, ReviewCarousel | One source: e.g. `REVIEW_COUNT` and optionally `CLIENT_COUNT`. Use same numbers everywhere or clearly distinguish “reviews” vs “clients.” |
-| 3 | Align business hours | `src/lib/constants.ts`, Map.tsx, Footer.tsx, layout (schema) | Single source (e.g. `BUSINESS_HOURS`). Map currently 9–6/9–4; schema/Footer 10–6/10–4. |
-| 4 | AggregateRating | `src/app/layout.tsx` | Use verifiable review count or remove aggregateRating to avoid policy risk. |
+| 1 | Fix duplicate H1 | `src/components/Header.tsx` | Change site name from `<h1>` to `<span>` (or `<p>`). Keep one H1 per page (main content, e.g. Hero headline). |
+| 2 | Add single definition sentence | `src/components/Hero.tsx` | In hero subcopy add: “Beauty by Raquel Nicole is a hair salon in Milford, OH, at The Beauty Bar, with 200+ five-star reviews and 500+ clients.” Optionally add “Professional balayage, highlights, and lived-in color” for keywords. |
+| 3 | 404 noindex | `src/app/not-found.tsx` | Export metadata with `robots: { index: false, follow: true }` so 404 pages are not indexed. |
+| 4 | OG image for social | `public/` + `src/app/layout.tsx` | Add 1200×630 PNG (or JPG) for Open Graph/Twitter; many platforms don’t use SVG. Point `og:image` and Twitter image to the PNG. Keep SVG if desired for schema or fallback. |
+| 5 | Add body copy to thin pages | `gallery/page.tsx`, `book/page.tsx`, `contact/page.tsx` | 150–250 words each: Gallery (what’s in gallery, how to book); Book (after booking, reschedule, new-client tips); Contact (parking, first visit). |
 
 ---
 
@@ -29,10 +30,15 @@
 
 | # | Action | Where | Notes |
 |---|--------|--------|------|
-| 5 | Add body copy to thin pages | `gallery/page.tsx`, `book/page.tsx`, `contact/page.tsx` (or Map) | 80–150 words each: gallery (real transformations, Milford); book (what to expect, cancellation); contact (visiting, parking). |
-| 6 | Fix About heading | `src/components/About.tsx` | Visible H2 (e.g. “About Raquel”); current H2 is sr-only. |
-| 7 | Touch targets ≥ 44px | TrustBadges.tsx, Footer.tsx, Gallery (filters, Instagram CTA) | Use `min-h-[44px]` or `py-3` so tap areas meet accessibility. |
-| 8 | Meta description length | Page metadata across app | Trim to 150–160 chars where long or repetitive. |
+| 6 | TrustBlock wording | `src/components/TrustBlock.tsx` | Use “rating from {REVIEW_COUNT}+ reviews” (not “clients”) to align with schema and avoid confusion with CLIENT_COUNT. |
+| 7 | Shorten meta titles | about, contact, gallery, services page metadata | Trim to ≤60 characters so SERP titles don’t truncate; keep brand and location. |
+| 8 | Homepage first 100 words | `Hero.tsx` | Add primary keywords (e.g. “Professional balayage and highlights in Milford, OH”) in subline or first paragraph. |
+| 9 | Preconnect book.squareup.com | `src/app/layout.tsx` | Add `<link rel="preconnect" href="https://book.squareup.com" />` (booking widget uses it). |
+| 10 | 404 noindex (if not in Critical) | `not-found.tsx` | Same as Critical #3. |
+| 11 | ReviewCarousel touch targets | `ReviewCarousel.tsx` | Prev/next and dots ≥44px; add aria-label / aria-current. |
+| 12 | Gallery card accessibility | `Gallery.tsx` | Use `<button>` or link with keyboard support instead of `<div onClick>`. |
+| 13 | HomepageServicesStrip link targets | `HomepageServicesStrip.tsx` | Add min-h-[44px] (and padding) to “View details” links. |
+| 14 | Footer tel/email tap targets | `Footer.tsx` | Add min-h-[44px] to tel and email links. |
 
 ---
 
@@ -40,18 +46,20 @@
 
 | # | Action | Where | Notes |
 |---|--------|--------|------|
-| 9 | HSTS header | next.config.js or host | Add `Strict-Transport-Security` where possible. |
-| 10 | Canonicals | Page metadata | Prefer relative (e.g. `canonical: '/book'`) for portability; metadataBase still resolves. |
-| 11 | Homepage title | `src/app/page.tsx` | Shorten so template doesn’t double brand; keep under ~60 chars before “\| Beauty by Raquel Nicole.” |
-| 12 | AI-quotable definition | Hero or About (homepage) | One sentence: “Beauty by Raquel Nicole is a hair salon in Milford, OH, at The Beauty Bar…” Optional: FAQ schema with 3–5 Q&As. |
-| 13 | Bridal page depth | `bridal/page.tsx` | Add 100–150 words: trial, timeline, travel, why book with Raquel. |
-| 14 | Memoize getAvailableDates | `src/components/BookingForm.tsx` | `const availableDates = useMemo(() => getAvailableDates(), []);` for INP. |
-| 15 | Hero image size | `src/components/Hero.tsx` | Larger intrinsic size (e.g. 800×600); keep `sizes`. |
-| 16 | Remove font preconnects | `src/app/layout.tsx` | Remove preconnect to fonts.googleapis.com / fonts.gstatic.com (next/font serves from origin). |
-| 17 | Preconnect for Square | `src/app/layout.tsx` | `<link rel="preconnect" href="https://squareup.com" />` (when Book in tree or in layout). |
-| 18 | next.config | next.config.js | Remove `generateEtags: false` and `onDemandEntries` if not needed. |
-| 19 | Header nav | Header component | Prefer `<Link>` over `<a>` for client-side navigation; ensure focus-visible. |
-| 20 | Format detection | `src/app/layout.tsx` | Enable (or remove) email/address/telephone so devices can tap-to-call/email. |
+| 15 | Content-Security-Policy | next.config.js | Add CSP (e.g. frame-ancestors 'none', default-src 'self', allow Square/Instagram if needed). |
+| 16 | Canonical consistency | All page metadata | Use relative canonicals (e.g. `/book`, `/contact`) with metadataBase. |
+| 17 | Sitemap lastModified | `src/app/sitemap.ts` | Use stable value (e.g. build time or fixed date) instead of `new Date()` on every request. |
+| 18 | TrustBlock testimonial | `TrustBlock.tsx` | Replace with one real, specific quote (service + result) or rotate real quotes. |
+| 19 | Contact H2 | `contact/page.tsx` or Map | Add H2 (e.g. “Location & Hours”) above Map/contact content. |
+| 20 | Gallery H2 | `gallery/page.tsx` | Add H2 (e.g. “Before & After Results”) before gallery grid. |
+| 21 | useCallback for forms | BookingForm.tsx, BridalForm.tsx | Wrap onSubmit in useCallback for INP. |
+| 22 | useCallback carousel | ReviewCarousel.tsx | Wrap nextReview, prevReview, goToReview in useCallback. |
+| 23 | Dynamic import BridalForm | `bridal/page.tsx` | next/dynamic for BridalForm to reduce /bridal bundle. |
+| 24 | Dynamic import SquareBooking | `book/page.tsx` | next/dynamic with ssr: false and loading placeholder. |
+| 25 | not-found CTA | `not-found.tsx` | Add min-h-[48px] to “Back to home” link. |
+| 26 | Contrast | Body text on cream | Consider text-text/80 for body where text-text/60 or /70 may fail 4.5:1. |
+| 27 | Montserrat | layout or tailwind | Load Montserrat if buttons use font-montserrat, or switch button font to Lato. |
+| 28 | Schema logo/image | layout.tsx | Optional: add raster (PNG) for BeautySalon logo/image for rich results. |
 
 ---
 
@@ -59,15 +67,10 @@
 
 | # | Action | Where | Notes |
 |---|--------|--------|------|
-| 21 | Image `sizes` | About.tsx, Gallery.tsx | Add responsive `sizes` for next/image. |
-| 22 | Gallery category | Gallery data | Fix “Womens Haircut” category (e.g. extensions → styling) for consistency. |
-| 23 | Custom 404 | `src/app/not-found.tsx` | Add branded not-found page. |
-| 24 | Google verification | layout metadata | Uncomment and add verification code when using Search Console. |
-| 25 | BreadcrumbList | About, Bridal, Gallery, Contact, Book | Use `BreadcrumbSchema` (as on Services) with correct items. |
-| 26 | Dynamic-import BridalForm | `src/app/bridal/page.tsx` | Reduce /bridal bundle (zod, react-hook-form only on that page). |
-| 27 | Gallery filter / CTA | Gallery.tsx | Ensure filter buttons and Instagram CTA have min-h-[44px]. |
-| 28 | theme-color | layout head | Optional; improve mobile browser chrome. |
-| 29 | Montserrat | tailwind.config / layout | Load Montserrat if used in Tailwind or switch to Lato. |
+| 29 | manifest.json icons | public/manifest.json | Add at least one icon (e.g. 192×192, 512×512). |
+| 30 | WebSite / Person @id | layout schema | Optional: add @id for clearer graph. |
+| 31 | FAQ block + FAQPage schema | Home or About | 3–5 Q&As (location, services, booking); optional FAQPage JSON-LD for AI. |
+| 32 | ReviewCarousel aria | ReviewCarousel.tsx | aria-label on prev/next, aria-current on active dot. |
 
 ---
 
@@ -75,9 +78,11 @@
 
 | Priority | Count |
 |----------|--------|
-| Critical | 4 |
-| High | 4 |
-| Medium | 12 |
-| Low | 9 |
+| Critical | 5 |
+| High | 9 |
+| Medium | 14 |
+| Low | 4 |
 
-Tackle Critical and High first; then Medium (hours/constants, copy, performance, schema/FAQ); Low as capacity allows.
+---
+
+Tackle Critical first (H1, definition sentence, 404 noindex, OG PNG, thin-page copy), then High (TrustBlock wording, meta titles, preconnect, accessibility/touch targets). Medium and Low can follow in order.

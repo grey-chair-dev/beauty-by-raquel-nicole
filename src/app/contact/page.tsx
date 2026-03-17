@@ -4,9 +4,8 @@ import Map from '@/components/Map';
 import TrustBadges from '@/components/TrustBadges';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
-import { INSTAGRAM_URL } from '@/lib/constants';
-
-import { SITE_URL } from '@/lib/constants';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+import { INSTAGRAM_URL, SITE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Hair Salon Near Me Milford OH | Book Appointment Beauty by Raquel Nicole',
@@ -32,6 +31,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]} />
       <Header />
       <main className="min-h-screen">
         {/* Hero Section for Contact */}
@@ -41,9 +41,12 @@ export default function ContactPage() {
               <h1 className="text-heading text-h1-mobile md:text-h1 font-bold text-text mb-6">
                 Visit Our Hair Salon in Milford, OH
               </h1>
-              <p className="text-body text-body-mobile md:text-body text-text/80 mb-6">
+              <p className="text-body text-body-mobile md:text-body text-text/80 mb-4">
                 Located in the heart of Milford, OH at 212 Main St with easy access and plenty of free parking.
                 Book your hair appointment online for balayage, highlights, extensions, and professional hair services.
+              </p>
+              <p className="text-body text-body-mobile md:text-body text-text/70 max-w-2xl mx-auto mb-6">
+                The Beauty Bar is on Main Street in Old Milford. Free parking is available nearby. First visit? Come a few minutes early so we can get you comfortable and discuss your look.
               </p>
               {/* All inquiries → DMs */}
               <div className="inline-flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 p-4 sm:p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-primary/30">
@@ -66,7 +69,10 @@ export default function ContactPage() {
         </section>
 
         {/* Map & Contact Section */}
-        <Map />
+        <section aria-labelledby="location-heading">
+          <h2 id="location-heading" className="sr-only">Location &amp; Hours</h2>
+          <Map />
+        </section>
 
 
       </main>
