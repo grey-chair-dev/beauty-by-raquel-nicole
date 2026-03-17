@@ -117,10 +117,11 @@ export default function RootLayout({
                 "publisher": { "@id": `${SITE_URL}/#beautysalon` },
                 "potentialAction": {
                   "@type": "ReserveAction",
+                  "name": "Book appointment",
                   "target": {
                     "@type": "EntryPoint",
                     "urlTemplate": "https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services",
-                    "actionPlatform": "http://schema.org/DesktopWebPlatform"
+                    "actionPlatform": "https://schema.org/DesktopWebPlatform"
                   }
                 }
               },
@@ -153,10 +154,12 @@ export default function RootLayout({
                 "priceRange": "$$",
                 "aggregateRating": {
                   "@type": "AggregateRating",
-                  "ratingValue": "5.0",
-                  "reviewCount": "200",
-                  "bestRating": "5"
+                  "ratingValue": 5.0,
+                  "reviewCount": 200,
+                  "bestRating": 5
                 },
+                "logo": `${SITE_URL}/og-image.jpg`,
+                "image": `${SITE_URL}/og-image.jpg`,
                 "sameAs": [
                   "https://www.instagram.com/beauty_by_raquel_nicole/",
                   "https://www.facebook.com/profile.php?id=100028195435498"
