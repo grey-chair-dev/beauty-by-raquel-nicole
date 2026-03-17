@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -102,7 +102,7 @@ const BookingForm = () => {
     return dates;
   };
 
-  const availableDates = getAvailableDates();
+  const availableDates = useMemo(() => getAvailableDates(), []);
 
   return (
     <motion.div

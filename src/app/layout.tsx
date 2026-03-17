@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { DM_Serif_Display, Lato, Dancing_Script } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
-import { SITE_URL } from '@/lib/constants';
+import { SITE_URL, BUSINESS_HOURS, REVIEW_COUNT } from '@/lib/constants';
 
 const dmSerif = DM_Serif_Display({
   weight: '400',
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   creator: 'Beauty by Raquel Nicole',
   publisher: 'Beauty by Raquel Nicole',
   formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+    email: true,
+    address: true,
+    telephone: true,
   },
   metadataBase: new URL(SITE_URL),
   alternates: {
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     siteName: 'Beauty by Raquel Nicole',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
         alt: 'Beauty by Raquel Nicole - Hair Stylist & Color Specialist in Milford, OH',
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Beauty by Raquel Nicole | Hair Stylist Milford OH',
     description: 'Professional hair stylist in Milford, OH. Balayage, highlights, bridal hair. Book today.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.svg'],
   },
   robots: {
     index: true,
@@ -98,8 +98,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSerif.variable} ${lato.variable} ${dancingScript.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://squareup.com" />
+        <link rel="preconnect" href="https://book.squareup.com" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="manifest" href="/manifest.json" />
         
@@ -117,10 +117,11 @@ export default function RootLayout({
                 "publisher": { "@id": `${SITE_URL}/#beautysalon` },
                 "potentialAction": {
                   "@type": "ReserveAction",
+                  "name": "Book appointment",
                   "target": {
                     "@type": "EntryPoint",
                     "urlTemplate": "https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services",
-                    "actionPlatform": "http://schema.org/DesktopWebPlatform"
+                    "actionPlatform": "https://schema.org/DesktopWebPlatform"
                   }
                 }
               },
@@ -147,16 +148,18 @@ export default function RootLayout({
                   "longitude": -84.2956789
                 },
                 "openingHoursSpecification": [
-                  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "18:00" },
-                  { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "16:00" }
+                  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": BUSINESS_HOURS.weekdaysOpen, "closes": BUSINESS_HOURS.weekdaysClose },
+                  { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": BUSINESS_HOURS.saturdayOpen, "closes": BUSINESS_HOURS.saturdayClose }
                 ],
                 "priceRange": "$$",
                 "aggregateRating": {
                   "@type": "AggregateRating",
-                  "ratingValue": "5.0",
-                  "reviewCount": "200",
-                  "bestRating": "5"
+                  "ratingValue": 5.0,
+                  "reviewCount": REVIEW_COUNT,
+                  "bestRating": 5
                 },
+                "logo": `${SITE_URL}/og-image.svg`,
+                "image": `${SITE_URL}/og-image.svg`,
                 "sameAs": [
                   "https://www.instagram.com/beauty_by_raquel_nicole/",
                   "https://www.facebook.com/profile.php?id=100028195435498"

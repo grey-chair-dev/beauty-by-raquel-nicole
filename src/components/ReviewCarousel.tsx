@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { REVIEW_COUNT } from '@/lib/constants';
 
 interface Review {
   id: string;
@@ -97,7 +98,7 @@ const ReviewCarousel = ({ className = '' }: ReviewCarouselProps) => {
         <div className="flex items-center justify-center space-x-2 mb-4">
           <Star className="w-6 h-6 text-accent fill-current" />
           <span className="text-heading text-2xl font-bold text-text">5.0</span>
-          <span className="text-body text-text/60">(200+ reviews)</span>
+          <span className="text-body text-text/60">({REVIEW_COUNT}+ reviews)</span>
         </div>
         <h3 className="text-heading text-xl font-semibold text-text mb-2">
           What Our Clients Say

@@ -1,17 +1,20 @@
 import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import WavyDivider from '@/components/WavyDivider';
+import TrustBlock from '@/components/TrustBlock';
+import HomepageTransformations from '@/components/HomepageTransformations';
+import HomepageServicesStrip from '@/components/HomepageServicesStrip';
 import About from '@/components/About';
 import Testimonials from '@/components/Testimonials';
+import ClosingCTA from '@/components/ClosingCTA';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
 
 import { SITE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Balayage & Highlights Milford OH | Best Hair Stylist Beauty by Raquel Nicole',
-  description: 'Professional balayage, highlights, and hair color services in Milford, OH. Best hair stylist Raquel Nicole specializes in balayage, highlights, hand-tied extensions, and hair transformations. Book your appointment today!',
+  title: 'Balayage & Highlights Milford OH | Hair Stylist',
+  description: 'Professional balayage, highlights, and hair color in Milford, OH. Raquel Nicole — 7+ years, lived-in color, bridal hair, hand-tied extensions at The Beauty Bar. Book today.',
   keywords: [
     'balayage Milford OH',
     'highlights Milford OH',
@@ -24,10 +27,10 @@ export const metadata: Metadata = {
     'hair extensions Milford OH',
     'professional hair colorist Milford'
   ],
-  alternates: { canonical: SITE_URL },
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'Balayage & Highlights Milford OH | Best Hair Stylist Beauty by Raquel Nicole',
-    description: 'Professional balayage, highlights, and hair color services in Milford, OH. Best hair stylist Raquel Nicole specializes in balayage, highlights, hand-tied extensions, and hair transformations.',
+    title: 'Balayage & Highlights Milford OH | Hair Stylist',
+    description: 'Professional balayage, highlights, and hair color in Milford, OH. Raquel Nicole — 7+ years, lived-in color, bridal hair, extensions at The Beauty Bar.',
     url: SITE_URL,
   },
 };
@@ -38,9 +41,12 @@ export default function HomePage() {
       <Header />
       <main className="min-h-screen">
         <Hero />
-        <WavyDivider variant="cream-peach" />
+        <TrustBlock />
+        <HomepageTransformations />
+        <HomepageServicesStrip />
         <About />
         <Testimonials />
+        <ClosingCTA />
       </main>
       <Footer />
       <MobileCTA variant="floating" />

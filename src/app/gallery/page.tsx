@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Gallery from '@/components/Gallery';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 import { SITE_URL } from '@/lib/constants';
 
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Gallery', path: '/gallery' }]} />
       <Header />
       <main className="min-h-screen">
         {/* Hero Section for Gallery */}
@@ -40,16 +42,25 @@ export default function GalleryPage() {
               <h1 className="text-heading text-h1-mobile md:text-h1 font-bold text-text mb-6">
                 Hair Services Gallery
               </h1>
-              <p className="text-body text-body-mobile md:text-body text-text/80 mb-8">
+              <p className="text-body text-body-mobile md:text-body text-text/80 mb-6">
                 Explore our gallery of real client results from a variety of professional hair services in Milford, OH. 
                 From balayage and highlights to haircuts and extensions, see the quality and artistry of our work.
+              </p>
+              <p className="text-body text-body-mobile md:text-body text-text/70 max-w-2xl mx-auto">
+                Every photo is from real transformations done at The Beauty Bar in Old Milford. Whether you&apos;re looking for lived-in color, 
+                a fresh cut, or bridal styling inspiration, this gallery shows what you can expect when you sit in Raquel&apos;s chair.
               </p>
             </div>
           </div>
         </section>
 
         {/* Gallery Section */}
-        <Gallery />
+        <section aria-labelledby="gallery-results-heading">
+          <h2 id="gallery-results-heading" className="text-heading text-2xl sm:text-3xl font-bold text-text text-center mb-8">
+            Before &amp; After Results
+          </h2>
+          <Gallery />
+        </section>
 
 
       </main>
