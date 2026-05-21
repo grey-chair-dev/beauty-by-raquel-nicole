@@ -15,7 +15,8 @@ import {
   saveReviewerName,
 } from "@/lib/review-comments-storage";
 
-const VISIBILITY_KEY = "gc-review-flags-visible";
+/** Default off; bump key when changing default so stale "on" values are not restored */
+const VISIBILITY_KEY = "gc-review-flags-visible-v2";
 
 type ReviewFlagsContextValue = {
   featureEnabled: boolean;

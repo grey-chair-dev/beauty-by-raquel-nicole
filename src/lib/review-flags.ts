@@ -109,9 +109,7 @@ export function partitionReviewFlags(flags: ReviewFlag[]) {
 }
 
 export function isReviewFlagsUiEnabled(): boolean {
-  if (process.env.NEXT_PUBLIC_SHOW_REVIEW_FLAGS === "false") return false;
-  if (process.env.NEXT_PUBLIC_SHOW_REVIEW_FLAGS === "true") return true;
-  return process.env.NODE_ENV === "development";
+  return process.env.NEXT_PUBLIC_SHOW_REVIEW_FLAGS === "true";
 }
 
 export function getOpenFlags(review: ReviewFlagsContent): ReviewFlag[] {
