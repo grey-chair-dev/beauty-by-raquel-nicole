@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://beautybyraquelnicole.com/sitemap.xml
+Sitemap: https://beauty-by-raquel-nicole.greychair.io/sitemap.xml
 
 # Disallow admin/API (if added later)
 Disallow: /admin/

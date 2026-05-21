@@ -1,5 +1,5 @@
 /** Canonical site URL for SEO (canonical, Open Graph, schema) */
-export const SITE_URL = 'https://beautybyraquelnicole.com';
+export const SITE_URL = 'https://beauty-by-raquel-nicole.greychair.io';
 
 /** Instagram profile — all inquiries go to her DMs */
 export const INSTAGRAM_URL = 'https://www.instagram.com/beauty_by_raquel_nicole/';
