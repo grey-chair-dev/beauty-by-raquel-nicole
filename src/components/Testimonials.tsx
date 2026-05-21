@@ -1,5 +1,6 @@
 import { Star, Quote } from 'lucide-react';
 import ReviewCarousel from './ReviewCarousel';
+import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 const testimonials = [
   {
@@ -54,6 +55,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
+    <ReviewSectionAnchor flagIds={['home-testimonials']} href="/#testimonials">
     <section id="testimonials" className="py-20 bg-seamless section-transition">
       <div className="section-divider"></div>
       <div className="container-custom">
@@ -73,6 +75,7 @@ const Testimonials = () => {
         </div>
       </div>
     </section>
+    </ReviewSectionAnchor>
   );
 };
 

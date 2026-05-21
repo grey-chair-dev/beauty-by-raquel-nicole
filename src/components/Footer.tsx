@@ -3,11 +3,13 @@
 
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Instagram, Facebook, Clock, Calendar } from 'lucide-react';
+import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
+    <ReviewSectionAnchor flagIds={['footer-info', 'site-social', 'site-hours', 'site-location']}>
     <footer id="contact" className="bg-text text-white section-transition">
       <div className="section-divider"></div>
       <div className="container-custom py-12">
@@ -201,6 +203,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </ReviewSectionAnchor>
   );
 };
 

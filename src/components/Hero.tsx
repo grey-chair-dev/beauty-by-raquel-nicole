@@ -3,9 +3,14 @@ import Image from 'next/image';
 import { ArrowRight, Star } from 'lucide-react';
 import SmartCTA from './SmartCTA';
 import TrustBadges from './TrustBadges';
+import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 const Hero = () => {
   return (
+    <ReviewSectionAnchor
+      flagIds={['home-hero-headline', 'home-hero-intro', 'home-hero-image']}
+      href="/#home"
+    >
     <section id="home" className="relative min-h-screen flex items-center justify-center bg-seamless section-transition">
       <div className="gradient-overlay absolute inset-0"></div>
       <div className="container-custom relative z-10">
@@ -85,6 +90,7 @@ const Hero = () => {
       <div className="absolute top-20 left-10 w-20 h-20 bg-accent/10 rounded-full blur-xl"></div>
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-primary/20 rounded-full blur-xl"></div>
     </section>
+    </ReviewSectionAnchor>
   );
 };
 

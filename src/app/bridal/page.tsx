@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BridalForm from '@/components/BridalForm';
 import MobileCTA from '@/components/MobileCTA';
+import { ReviewSectionAnchor } from '@/components/review/ReviewSectionAnchor';
 
 export const metadata: Metadata = {
   title: 'Bridal Hair Services Milford OH | Wedding Hair Styling',
@@ -29,6 +30,7 @@ export default function BridalPage() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
+        <ReviewSectionAnchor flagIds={['bridal-intro']} href="/bridal">
         <section className="py-20 bg-gradient-to-br from-primary/20 to-secondary/20">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
@@ -43,8 +45,10 @@ export default function BridalPage() {
             </div>
           </div>
         </section>
+        </ReviewSectionAnchor>
 
         {/* Rates Section */}
+        <ReviewSectionAnchor flagIds={['bridal-rates', 'bridal-policies']} href="/bridal">
         <section className="py-16 bg-white">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
@@ -100,8 +104,10 @@ export default function BridalPage() {
             </div>
           </div>
         </section>
+        </ReviewSectionAnchor>
 
         {/* Contact Form Section */}
+        <ReviewSectionAnchor flagIds={['bridal-form']} href="/bridal">
         <section className="py-20 bg-seamless">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
@@ -119,6 +125,7 @@ export default function BridalPage() {
             </div>
           </div>
         </section>
+        </ReviewSectionAnchor>
       </main>
       <Footer />
       <MobileCTA variant="floating" />

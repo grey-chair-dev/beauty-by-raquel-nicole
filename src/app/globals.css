@@ -121,6 +121,26 @@ select:focus {
   .text-button {
     @apply font-montserrat;
   }
+
+  .page-x {
+    @apply container-custom;
+  }
+
+  .type-label-lg {
+    @apply text-sm font-semibold uppercase tracking-wider;
+  }
+
+  .type-headline-lg {
+    @apply font-playfair text-3xl md:text-4xl;
+  }
+
+  .type-headline-sm {
+    @apply font-playfair text-xl md:text-2xl;
+  }
+
+  .type-body-lg {
+    @apply font-lato text-base md:text-lg;
+  }
 } 
 
 /* Seamless Design System */

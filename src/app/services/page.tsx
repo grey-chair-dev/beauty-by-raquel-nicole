@@ -4,6 +4,7 @@ import Services from '@/components/Services';
 import TrustBadges from '@/components/TrustBadges';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
+import { ReviewSectionAnchor } from '@/components/review/ReviewSectionAnchor';
 
 export const metadata: Metadata = {
   title: 'Balayage, Highlights & Hair Extensions Milford OH | Professional Hair Colorist',
@@ -35,6 +36,7 @@ export default function ServicesPage() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section for Services */}
+        <ReviewSectionAnchor flagIds={['services-intro']} href="/services">
         <section className="py-20 bg-gradient-to-br from-primary/20 to-secondary/20">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
@@ -52,6 +54,7 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
+        </ReviewSectionAnchor>
 
         {/* Services Section */}
         <Services />

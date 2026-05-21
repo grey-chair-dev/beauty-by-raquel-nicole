@@ -1,0 +1,377 @@
+{
+  "title": "Questions for Raquel",
+  "intro": "Walk through each page and answer below. Check “No change needed” if it looks right, or type what should change. At the bottom of every page, tell us if you need anything else added. Use the toggle at the bottom-right to show or hide questions on the site.",
+  "actionItemsIntro": "Launch tasks for Grey Chair — not regular page copy.",
+  "flags": [
+    {
+      "id": "launch-access",
+      "kind": "action",
+      "status": "resolved",
+      "priority": "high",
+      "page": "Launch",
+      "href": "/review",
+      "question": "Domain already purchased — no action needed. (Hosting access only if Grey Chair still needs it to go live.)",
+      "group": "Launch checklist"
+    },
+    {
+      "id": "site-business-name",
+      "status": "open",
+      "priority": "high",
+      "page": "Whole site",
+      "href": "/",
+      "question": "Should the public brand stay “Beauty by Raquel Nicole,” show “RS C&C LLC” anywhere, or use a different name on the site?",
+      "group": "Business & contact"
+    },
+    {
+      "id": "site-phone",
+      "status": "open",
+      "priority": "high",
+      "page": "Whole site",
+      "href": "/contact",
+      "question": "Is (513) 330-2277 the correct phone number everywhere on the site?",
+      "group": "Business & contact"
+    },
+    {
+      "id": "site-email",
+      "status": "open",
+      "priority": "high",
+      "page": "Whole site",
+      "href": "/contact",
+      "question": "Is beautybyraquelnicole@gmail.com the correct email for clients to reach you?",
+      "group": "Business & contact"
+    },
+    {
+      "id": "site-location",
+      "status": "open",
+      "priority": "high",
+      "page": "Whole site",
+      "href": "/contact",
+      "question": "Is the location correct: The Beauty Bar, 212 Main St, Old Milford / Milford, OH 45150? Any wording you want emphasized (chair rental, downtown, parking)?",
+      "group": "Business & contact"
+    },
+    {
+      "id": "site-hours",
+      "status": "open",
+      "priority": "high",
+      "page": "Whole site",
+      "href": "/contact",
+      "question": "Are these hours correct? Tue–Fri 10 AM–6 PM, Sat 10 AM–4 PM, closed Sun–Mon. List any holidays or exceptions.",
+      "group": "Business & contact"
+    },
+    {
+      "id": "site-booking",
+      "status": "open",
+      "priority": "high",
+      "page": "Whole site",
+      "href": "/book",
+      "question": "Is Square online booking the only way you want clients to book, or should we also push phone/text? Is your Square service list complete and priced correctly?",
+      "group": "Booking & social"
+    },
+    {
+      "id": "site-social",
+      "status": "open",
+      "priority": "medium",
+      "page": "Whole site",
+      "href": "/",
+      "question": "Are your Instagram (@beauty_by_raquel_nicole) and Facebook links correct? Any other socials to add (TikTok, Pinterest)?",
+      "group": "Booking & social"
+    },
+    {
+      "id": "site-design-vibe",
+      "status": "open",
+      "priority": "medium",
+      "page": "Whole site",
+      "href": "/",
+      "question": "Overall look and feel: does the site feel like you — warm, modern, professional? Too formal, too playful, or anything that feels “off”?",
+      "group": "Design & SEO"
+    },
+    {
+      "id": "home-hero-headline",
+      "status": "open",
+      "priority": "high",
+      "page": "Home",
+      "href": "/#home",
+      "question": "Home hero headline: does “My passion is making you feel like YOU again” sound right, or would you like different wording?",
+      "group": "Hero"
+    },
+    {
+      "id": "home-hero-intro",
+      "status": "open",
+      "priority": "high",
+      "page": "Home",
+      "href": "/#home",
+      "question": "Home hero intro (RS C&C LLC, 7 years, The Beauty Bar, specialties, bridal updos): accurate and complete? Anything to add or remove?",
+      "group": "Hero"
+    },
+    {
+      "id": "home-hero-image",
+      "status": "open",
+      "priority": "medium",
+      "page": "Home",
+      "href": "/#home",
+      "question": "Home before/after photo: is this the transformation you want featured, or do you have a different image to use?",
+      "group": "Hero"
+    },
+    {
+      "id": "home-about-copy",
+      "status": "open",
+      "priority": "high",
+      "page": "Home",
+      "href": "/#about",
+      "question": "About section on the home page (hairapist, mental health, hobbies): does this sound like you? Any edits to tone or details?",
+      "group": "About section"
+    },
+    {
+      "id": "home-about-stats",
+      "status": "open",
+      "priority": "medium",
+      "page": "Home",
+      "href": "/#about",
+      "question": "Stats shown (500+ clients, 7+ years, 100% satisfaction, Licensed): are these numbers accurate and okay to publish?",
+      "group": "About section"
+    },
+    {
+      "id": "home-about-photo",
+      "status": "open",
+      "priority": "medium",
+      "page": "Home",
+      "href": "/#about",
+      "question": "Profile photo and “Meet Raquel Schmid” card: correct name spelling, title, and image? Prefer Nicole vs Schmid on the site?",
+      "group": "About section"
+    },
+    {
+      "id": "home-testimonials",
+      "status": "open",
+      "priority": "medium",
+      "page": "Home",
+      "href": "/#testimonials",
+      "question": "Testimonials/reviews section: are these representative of real clients? Should we link to Google reviews only, or add/remove quotes?",
+      "group": "Testimonials"
+    },
+    {
+      "id": "services-intro",
+      "status": "open",
+      "priority": "medium",
+      "page": "Services",
+      "href": "/services",
+      "question": "Services page intro (balayage, highlights, extensions in Milford): accurate summary of what you offer?",
+      "group": "Page intro"
+    },
+    {
+      "id": "services-pricing",
+      "status": "open",
+      "priority": "high",
+      "page": "Services",
+      "href": "/services#services",
+      "question": "Service names, durations, and prices: do they match your current Square menu? List anything wrong, missing, or discontinued.",
+      "group": "Services list"
+    },
+    {
+      "id": "services-descriptions",
+      "status": "open",
+      "priority": "medium",
+      "page": "Services",
+      "href": "/services#services",
+      "question": "Service descriptions and bullet points: anything misleading or that you would word differently for clients?",
+      "group": "Services list"
+    },
+    {
+      "id": "services-categories",
+      "status": "open",
+      "priority": "low",
+      "page": "Services",
+      "href": "/services#services",
+      "question": "Service filters/categories (haircuts, color, extensions, styling, treatments): do these groupings make sense for how you book?",
+      "group": "Services list"
+    },
+    {
+      "id": "about-page-intro",
+      "status": "open",
+      "priority": "medium",
+      "page": "About",
+      "href": "/about",
+      "question": "Dedicated About page top intro still mentions “6+ years” in places — should everything say 7 years to match your bio?",
+      "group": "Page intro"
+    },
+    {
+      "id": "about-page-duplicate",
+      "status": "open",
+      "priority": "low",
+      "page": "About",
+      "href": "/about",
+      "question": "About page repeats home content (about + testimonials). Keep as-is for SEO, or trim so it feels less repetitive?",
+      "group": "Page layout"
+    },
+    {
+      "id": "gallery-hero",
+      "status": "open",
+      "priority": "medium",
+      "page": "Gallery",
+      "href": "/gallery",
+      "question": "Gallery intro text: does it describe your work the way you want (balayage, cuts, extensions, etc.)?",
+      "group": "Page intro"
+    },
+    {
+      "id": "gallery-photos",
+      "status": "open",
+      "priority": "high",
+      "page": "Gallery",
+      "href": "/gallery#gallery",
+      "question": "Gallery photos: which folders or shots should we add, remove, or reorder? Send filenames or describe your best work to feature first.",
+      "group": "Gallery"
+    },
+    {
+      "id": "gallery-categories",
+      "status": "open",
+      "priority": "medium",
+      "page": "Gallery",
+      "href": "/gallery#gallery",
+      "question": "Gallery categories (balayage, extensions, cuts, etc.): are the labels right? Any category missing that you want highlighted?",
+      "group": "Gallery"
+    },
+    {
+      "id": "bridal-intro",
+      "status": "open",
+      "priority": "medium",
+      "page": "Bridal",
+      "href": "/bridal",
+      "question": "Bridal page intro: does it reflect how you want to present wedding hair (on-site, trials, party size)?",
+      "group": "Page intro"
+    },
+    {
+      "id": "bridal-rates",
+      "status": "open",
+      "priority": "high",
+      "page": "Bridal",
+      "href": "/bridal",
+      "question": "Bridal rates ($85 bride, $75 party, $50 flower girl): still current? List correct prices if anything changed.",
+      "group": "Rates & policies"
+    },
+    {
+      "id": "bridal-policies",
+      "status": "open",
+      "priority": "high",
+      "page": "Bridal",
+      "href": "/bridal",
+      "question": "Bridal policies (50% deposit, consultation, travel/on-site): accurate? Anything to add about trials, minimum party size, or travel fees?",
+      "group": "Rates & policies"
+    },
+    {
+      "id": "bridal-form",
+      "status": "open",
+      "priority": "medium",
+      "page": "Bridal",
+      "href": "/bridal",
+      "question": "Bridal inquiry form: are the questions what you need (date, venue, party size, inspiration)? Missing fields?",
+      "group": "Inquiry form"
+    },
+    {
+      "id": "contact-hero",
+      "status": "open",
+      "priority": "medium",
+      "page": "Contact",
+      "href": "/contact",
+      "question": "Contact page intro (location, parking, booking online): anything to clarify for first-time clients finding The Beauty Bar?",
+      "group": "Page intro"
+    },
+    {
+      "id": "contact-map",
+      "status": "open",
+      "priority": "medium",
+      "page": "Contact",
+      "href": "/contact#contact",
+      "question": "Map and directions: does the pin land on the right building/entrance? Parking tips to add?",
+      "group": "Location & directions"
+    },
+    {
+      "id": "book-page",
+      "status": "open",
+      "priority": "medium",
+      "page": "Book",
+      "href": "/book",
+      "question": "Book page: does the Square booking widget load and show the right services? Any instructions clients need before booking?",
+      "group": "Online booking"
+    },
+    {
+      "id": "footer-info",
+      "status": "open",
+      "priority": "medium",
+      "page": "Footer",
+      "href": "/",
+      "question": "Footer (copyright RS C&C LLC, The Beauty Bar | Old Milford, links, hours): all correct?",
+      "group": "Footer"
+    },
+    {
+      "id": "seo-titles",
+      "status": "open",
+      "priority": "low",
+      "page": "Whole site",
+      "href": "/review",
+      "question": "Search/Google snippets use phrases like “best hair stylist Milford” — comfortable with that marketing language, or prefer softer wording?",
+      "group": "Design & SEO"
+    },
+    {
+      "id": "page-other-home",
+      "status": "open",
+      "priority": "medium",
+      "page": "Home",
+      "href": "/",
+      "question": "Home page — is there anything else you need on this page? (more photos, a new section, different wording, links, pricing callouts, etc.)",
+      "group": "Anything else needed"
+    },
+    {
+      "id": "page-other-services",
+      "status": "open",
+      "priority": "medium",
+      "page": "Services",
+      "href": "/services",
+      "question": "Services page — is there anything else you need on this page? (services to add/remove, packages, policies, photos, FAQs, etc.)",
+      "group": "Anything else needed"
+    },
+    {
+      "id": "page-other-about",
+      "status": "open",
+      "priority": "medium",
+      "page": "About",
+      "href": "/about",
+      "question": "About page — is there anything else you need on this page? (more about you, certifications, team, photos, personal story, etc.)",
+      "group": "Anything else needed"
+    },
+    {
+      "id": "page-other-gallery",
+      "status": "open",
+      "priority": "medium",
+      "page": "Gallery",
+      "href": "/gallery",
+      "question": "Gallery page — is there anything else you need on this page? (more photos, before/after sets, video, Instagram feed, categories, etc.)",
+      "group": "Anything else needed"
+    },
+    {
+      "id": "page-other-bridal",
+      "status": "open",
+      "priority": "medium",
+      "page": "Bridal",
+      "href": "/bridal",
+      "question": "Bridal page — is there anything else you need on this page? (pricing tiers, packages, timeline, inspiration gallery, policies, etc.)",
+      "group": "Anything else needed"
+    },
+    {
+      "id": "page-other-contact",
+      "status": "open",
+      "priority": "medium",
+      "page": "Contact",
+      "href": "/contact",
+      "question": "Contact page — is there anything else you need on this page? (directions, parking, contact form, FAQ, salon photos, etc.)",
+      "group": "Anything else needed"
+    },
+    {
+      "id": "page-other-book",
+      "status": "open",
+      "priority": "medium",
+      "page": "Book",
+      "href": "/book",
+      "question": "Book page — is there anything else you need on this page? (booking instructions, cancellation policy, deposit info, what to expect, etc.)",
+      "group": "Anything else needed"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Gallery from '@/components/Gallery';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
+import { ReviewSectionAnchor } from '@/components/review/ReviewSectionAnchor';
 
 export const metadata: Metadata = {
   title: 'Hair Transformations Gallery | Before After Hair Color Results Milford OH',
@@ -30,6 +31,7 @@ export default function GalleryPage() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section for Gallery */}
+        <ReviewSectionAnchor flagIds={['gallery-hero']} href="/gallery">
         <section className="py-20 bg-gradient-to-br from-primary/20 to-secondary/20">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
@@ -43,6 +45,7 @@ export default function GalleryPage() {
             </div>
           </div>
         </section>
+        </ReviewSectionAnchor>
 
         {/* Gallery Section */}
         <Gallery />

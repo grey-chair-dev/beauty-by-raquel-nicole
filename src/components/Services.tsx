@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Clock, Star, ArrowRight } from 'lucide-react';
 import ServiceFilter, { FilterState } from './ServiceFilter';
 import { useState } from 'react';
+import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 const services = [
   {
@@ -246,6 +247,10 @@ const Services = () => {
   });
 
   return (
+    <ReviewSectionAnchor
+      flagIds={['services-pricing', 'services-descriptions', 'services-categories']}
+      href="/services#services"
+    >
     <section id="services" className="py-20 bg-seamless section-transition">
       <div className="section-divider"></div>
       <div className="container-custom">
@@ -317,6 +322,7 @@ const Services = () => {
         </div>
       </div>
     </section>
+    </ReviewSectionAnchor>
   );
 };
 

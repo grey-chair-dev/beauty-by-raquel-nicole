@@ -13,6 +13,20 @@ module.exports = {
         accent: '#C2876C',     // Rose Gold
         text: '#3C3C3C',       // Charcoal Gray
         bg: '#FFF8F5',         // Off-White
+        surface: '#FFFFFF',
+        'on-surface': '#3C3C3C',
+        'on-surface-variant': 'rgba(60, 60, 60, 0.65)',
+        'on-secondary': '#3C3C3C',
+        'on-primary': '#FFFFFF',
+        'surface-container-low': '#FFF8F5',
+        'surface-container-lowest': '#FFFFFF',
+        'surface-container-high': '#F3D7C6',
+        'outline-variant': 'rgba(60, 60, 60, 0.2)',
+        'error-container': '#FEE4E4',
+        'on-error-container': '#7F1D1D',
+        'tertiary-container': '#F9E6E6',
+        'on-tertiary-container': '#3C3C3C',
+        error: '#B91C1C',
       },
       fontFamily: {
         'playfair': ['Playfair Display', 'serif'],

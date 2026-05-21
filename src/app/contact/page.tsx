@@ -4,6 +4,7 @@ import Map from '@/components/Map';
 import TrustBadges from '@/components/TrustBadges';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
+import { ReviewSectionAnchor } from '@/components/review/ReviewSectionAnchor';
 
 export const metadata: Metadata = {
   title: 'Hair Salon Near Me Milford OH | Book Appointment Beauty by Raquel Nicole',
@@ -30,6 +31,7 @@ export default function ContactPage() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section for Contact */}
+        <ReviewSectionAnchor flagIds={['contact-hero']} href="/contact">
         <section className="py-20 bg-gradient-to-br from-primary/20 to-secondary/20">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
@@ -46,6 +48,7 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+        </ReviewSectionAnchor>
 
         {/* Map & Contact Section */}
         <Map />

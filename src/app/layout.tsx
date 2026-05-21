@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Playfair_Display, Lato } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
+import { SiteShell } from '@/components/SiteShell';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -171,7 +172,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} bg-bg text-text`}>
-        {children}
+        <SiteShell>{children}</SiteShell>
         <Toaster 
           position="top-right"
           toastOptions={{

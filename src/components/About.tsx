@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Award, Heart, Shield, Users } from 'lucide-react';
+import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 const About = () => {
   const stats = [
@@ -10,6 +11,10 @@ const About = () => {
   ];
 
   return (
+    <ReviewSectionAnchor
+      flagIds={['home-about-copy', 'home-about-stats', 'home-about-photo', 'about-page-intro', 'about-page-duplicate']}
+      href="/#about"
+    >
     <section id="about" className="py-20 bg-seamless section-transition">
       <div className="section-divider"></div>
       <div className="container-custom">
@@ -128,6 +133,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    </ReviewSectionAnchor>
   );
 };
 

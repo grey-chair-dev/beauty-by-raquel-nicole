@@ -1,7 +1,9 @@
 import { MapPin, Clock, Phone, Mail } from 'lucide-react';
+import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 const Map = () => {
   return (
+    <ReviewSectionAnchor flagIds={['contact-map', 'site-phone', 'site-email', 'site-hours', 'site-location']} href="/contact#contact">
     <section id="contact" className="py-20 bg-seamless section-transition">
       <div className="section-divider"></div>
       <div className="container-custom">
@@ -117,6 +119,7 @@ const Map = () => {
         </div>
       </div>
     </section>
+    </ReviewSectionAnchor>
   );
 };
 

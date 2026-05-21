@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SquareBooking from '@/components/SquareBooking';
+import { ReviewSectionAnchor } from '@/components/review/ReviewSectionAnchor';
 
 export const metadata: Metadata = {
   title: 'Book Hair Appointment Online | Balayage & Highlights Milford OH',
@@ -29,6 +30,7 @@ export default function BookPage() {
     <>
       <Header />
       <main className="min-h-screen">
+        <ReviewSectionAnchor flagIds={['book-page', 'site-booking']} href="/book">
         <section className="py-20 bg-seamless">
           <div className="container-custom">
             <div className="text-center mb-12">
@@ -46,6 +48,7 @@ export default function BookPage() {
             </div>
           </div>
         </section>
+        </ReviewSectionAnchor>
       </main>
       <Footer />
     </>

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Instagram, ExternalLink, Sparkles } from 'lucide-react';
+import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 interface GalleryItem {
   id: string;
@@ -73,6 +74,7 @@ const Gallery = () => {
   );
 
   return (
+    <ReviewSectionAnchor flagIds={['gallery-photos', 'gallery-categories']} href="/gallery#gallery">
     <section id="gallery" className="py-20 bg-seamless section-transition">
       <div className="section-divider"></div>
       <div className="container-custom">
@@ -164,6 +166,7 @@ const Gallery = () => {
         </div>
       </div>
     </section>
+    </ReviewSectionAnchor>
   );
 };
 
