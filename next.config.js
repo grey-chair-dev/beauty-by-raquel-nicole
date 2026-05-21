@@ -17,15 +17,9 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
-  generateEtags: false,
   swcMinify: true,
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
-  },
-
-  onDemandEntries: {
-    maxInactiveAge: 25 * 1000,
-    pagesBufferLength: 2,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -46,6 +40,10 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains; preload',
           },
         ],
       },

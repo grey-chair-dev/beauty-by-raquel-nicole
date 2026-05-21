@@ -1,6 +1,6 @@
-import { Star, Quote } from 'lucide-react';
 import ReviewCarousel from './ReviewCarousel';
 import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
+import { BOOK_URL } from '@/lib/constants';
 
 const testimonials = [
   {
@@ -56,22 +56,31 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <ReviewSectionAnchor flagIds={['home-testimonials']} href="/#testimonials">
-    <section id="testimonials" className="py-20 bg-seamless section-transition">
-      <div className="section-divider"></div>
+    <section id="testimonials" className="py-16 sm:py-24 bg-seamless section-transition">
+      <div className="section-divider" />
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-heading text-h2 font-bold text-text mb-6">
+        <div className="text-center mb-12">
+          <h2 className="text-heading text-3xl sm:text-4xl md:text-h2 font-bold text-text mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-body text-body-mobile md:text-body text-text/70 max-w-2xl mx-auto">
-            Don&apos;t just take our word for it. Here&apos;s what our amazing clients 
-            have to say about their experience with Beauty by Raquel Nicole.
+          <p className="text-body text-text/70 max-w-lg mx-auto">
+            Real results, real reviews. See why clients keep coming back.
           </p>
         </div>
 
-        {/* Enhanced Review Carousel */}
-        <div className="mb-12">
+        <div className="max-w-4xl mx-auto mb-12">
           <ReviewCarousel />
+        </div>
+
+        <div className="text-center">
+          <a
+            href={BOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-flex items-center justify-center min-h-[48px] px-8"
+          >
+            Book Appointment
+          </a>
         </div>
       </div>
     </section>

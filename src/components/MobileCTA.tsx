@@ -1,6 +1,7 @@
 'use client';
 
 import { Phone, Calendar, MessageCircle } from 'lucide-react';
+import { BOOK_URL, INSTAGRAM_URL } from '@/lib/constants';
 
 interface MobileCTAProps {
   variant?: 'floating' | 'inline';
@@ -13,20 +14,19 @@ const MobileCTA = ({ variant = 'floating', className = '' }: MobileCTAProps) => 
   };
 
   const handleBook = () => {
-    window.open(
-      'https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=000000&color=e8b4b8&locale=en&referrer=so',
-      '_blank',
-      'noopener,noreferrer'
-    );
+    window.open(BOOK_URL, '_blank', 'noopener,noreferrer');
   };
 
   const handleMessage = () => {
-    window.open('sms:+15133302277', '_blank');
+    window.open(INSTAGRAM_URL, '_blank', 'noopener,noreferrer');
   };
 
   if (variant === 'floating') {
     return (
-      <div className={`fixed bottom-4 left-4 right-4 z-50 md:hidden ${className}`}>
+      <div
+        className={`fixed left-4 right-4 z-50 md:hidden ${className}`}
+        style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))' }}
+      >
         <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-4">
           <div className="flex items-center justify-between">
             <div className="flex-1">
@@ -40,14 +40,14 @@ const MobileCTA = ({ variant = 'floating', className = '' }: MobileCTAProps) => 
             <div className="flex space-x-2">
               <button
                 onClick={handleCall}
-                className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
+                className="w-12 h-12 min-w-[48px] min-h-[48px] bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 active:scale-95 transition-transform touch-manipulation"
                 aria-label="Call to book"
               >
                 <Phone className="w-5 h-5 text-white" />
               </button>
               <button
                 onClick={handleBook}
-                className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg hover:bg-accent/80 transition-colors"
+                className="w-12 h-12 min-w-[48px] min-h-[48px] bg-accent rounded-full flex items-center justify-center shadow-lg hover:bg-accentDark active:scale-95 transition-transform touch-manipulation"
                 aria-label="Book online"
               >
                 <Calendar className="w-5 h-5 text-white" />
@@ -82,7 +82,7 @@ const MobileCTA = ({ variant = 'floating', className = '' }: MobileCTAProps) => 
 
           <button
             onClick={handleBook}
-            className="w-full bg-accent hover:bg-accent/80 text-white rounded-xl p-4 flex items-center justify-center space-x-3 transition-colors shadow-lg"
+            className="w-full bg-accent hover:bg-accentDark text-white rounded-xl p-4 flex items-center justify-center space-x-3 transition-colors shadow-lg"
           >
             <Calendar className="w-5 h-5" />
             <span className="font-medium">📅 Book Online</span>
@@ -90,10 +90,10 @@ const MobileCTA = ({ variant = 'floating', className = '' }: MobileCTAProps) => 
 
           <button
             onClick={handleMessage}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-xl p-4 flex items-center justify-center space-x-3 transition-colors shadow-lg"
+            className="w-full bg-accent hover:bg-accentDark text-white rounded-xl p-4 flex items-center justify-center space-x-3 transition-colors shadow-lg"
           >
             <MessageCircle className="w-5 h-5" />
-            <span className="font-medium">💬 Text Message</span>
+            <span className="font-medium">💬 DM me on Instagram</span>
           </button>
         </div>
 

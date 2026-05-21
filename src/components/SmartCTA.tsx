@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { ArrowRight, Phone, Calendar, Star } from 'lucide-react';
+import { BOOK_URL, CLIENT_COUNT } from '@/lib/constants';
 
 interface SmartCTAProps {
   variant?: 'primary' | 'secondary' | 'urgent';
@@ -21,7 +22,7 @@ const SmartCTA = ({ variant = 'primary', context = 'hero', className = '' }: Sma
       return {
         text: 'Book Your Appointment',
         icon: <ArrowRight className="w-4 h-4" />,
-        url: 'https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=000000&color=e8b4b8&locale=en&referrer=so'
+        url: BOOK_URL
       };
     }
 
@@ -35,27 +36,27 @@ const SmartCTA = ({ variant = 'primary', context = 'hero', className = '' }: Sma
           return {
             text: 'Book Today - Only 2 Spots Left!',
             icon: <Calendar className="w-4 h-4" />,
-            url: 'https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=000000&color=e8b4b8&locale=en&referrer=so'
+            url: BOOK_URL
           };
         }
         return {
           text: 'Book Your Appointment',
           icon: <Calendar className="w-4 h-4" />,
-          url: 'https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=000000&color=e8b4b8&locale=en&referrer=so'
+          url: BOOK_URL
         };
       
       case 'services':
         return {
           text: 'Book This Service',
           icon: <ArrowRight className="w-4 h-4" />,
-          url: 'https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=000000&color=e8b4b8&locale=en&referrer=so'
+          url: BOOK_URL
         };
       
       case 'testimonials':
         return {
-          text: 'Join 500+ Happy Clients',
+          text: `Join ${CLIENT_COUNT}+ Happy Clients`,
           icon: <Star className="w-4 h-4" />,
-          url: 'https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=000000&color=e8b4b8&locale=en&referrer=so'
+          url: BOOK_URL
         };
       
       case 'contact':
@@ -69,7 +70,7 @@ const SmartCTA = ({ variant = 'primary', context = 'hero', className = '' }: Sma
         return {
           text: 'Book Your Appointment',
           icon: <ArrowRight className="w-4 h-4" />,
-          url: 'https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=000000&color=e8b4b8&locale=en&referrer=so'
+          url: BOOK_URL
         };
     }
   }, [context, isClient]);

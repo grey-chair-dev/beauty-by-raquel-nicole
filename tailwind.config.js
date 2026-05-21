@@ -8,30 +8,40 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#F9E6E6',    // Blush Pink
-        secondary: '#F3D7C6',  // Warm Beige
-        accent: '#C2876C',     // Rose Gold
-        text: '#3C3C3C',       // Charcoal Gray
-        bg: '#FFF8F5',         // Off-White
+        primary: '#F4D1C7',      // Warm peach / light coral
+        secondary: '#E8B4B8',     // Soft rose pink
+        accent: '#D96B3B',       // Vibrant orange (CTA)
+        accentDark: '#B85C38',   // Burnt orange (hover)
+        text: '#3D3632',         // Warm charcoal
+        bg: '#FBF6F2',           // Cream / off-white
+        neutralLavender: '#E8E0EB',
+        neutralMint: '#D4E8E0',
+        goldenOrange: '#E8A84A',
+        goldenOrangeDark: '#D4892E',
+        shadowRetro: '#A64B2A',
         surface: '#FFFFFF',
-        'on-surface': '#3C3C3C',
-        'on-surface-variant': 'rgba(60, 60, 60, 0.65)',
-        'on-secondary': '#3C3C3C',
+        'on-surface': '#3D3632',
+        'on-surface-variant': 'rgba(61, 54, 50, 0.65)',
+        'on-secondary': '#3D3632',
         'on-primary': '#FFFFFF',
-        'surface-container-low': '#FFF8F5',
+        'surface-container-low': '#FBF6F2',
         'surface-container-lowest': '#FFFFFF',
-        'surface-container-high': '#F3D7C6',
-        'outline-variant': 'rgba(60, 60, 60, 0.2)',
+        'surface-container-high': '#F4D1C7',
+        'outline-variant': 'rgba(61, 54, 50, 0.2)',
         'error-container': '#FEE4E4',
         'on-error-container': '#7F1D1D',
-        'tertiary-container': '#F9E6E6',
-        'on-tertiary-container': '#3C3C3C',
+        'tertiary-container': '#E8B4B8',
+        'on-tertiary-container': '#3D3632',
         error: '#B91C1C',
       },
       fontFamily: {
-        'playfair': ['Playfair Display', 'serif'],
-        'lato': ['Lato', 'sans-serif'],
-        'montserrat': ['Montserrat', 'sans-serif'],
+        display: ['var(--font-dm-serif)', 'DM Serif Display', 'serif'],
+        heading: ['var(--font-dm-serif)', 'DM Serif Display', 'serif'],
+        body: ['var(--font-lato)', 'Lato', 'sans-serif'],
+        script: ['var(--font-dancing)', 'Dancing Script', 'cursive'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'],
+        lato: ['Lato', 'sans-serif'],
       },
       fontSize: {
         'h1': ['48px', { lineHeight: '1.2', fontWeight: '700' }],
@@ -77,7 +87,11 @@ module.exports = {
         '12': 'repeat(12, minmax(0, 1fr))',
         '4': 'repeat(4, minmax(0, 1fr))',
       },
+      backgroundImage: {
+        'hero-gradient': 'linear-gradient(135deg, #FBF6F2 0%, #F4D1C7 40%, #E8B4B8 100%)',
+        'wavy-stripe': 'repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(244,209,199,0.3) 80px, rgba(232,180,184,0.3) 160px)',
+      },
     },
   },
   plugins: [],
-}; 
+};

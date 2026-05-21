@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import { Award, Heart, Shield, Users } from 'lucide-react';
 import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
+import { CLIENT_COUNT } from '@/lib/constants';
 
 const About = () => {
   const stats = [
-    { icon: Users, value: '500+', label: 'Happy Clients' },
-    { icon: Award, value: '6+', label: 'Years Experience' },
+    { icon: Users, value: `${CLIENT_COUNT}+`, label: 'Happy Clients' },
+    { icon: Award, value: '7+', label: 'Years Experience' },
     { icon: Heart, value: '100%', label: 'Satisfaction Rate' },
     { icon: Shield, value: 'Licensed', label: 'Professional' },
   ];
@@ -15,41 +16,46 @@ const About = () => {
       flagIds={['home-about-copy', 'home-about-stats', 'home-about-photo', 'about-page-intro', 'about-page-duplicate']}
       href="/#about"
     >
-    <section id="about" className="py-20 bg-seamless section-transition">
-      <div className="section-divider"></div>
+    <section id="about" className="py-16 sm:py-24 md:py-28 bg-seamless section-transition relative">
+      <div className="section-divider" />
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <h2 className="text-heading text-h2 font-bold text-text mb-6">
-              About Beauty by Raquel Nicole
+            {/* Bold hook — not buried */}
+            <h2 className="text-heading text-2xl sm:text-3xl md:text-4xl font-bold text-text mb-6">
+              More than a hair appointment.
             </h2>
-            
-            <div className="space-y-6 text-body text-body-mobile md:text-body text-text/80">
-              <p>
-                Welcome to Beauty by Raquel Nicole, where I specialize in creating 
-                beautiful hair transformations. Located in downtown Milford, OH, I offer 
-                a personalized experience for every client, focusing on blonding, 
-                dimensional color, vivids, and hand-tied weft extensions.
-              </p>
-              
-              <p>
-                With years of experience in the beauty industry, I specialize in 
-                creating stunning hair transformations that enhance your unique features. 
-                From face-framing highlights to full color transformations, every service 
-                is tailored to your individual needs and preferences.
-              </p>
-              
-              <p>
-                Our commitment to quality, attention to detail, and personalized care 
-                has made us a trusted name in Milford&apos;s beauty community. I use 
-                only the highest quality products and maintain the strictest hygiene 
-                standards for your safety and satisfaction.
-              </p>
-            </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-6 mt-8">
+            <p className="text-body text-text/80 mb-6 max-w-prose leading-relaxed">
+              When you sit in my chair, it&apos;s a judgment-free space to unwind and leave feeling like yourself again.
+            </p>
+
+            <p className="text-body text-text/80 mb-8 max-w-prose leading-relaxed">
+              I call it being your <strong className="text-accent">&quot;hairapist&quot;</strong> — great hair plus a supportive ear. Mental health matters to me, and so does giving you a place to talk about anything and walk out refreshed.
+            </p>
+
+            {/* Scannable bullets */}
+            <ul className="space-y-3 mb-10">
+              <li className="flex items-start gap-3 text-body text-text/80">
+                <span className="text-accent font-bold mt-0.5">·</span>
+                <span>7+ years in the chair · licensed professional</span>
+              </li>
+              <li className="flex items-start gap-3 text-body text-text/80">
+                <span className="text-accent font-bold mt-0.5">·</span>
+                <span>Lived-in color, blonding, extensions, bridal</span>
+              </li>
+              <li className="flex items-start gap-3 text-body text-text/80">
+                <span className="text-accent font-bold mt-0.5">·</span>
+                <span>The Beauty Bar, Old Milford — one chair, full attention</span>
+              </li>
+            </ul>
+
+            {/* Hobbies — one short line, lower */}
+            <p className="text-body text-small text-text/60 max-w-prose">
+              Off the clock: reading, yoga, crochet, thrifting, plant mom, couch time with my fiancé.
+            </p>
+
+            <div className="grid grid-cols-2 gap-6 mt-10">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="flex justify-center mb-2">
@@ -66,75 +72,41 @@ const About = () => {
             </div>
           </div>
 
-          {/* Raquel's Photo */}
-          <div className="relative floating-element">
+          <div className="relative">
             <div className="seamless-card rounded-2xl overflow-hidden">
               <div className="relative">
-                <Image 
-                  src="/images/raquel/raquel-profile.jpg" 
+                <Image
+                  src="/images/raquel/raquel-profile.jpg"
                   alt="Raquel Schmid - Licensed Hairstylist"
                   width={400}
                   height={384}
-                  className="w-full h-96 object-cover object-top -translate-y-10"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
+                  className="w-full h-64 sm:h-80 md:h-96 object-cover object-top -translate-y-6 md:-translate-y-10"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center hidden">
-                  <div className="text-center p-8">
-                    <div className="w-32 h-32 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-3xl">👩‍🎨</span>
-                    </div>
-                    <h3 className="text-heading text-xl font-semibold text-text mb-2">
-                      Meet Raquel Schmid
-                    </h3>
-                    <p className="text-body text-text/70">
-                      Licensed Hairstylist
-                    </p>
-                  </div>
-                </div>
               </div>
-              
               <div className="p-6">
-                <div className="text-center mb-6">
-                  <h3 className="text-heading text-xl font-semibold text-text mb-2">
-                    Meet Raquel Schmid
-                  </h3>
-                  <p className="text-body text-text/70">
-                    Licensed Hairstylist
-                  </p>
-                </div>
-                
-                <div className="space-y-4 text-body text-small text-text/80">
-                  <div className="flex items-start space-x-3">
-                    <Award className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-text">Certified Professional</h4>
-                      <p>Licensed and certified in hair styling and color services</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <Heart className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-text">Personalized Care</h4>
-                      <p>Every service is customized to your unique hair type and preferences</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <Shield className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-text">Safety First</h4>
-                      <p>Highest hygiene standards and quality products for your safety</p>
-                    </div>
-                  </div>
-                </div>
+                <h3 className="text-heading text-xl font-semibold text-text mb-1">
+                  Raquel Schmid
+                </h3>
+                <p className="text-body text-text/70 text-sm">
+                  Licensed Hairstylist · The Beauty Bar
+                </p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-20 overflow-hidden pointer-events-none" aria-hidden>
+        <svg className="absolute bottom-0 w-full h-20" viewBox="0 0 1200 80" preserveAspectRatio="none">
+          <path d="M0 40 Q300 20 600 40 T1200 40 L1200 80 L0 80 Z" fill="#F4D1C7" />
+          <path d="M0 55 Q400 30 800 55 T1200 55 L1200 80 L0 80 Z" fill="#E8B4B8" />
+          <path d="M0 68 Q350 45 1200 68 L1200 80 L0 80 Z" fill="#D96B3B" opacity="0.85" />
+        </svg>
       </div>
     </section>
     </ReviewSectionAnchor>
   );
 };
 
-export default About; 
+export default About;

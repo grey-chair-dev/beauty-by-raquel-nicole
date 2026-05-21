@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import toast from 'react-hot-toast';
 import { Calendar, Clock, User, Mail, Phone, MessageSquare } from 'lucide-react';
+import { INSTAGRAM_URL } from '@/lib/constants';
 
 const bookingSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -62,16 +63,22 @@ const BookingForm = () => {
 
   const onSubmit = async (data: BookingFormData) => {
     setIsSubmitting(true);
-    
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      toast.success('Booking request submitted successfully! We\'ll contact you to confirm your appointment.');
+      const summary = [
+        `Booking request from ${data.name}`,
+        `Email: ${data.email} | Phone: ${data.phone}`,
+        `Service: ${data.service}`,
+        `Preferred: ${data.date} at ${data.time}`,
+        data.message ? `Message: ${data.message}` : '',
+      ].filter(Boolean).join('\n');
+      await navigator.clipboard.writeText(summary);
+      window.open(INSTAGRAM_URL, '_blank', 'noopener,noreferrer');
+      toast.success("Your message was copied — paste it in a DM to me on Instagram and I'll confirm your appointment!");
       reset();
       setSelectedService('');
     } catch (error) {
-      toast.error('Something went wrong. Please try again or call us directly.');
+      toast.error("Couldn't copy to clipboard. Please DM me on Instagram with your booking details.");
+      window.open(INSTAGRAM_URL, '_blank', 'noopener,noreferrer');
     } finally {
       setIsSubmitting(false);
     }
@@ -95,7 +102,7 @@ const BookingForm = () => {
     return dates;
   };
 
-  const availableDates = getAvailableDates();
+  const availableDates = useMemo(() => getAvailableDates(), []);
 
   return (
     <motion.div
@@ -281,7 +288,7 @@ const BookingForm = () => {
           </button>
           
           <p className="text-small text-text/60 mt-4">
-            We&apos;ll contact you within 24 hours to confirm your appointment.
+            Your request will be copied and Instagram will open — paste into a DM to me and I&apos;ll confirm your appointment!
           </p>
         </div>
       </form>

@@ -5,10 +5,13 @@ import Testimonials from '@/components/Testimonials';
 import TrustBadges from '@/components/TrustBadges';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+
+import { SITE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Best Hair Stylist Milford OH | Professional Hair Colorist Raquel Nicole',
-  description: 'Meet Raquel Nicole, the best hair stylist in Milford, OH. Professional hair colorist specializing in balayage, highlights, hand-tied extensions, and hair transformations. 10+ years of experience creating beautiful hair.',
+  description: 'Meet Raquel Nicole, the best hair stylist in Milford, OH. Professional hair colorist specializing in balayage, highlights, hand-tied extensions, and hair transformations. 7+ years of experience in Old Milford.',
   keywords: [
     'best hair stylist Milford',
     'professional hair colorist Milford OH',
@@ -20,15 +23,18 @@ export const metadata: Metadata = {
     'balayage specialist Milford',
     'highlights specialist Milford'
   ],
+  alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     title: 'Best Hair Stylist Milford OH | Professional Hair Colorist Raquel Nicole',
-    description: 'Meet Raquel Nicole, the best hair stylist in Milford, OH. Professional hair colorist specializing in balayage, highlights, hand-tied extensions, and hair transformations.',
+    description: 'Meet Raquel Nicole, the best hair stylist in Milford, OH. 7+ years experience. Balayage, highlights, hand-tied extensions, and hair transformations.',
+    url: `${SITE_URL}/about`,
   },
 };
 
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]} />
       <Header />
       <main className="min-h-screen">
         {/* Hero Section for About */}
@@ -39,7 +45,7 @@ export default function AboutPage() {
                 Hair Stylist in Milford, OH
               </h1>
               <p className="text-body text-body-mobile md:text-body text-text/80 mb-8">
-                Professional hair colorist Raquel Nicole is your trusted hair stylist in Milford, OH with over 6 years of experience 
+                Professional hair colorist Raquel Nicole is your trusted hair stylist in Milford, OH with 7+ years of experience 
                 creating beautiful balayage, highlights, hand-tied extensions, and hair transformations. 
                 Building lasting relationships with clients through personalized care and expert techniques.
               </p>

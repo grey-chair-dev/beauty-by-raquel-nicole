@@ -1,4 +1,5 @@
-import { MapPin, Clock, Phone, Mail } from 'lucide-react';
+import { MapPin, Clock, Phone, MessageCircle } from 'lucide-react';
+import { INSTAGRAM_URL, BOOK_URL, BUSINESS_HOURS } from '@/lib/constants';
 import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 const Map = () => {
@@ -46,25 +47,34 @@ const Map = () => {
                   <div>
                     <h4 className="text-heading font-semibold text-text mb-1">Hours</h4>
                     <div className="text-body text-text/70 space-y-1">
-                      <p>Tuesday - Friday: 9:00 AM - 6:00 PM</p>
-                      <p>Saturday: 9:00 AM - 4:00 PM</p>
-                      <p>Sunday - Monday: Closed</p>
+                      <p>{BUSINESS_HOURS.weekdaysLabel}: {BUSINESS_HOURS.weekdays}</p>
+                      <p>{BUSINESS_HOURS.saturdayLabel}: {BUSINESS_HOURS.saturday}</p>
+                      <p>{BUSINESS_HOURS.closed}</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Mail className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
+                  <MessageCircle className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-heading font-semibold text-text mb-1">Booking</h4>
-                    <p className="text-body text-text/70 mb-2">
-                      Book your appointment online for the best experience.
+                    <h4 className="text-heading font-semibold text-text mb-1">Questions & Inquiries</h4>
+                    <p className="text-body text-text/70 mb-3">
+                      All inquiries go to my DMs — message me on Instagram and I&apos;ll get back to you!
                     </p>
-                    <a 
-                      href="https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=000000&color=e8b4b8&locale=en&referrer=so" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="btn-primary inline-flex items-center"
+                    <a
+                      href={INSTAGRAM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center mb-3"
+                    >
+                      DM me on Instagram
+                    </a>
+                    <p className="text-body text-text/70 mb-2 mt-3">Or book your appointment online:</p>
+                    <a
+                      href={BOOK_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-secondary inline-flex items-center"
                     >
                       Book Appointment
                     </a>

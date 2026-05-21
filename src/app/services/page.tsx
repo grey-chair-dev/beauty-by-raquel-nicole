@@ -5,6 +5,8 @@ import TrustBadges from '@/components/TrustBadges';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
 import { ReviewSectionAnchor } from '@/components/review/ReviewSectionAnchor';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+import { SITE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Balayage, Highlights & Hair Extensions Milford OH | Professional Hair Colorist',
@@ -24,15 +26,18 @@ export const metadata: Metadata = {
     'haircuts',
     'styling'
   ],
+  alternates: { canonical: `${SITE_URL}/services` },
   openGraph: {
     title: 'Balayage, Highlights & Hair Extensions Milford OH | Professional Hair Colorist',
-    description: 'Professional balayage, highlights, hand-tied extensions, and hair color services in Milford, OH. Expert hair colorist Raquel Nicole specializes in balayage, highlights, money piece highlights, and hair transformations.',
+    description: 'Professional balayage, highlights, hand-tied extensions, and hair color services in Milford, OH. Expert hair colorist Raquel Nicole. View pricing and book today.',
+    url: `${SITE_URL}/services`,
   },
 };
 
 export default function ServicesPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Services', path: '/services' }]} />
       <Header />
       <main className="min-h-screen">
         {/* Hero Section for Services */}

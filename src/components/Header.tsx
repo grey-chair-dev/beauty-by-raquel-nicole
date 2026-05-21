@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, Phone } from 'lucide-react';
+import { BOOK_URL, SPOTS_LEFT_THIS_WEEK } from '@/lib/constants';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,76 +18,74 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 seamless-card border-b border-white/20">
+    <header className="sticky top-0 z-50 seamless-card border-b border-secondary/30 shadow-sm">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div>
-              <h1 className="text-heading text-xl md:text-2xl font-bold text-text">
-                Beauty by Raquel Nicole
-              </h1>
-            </div>
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20 gap-2">
+          <Link href="/" className="flex items-center min-w-0 flex-1" aria-label="Beauty by Raquel Nicole home">
+            <span className="text-display text-base sm:text-xl md:text-2xl font-bold text-text truncate">
+              Beauty by Raquel Nicole
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
-                className="text-body text-text hover:text-accent transition-colors duration-200 font-medium cursor-pointer"
+                className="text-body text-text hover:text-accent transition-colors duration-200 font-medium"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link href="tel:+15133302277" className="flex items-center space-x-2 text-accent hover:text-text transition-colors">
-              <Phone size={16} />
-              <span className="text-sm font-medium">(513) 330-2277</span>
-            </Link>
-            <a href="https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=000000&color=e8b4b8&locale=en&referrer=so" target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Book Now
+          <div className="hidden md:flex items-center gap-4">
+            <a href="tel:+15133302277" className="flex items-center space-x-2 text-accent hover:text-accentDark transition-colors min-h-[44px] items-center touch-manipulation">
+              <Phone size={18} />
+              <span className="text-sm font-semibold">(513) 330-2277</span>
             </a>
+            <div className="flex flex-col items-end">
+              <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn-primary min-h-[48px] px-5 py-2.5 flex items-center justify-center font-bold text-button shadow-md hover:shadow-lg transition-shadow">
+                Book Appointment
+              </a>
+              {SPOTS_LEFT_THIS_WEEK != null && (
+                <span className="text-small text-accent font-medium mt-1">Only {SPOTS_LEFT_THIS_WEEK} spots this week</span>
+              )}
+            </div>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-text hover:text-accent transition-colors"
+            className="md:hidden p-3 -mr-2 text-text hover:text-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-primary/20">
-            <div className="py-4 space-y-4">
+          <div className="md:hidden border-t border-primary/30 bg-white/95">
+            <nav className="py-3">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
-                  className="block text-body text-text hover:text-accent transition-colors duration-200 font-medium cursor-pointer"
+                  className="block py-3.5 px-1 text-body text-text hover:text-accent transition-colors duration-200 font-medium touch-manipulation active:bg-primary/20 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
-              ))}
-              <div className="pt-4 border-t border-primary/20">
-                <Link href="tel:+15133302277" className="flex items-center space-x-2 text-accent hover:text-text transition-colors mb-4">
-                  <Phone size={16} />
-                  <span className="text-sm font-medium">(513) 330-2277</span>
                 </Link>
-                <a href="https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=000000&color=e8b4b8&locale=en&referrer=so" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">
-                  Book Now
+              ))}
+              <div className="pt-3 pb-2 border-t border-primary/30 mt-2 space-y-2">
+                <a href="tel:+15133302277" className="flex items-center space-x-2 text-accent hover:text-accentDark transition-colors py-3 px-1 rounded-lg active:bg-primary/20 touch-manipulation min-h-[44px]">
+                  <Phone size={20} />
+                  <span className="text-base font-medium">(513) 330-2277</span>
+                </a>
+                <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center block min-h-[48px] flex items-center justify-center font-bold">
+                  Book Appointment
                 </a>
               </div>
-            </div>
+            </nav>
           </div>
         )}
       </div>
@@ -94,4 +93,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;

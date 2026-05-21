@@ -1,8 +1,5 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Star } from 'lucide-react';
-import SmartCTA from './SmartCTA';
-import TrustBadges from './TrustBadges';
+import { BOOK_URL, REVIEW_COUNT, CLIENT_COUNT, SPOTS_LEFT_THIS_WEEK } from '@/lib/constants';
 import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 const Hero = () => {
@@ -11,87 +8,73 @@ const Hero = () => {
       flagIds={['home-hero-headline', 'home-hero-intro', 'home-hero-image']}
       href="/#home"
     >
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-seamless section-transition">
-      <div className="gradient-overlay absolute inset-0"></div>
-      <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left Column - Content */}
-          <div className="text-center lg:text-left">
-            {/* Professional Badge */}
-            <div className="inline-flex items-center space-x-2 seamless-card rounded-full px-4 py-2 mb-8">
-              <Star className="w-4 h-4 text-accent fill-current" />
-              <span className="text-small font-medium text-text">
-                Hair Stylist in Milford, OH
-              </span>
-            </div>
+    <section id="home" className="relative min-h-[100dvh] min-h-[100vh] flex items-center justify-center overflow-hidden section-transition py-16 sm:py-20 md:py-0">
+      <div className="absolute inset-0 bg-hero-gradient" aria-hidden />
+      <div className="gradient-overlay absolute inset-0" aria-hidden />
+      <div className="absolute top-0 right-0 w-[60%] md:w-[50%] h-[70%] rounded-full bg-secondary/20 blur-3xl -translate-y-1/4 translate-x-1/4" aria-hidden />
+      <div className="absolute bottom-0 left-0 w-[50%] md:w-[40%] h-[50%] rounded-full bg-primary/25 blur-3xl translate-y-1/4 -translate-x-1/4" aria-hidden />
 
-            {/* Main Headline */}
-            <h1 className="text-heading text-h1-mobile md:text-h1 font-bold text-text mb-6">
-              Beautiful Hair
-              <span className="block text-accent text-seamless">Transformations</span>
+      <div className="container-custom relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+          <div className="text-center lg:text-left max-w-xl mx-auto lg:mx-0">
+            <h1 className="text-display text-[28px] leading-tight sm:text-[36px] md:text-[42px] lg:text-h1 font-bold text-text mb-5">
+              Lived-In Color &amp; Dimensional Blonding That Actually Grows Out Well
             </h1>
 
-            <p className="text-body text-body-mobile md:text-body text-text/80 mb-8 max-w-lg mx-auto lg:mx-0">
-              Professional hair styling and color services in Milford, OH. 
-              Experience personalized care and stunning hair transformations 
-              that boost your confidence.
+            <p className="text-body text-lg md:text-xl text-text/90 mb-4">
+              Professional balayage and highlights in Milford, OH — lived-in color and dimensional blonding that grow out well.
+            </p>
+            <p className="text-body text-text/80 mb-8">
+              Beauty by Raquel Nicole is a hair salon in Milford, OH at The Beauty Bar, with {REVIEW_COUNT}+ five-star reviews and {CLIENT_COUNT}+ clients. 7+ years · Old Milford.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <SmartCTA context="hero" variant="primary" />
-              <Link href="/services" className="btn-secondary btn-seamless flex items-center justify-center whitespace-nowrap">
-                <span>View Services</span>
-              </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a
+                href={BOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center justify-center min-h-[52px] px-8 text-lg font-bold shadow-lg hover:shadow-xl transition-shadow"
+              >
+                Book Appointment
+              </a>
+              {SPOTS_LEFT_THIS_WEEK != null && (
+                <span className="inline-flex items-center justify-center min-h-[52px] px-5 rounded-lg bg-accent/15 text-accent font-semibold border-2 border-accent/40">
+                  Only {SPOTS_LEFT_THIS_WEEK} spots left this week
+                </span>
+              )}
             </div>
 
-            {/* Trust Badges */}
-            <TrustBadges variant="compact" />
+            <p className="text-body text-text/70 mt-6 max-w-md mx-auto lg:mx-0">
+              The Beauty Bar, 212 Main St. Balayage, extensions, bridal — book your spot.
+            </p>
           </div>
 
-          {/* Right Column - Visual Elements */}
           <div className="flex flex-col items-center lg:items-end">
-            {/* Before & After Transformation */}
-            <div className="relative floating-element w-full max-w-lg">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image 
-                  src="/images/hero/before-after-optimized.jpg" 
-                  alt="Dramatic hair transformation - Before and After"
-                  width={400}
-                  height={300}
+            <div className="relative w-full max-w-lg">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-2 ring-white/50">
+                <Image
+                  src="/images/hero/before-after-optimized.jpg"
+                  alt="Hair transformation — before and after lived-in color and dimensional blonding"
+                  width={800}
+                  height={600}
                   className="w-full h-auto object-cover"
                   priority
                   placeholder="blur"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxAAPwCdABmX/9k="
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                   quality={85}
                 />
-                
-                {/* Overlay with transformation labels */}
-                <div className="absolute inset-0">
-                  <div className="absolute top-4 left-4">
-                    <div className="seamless-card rounded-lg px-3 py-1">
-                      <span className="text-small font-semibold text-text">Before</span>
-                    </div>
-                  </div>
-                  <div className="absolute top-4 left-4" style={{ left: 'calc(50% + 1rem)' }}>
-                    <div className="seamless-card rounded-lg px-3 py-1">
-                      <span className="text-small font-semibold text-text">After</span>
-                    </div>
-                  </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                  <span className="text-white font-semibold text-sm">Full blonding transformation · Lived-in color</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-accent/10 rounded-full blur-xl"></div>
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-primary/20 rounded-full blur-xl"></div>
     </section>
     </ReviewSectionAnchor>
   );
 };
 
-export default Hero; 
+export default Hero;

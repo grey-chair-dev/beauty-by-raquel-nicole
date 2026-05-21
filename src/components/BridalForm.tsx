@@ -1,19 +1,19 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import toast from 'react-hot-toast';
 import { Calendar, Clock, User, Mail, Phone, MessageSquare, Heart } from 'lucide-react';
+import { INSTAGRAM_URL } from '@/lib/constants';
 
 const bridalSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
   lastName: z.string().min(2, 'Last name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email'),
   phone: z.string().min(10, 'Please enter a valid phone number'),
-  weddingDate: z.string().min(1, 'Please select your wedding date'),
+  weddingDate: z.string().min(1, 'Please enter your wedding date'),
   weddingTime: z.string().min(1, 'Please select your wedding time'),
   venueLocation: z.string().min(1, 'Please provide your venue location'),
   bridalPartySize: z.string().min(1, 'Please select your bridal party size'),
@@ -38,43 +38,41 @@ const BridalForm = () => {
 
   const onSubmit = async (data: BridalFormData) => {
     setIsSubmitting(true);
-    
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      toast.success('Bridal hair inquiry submitted successfully! I\'ll contact you within 24 hours to discuss your wedding hair needs.');
+      const weddingDateFormatted = data.weddingDate
+        ? new Date(data.weddingDate + 'T12:00:00').toLocaleDateString('en-US', {
+            weekday: 'long',
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+          })
+        : data.weddingDate;
+      const summary = [
+        `Bridal hair inquiry from ${data.firstName} ${data.lastName}`,
+        `Email: ${data.email} | Phone: ${data.phone}`,
+        `Wedding: ${weddingDateFormatted} at ${data.weddingTime}`,
+        `Venue: ${data.venueLocation}`,
+        `Bridal party: ${data.bridalPartySize}`,
+        `Hair style: ${data.hairStyle}`,
+        data.additionalServices ? `Additional: ${data.additionalServices}` : '',
+        data.message ? `Message: ${data.message}` : '',
+      ].filter(Boolean).join('\n');
+      await navigator.clipboard.writeText(summary);
+      window.open(INSTAGRAM_URL, '_blank', 'noopener,noreferrer');
+      toast.success("Your message was copied — paste it in a DM to me on Instagram and I'll reply soon!");
       reset();
     } catch (error) {
-      toast.error('Something went wrong. Please try again or call us directly.');
+      toast.error("Couldn't copy to clipboard. Please DM me on Instagram and send your details there.");
+      window.open(INSTAGRAM_URL, '_blank', 'noopener,noreferrer');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Get available dates (next 12 months)
-  const getAvailableDates = () => {
-    const dates = [];
-    const today = new Date();
-    
-    for (let i = 1; i <= 365; i++) {
-      const date = new Date(today);
-      date.setDate(today.getDate() + i);
-      dates.push(date);
-    }
-    
-    return dates;
-  };
-
-  const availableDates = getAvailableDates();
+  const today = new Date().toISOString().split('T')[0];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="bg-white rounded-2xl shadow-xl p-8"
-    >
+    <div className="bg-white rounded-2xl shadow-xl p-8">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
         {/* Personal Information */}
         <div>
@@ -161,22 +159,12 @@ const BridalForm = () => {
                 <Calendar className="inline w-4 h-4 mr-2" />
                 Wedding Date *
               </label>
-              <select
+              <input
+                type="date"
                 {...register('weddingDate')}
+                min={today}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
-              >
-                <option value="">Select your wedding date</option>
-                {availableDates.map((date) => (
-                  <option key={date.toISOString()} value={date.toISOString().split('T')[0]}>
-                    {date.toLocaleDateString('en-US', {
-                      weekday: 'long',
-                      month: 'long',
-                      day: 'numeric',
-                      year: 'numeric',
-                    })}
-                  </option>
-                ))}
-              </select>
+              />
               {errors.weddingDate && (
                 <p className="text-red-500 text-small mt-1">{errors.weddingDate.message}</p>
               )}
@@ -308,11 +296,11 @@ const BridalForm = () => {
           </button>
           
           <p className="text-small text-text/60 mt-4">
-            I&apos;ll contact you within 24 hours to discuss your wedding hair needs and schedule a consultation.
+            Your details will be copied and Instagram will open — paste into a DM to me and I&apos;ll reply soon!
           </p>
         </div>
       </form>
-    </motion.div>
+    </div>
   );
 };
 
