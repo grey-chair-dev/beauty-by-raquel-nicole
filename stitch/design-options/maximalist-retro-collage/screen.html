@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Beauty by Raquel Nicole | Maximalist Retro Style</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&amp;family=DM+Sans:ital,wght@0,400;0,500;1,400&amp;family=Space+Grotesk:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#a43716", // Deeper terracotta
+                    "secondary": "#973b67", // Vibrant pink
+                    "tertiary": "#d9a441", // Warm mustard
+                    "background": "#fff9ee",
+                    "on-background": "#1d1c15",
+                    "surface": "#fffbf2",
+                    "surface-variant": "#f3ede2",
+                    "primary-container": "#c54f2c",
+                    "secondary-container": "#fdad99",
+                    "tertiary-container": "#ffdbd2",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1d1c15",
+                    "outline": "#8b716a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Bricolage Grotesque"],
+                    "display-lg": ["Bricolage Grotesque"],
+                    "body-md": ["DM Sans"],
+                    "body-lg": ["DM Sans"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "label-md": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "800"}],
+                    "display-lg": ["84px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "headline-lg": ["56px", {"lineHeight": "64px", "fontWeight": "800"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .checkerboard {
+            background-image: 
+                linear-gradient(45deg, #f3ede2 25%, transparent 25%), 
+                linear-gradient(-45deg, #f3ede2 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #f3ede2 75%), 
+                linear-gradient(-45deg, transparent 75%, #f3ede2 75%);
+            background-size: 40px 40px;
+            background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+            opacity: 0.4;
+        }
+        .groovy-shadow-xl {
+            box-shadow: 16px 16px 0px 0px #a43716;
+        }
+        .groovy-shadow-pink {
+            box-shadow: 12px 12px 0px 0px #973b67;
+        }
+        .groovy-shadow-mustard {
+            box-shadow: 12px 12px 0px 0px #d9a441;
+        }
+        .wavy-divider-heavy {
+            height: 100px;
+            width: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23a43716' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,149.3C672,149,768,203,864,229.3C960,256,1056,256,1152,234.7C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .collage-frame {
+            border: 8px solid #1d1c15;
+            transform: rotate(-2deg);
+        }
+        .collage-frame-alt {
+            border: 8px solid #a43716;
+            transform: rotate(3deg);
+        }
+        .starburst-bg {
+            background: radial-gradient(circle, transparent 20%, #fff9ee 20%, #fff9ee 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #fff9ee 20%, #fff9ee 80%, transparent 80%, transparent) 50px 50px, linear-gradient(#d9a441 8px, transparent 8px) 0 -4px, linear-gradient(90deg, #d9a441 8px, transparent 8px) -4px 0;
+            background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px;
+            opacity: 0.05;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee-fast {
+            animation: marquee 15s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-tertiary selection:text-white">
+<!-- TopAppBar -->
+<header class="full-width top-0 z-50 sticky bg-background border-b-4 border-primary">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="text-3xl font-headline-lg font-black text-primary tracking-tighter uppercase italic" href="#">
+            Raquel Nicole
+        </a>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-on-background font-black hover:text-secondary transition-colors text-sm uppercase tracking-widest" href="#gallery">Gallery</a>
+<a class="text-on-background font-black hover:text-secondary transition-colors text-sm uppercase tracking-widest" href="#services">Services</a>
+<a class="text-on-background font-black hover:text-secondary transition-colors text-sm uppercase tracking-widest" href="#about">About</a>
+<button class="bg-secondary text-on-secondary px-8 py-3 font-black uppercase tracking-tighter groovy-shadow-mustard hover:translate-x-1 hover:translate-y-1 transition-all">
+                Book Now
+            </button>
+</nav>
+</div>
+</header>
+<main class="relative">
+<!-- Background Texture -->
+<div class="absolute inset-0 checkerboard pointer-events-none -z-10"></div>
+<!-- Hero Section: Collage Layout -->
+<section class="relative pt-12 pb-32 overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative">
+<!-- Abstract Elements -->
+<div class="absolute top-0 right-0 -z-10 opacity-30 animate-pulse">
+<span class="material-symbols-outlined text-[300px] text-tertiary">brightness_7</span>
+</div>
+<div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
+<!-- Text Content: Overlapping -->
+<div class="z-20 lg:w-3/5 lg:-mr-20 text-center lg:text-left">
+<div class="inline-block bg-tertiary text-on-background px-4 py-1 font-black text-sm uppercase mb-6 transform -rotate-1">
+                        Professional Hair Magic
+                    </div>
+<h1 class="font-display-lg text-6xl md:text-8xl lg:text-[110px] leading-[0.85] mb-8 text-primary uppercase">
+                        Lived-In <br/>
+<span class="text-secondary italic">Color</span> <br/>
+<span class="text-tertiary bg-on-background px-4">Studio</span>
+</h1>
+<div class="bg-white/90 p-8 max-w-lg groovy-shadow-xl border-4 border-on-background relative mb-12">
+<span class="material-symbols-outlined absolute -top-8 -left-8 text-6xl text-secondary">star</span>
+<p class="text-body-lg text-on-background font-medium leading-relaxed">
+                            Premium hair maintenance for the groovy souls. We specialize in color that grows out as gracefully as you do.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+<button class="bg-primary text-white px-12 py-5 font-black text-xl uppercase groovy-shadow-mustard hover:translate-y-1 transition-all">
+                            Claim Your Transformation
+                        </button>
+</div>
+</div>
+<!-- Collage Images -->
+<div class="lg:w-2/5 relative flex justify-center items-center">
+<div class="relative w-full max-w-md aspect-[4/5] collage-frame groovy-shadow-xl bg-on-background">
+<img alt="Transformation" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLs1ad-EnmY3H0LpMaNl8Cr1ABq0_4Veyyr1RJdekdxjgdcWgCPZUPRUC5l2P3kVg4WmBdz1lS7pLqnCYvWCdAjbusAm0C-4shpGkNRI3_SQ2PeDszPfJBFqy4YXkkPbN_F1uQHwZeg4pFM54dC5WaqotX2AXcnKwq-Osc3ClgPF7Zf4dSPFpxLlIwOWTrEnL6MT_qegOdbz8AczN99tX7G_SSefPaiCSvcTeIbSosDXj4UIL6WrnI42mMM"/>
+<!-- Floating Overlap Badge -->
+<div class="absolute -bottom-10 -right-10 bg-secondary text-white p-8 rounded-full transform rotate-12 groovy-shadow-mustard z-30">
+<p class="font-black text-2xl leading-none uppercase">Get<br/>The<br/>Glow</p>
+</div>
+</div>
+<!-- Secondary Floating Image Decor -->
+<div class="absolute -top-10 -left-20 w-48 aspect-square collage-frame-alt hidden lg:block overflow-hidden bg-on-background z-10">
+<img alt="Vibe" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida/AP1WRLssi7COOAACIpfFGE5MnUYMrNzl5ilsJFr9bcQ2vXrw7oWGFNCwURavzNa6CDzO24_v_LlHYidox9e4deJPRRu4BKqxTJUa6I84a90JZ_igHWxN9zhf2djArqWUM3hx5eTPq8jtquHjOGO1fNJbB3By0UDTzb7rNqTIdOxhKztsgjVZuGkdLD-0y7sZovbI9ShPq5pOXms7SlqvyN6Sfyi5S_4iKe9s5GzB51oeEQa6M6iO_AFnK_92Wrs"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Heavy Marquee Divider -->
+<div class="bg-primary overflow-hidden py-8 border-y-8 border-on-background">
+<div class="flex whitespace-nowrap animate-marquee-fast uppercase font-black text-white text-4xl italic gap-12 items-center">
+<span>• Stay Groovy • Dimensional Blonding • Hand-Tied Extensions • Retro Soul • Curly Cuts • </span>
+<span>• Stay Groovy • Dimensional Blonding • Hand-Tied Extensions • Retro Soul • Curly Cuts • </span>
+</div>
+</div>
+<!-- Services: Asymmetrical Grid -->
+<section class="py-32 relative bg-surface" id="services">
+<div class="absolute inset-0 starburst-bg pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-xl">
+<h2 class="font-display-lg text-5xl md:text-7xl text-secondary uppercase leading-none mb-4 italic">Our Magic <br/><span class="text-primary">Services</span></h2>
+<p class="text-body-lg text-on-background font-bold uppercase tracking-tight">High-End Rituals • Retro Flair</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-8xl text-tertiary">rebase_edit</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<!-- Service 1: Big & Bold -->
+<div class="md:col-span-7 bg-white border-4 border-on-background p-10 groovy-shadow-pink relative overflow-hidden group">
+<div class="absolute -right-8 -top-8 text-[120px] text-primary/5 group-hover:text-primary/10 transition-colors">palette</div>
+<div class="bg-primary text-white w-20 h-20 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-5xl">palette</span>
+</div>
+<h3 class="font-headline-lg text-4xl text-primary mb-6 uppercase italic">Lived-In Color</h3>
+<p class="text-body-md text-on-background max-w-md mb-8">
+                        Our signature approach. We blend high-contrast techniques with seamless transitions for hair that looks expensive but lives easy.
+                    </p>
+<a class="inline-flex items-center gap-4 font-black text-secondary uppercase tracking-tighter group-hover:gap-8 transition-all" href="#">
+                        Explore Style <span class="material-symbols-outlined">arrow_right_alt</span>
+</a>
+</div>
+<!-- Service 2: Taller & Squeezed -->
+<div class="md:col-span-5 bg-tertiary border-4 border-on-background p-10 groovy-shadow-xl flex flex-col justify-end">
+<div class="bg-on-background text-white w-16 h-16 flex items-center justify-center mb-auto">
+<span class="material-symbols-outlined text-4xl">content_cut</span>
+</div>
+<h3 class="font-headline-lg text-3xl text-on-background mb-6 uppercase">Retro Styling</h3>
+<p class="text-body-md text-on-background font-medium mb-8">
+                        70s shags, curtain bangs, and modern volume that celebrates your texture.
+                    </p>
+<a class="bg-on-background text-white px-6 py-3 self-start font-black uppercase text-sm" href="#">Learn More</a>
+</div>
+<!-- Service 3: Wide Bottom -->
+<div class="md:col-span-12 bg-secondary text-white p-12 border-4 border-on-background groovy-shadow-mustard flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1">
+<h3 class="font-display-lg text-4xl md:text-6xl uppercase italic leading-none mb-4">Dimensional Blonde</h3>
+<p class="text-body-lg opacity-90 max-w-2xl font-medium">
+                            Not just highlights. We create architectural depth that catches the light and turns heads from every angle.
+                        </p>
+</div>
+<button class="bg-white text-secondary px-12 py-6 font-black uppercase text-xl border-4 border-on-background hover:bg-tertiary transition-colors">
+                        Book Blonde
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section: Collage Style -->
+<section class="py-32 bg-on-background text-white relative overflow-hidden" id="about">
+<div class="absolute top-0 left-0 w-full h-full opacity-10 checkerboard pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col lg:flex-row-reverse items-center gap-20">
+<!-- Text Column -->
+<div class="lg:w-1/2 relative z-10">
+<h2 class="font-display-lg text-6xl md:text-8xl text-tertiary uppercase leading-none mb-10 transform -rotate-1">
+                        Meet <br/> Raquel <br/> <span class="text-secondary">Nicole</span>
+</h2>
+<div class="space-y-8 text-body-lg font-medium max-w-xl">
+<p class="leading-relaxed border-l-8 border-primary pl-8 py-4">
+                            A decade of mastery. A lifetime of retro obsession. Raquel doesn't just cut hair; she crafts identities with a 70s soul and a modern heartbeat.
+                        </p>
+<p class="italic text-2xl text-secondary">
+                            "Your hair is your halo. Make sure it sparkles with enough attitude to match your vibe."
+                        </p>
+</div>
+<div class="mt-12 flex gap-8">
+<div class="text-center">
+<p class="text-5xl font-display-lg text-primary">10+</p>
+<p class="text-sm uppercase tracking-widest font-black text-tertiary">Years Deep</p>
+</div>
+<div class="text-center">
+<p class="text-5xl font-display-lg text-primary">2k+</p>
+<p class="text-sm uppercase tracking-widest font-black text-tertiary">Happy Heads</p>
+</div>
+</div>
+</div>
+<!-- Image Column: Collage Overlap -->
+<div class="lg:w-1/2 relative">
+<div class="w-full max-w-md aspect-[3/4] collage-frame border-tertiary relative z-20 overflow-hidden bg-surface">
+<img alt="Raquel Nicole" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLssi7COOAACIpfFGE5MnUYMrNzl5ilsJFr9bcQ2vXrw7oWGFNCwURavzNa6CDzO24_v_LlHYidox9e4deJPRRu4BKqxTJUa6I84a90JZ_igHWxN9zhf2djArqWUM3hx5eTPq8jtquHjOGO1fNJbB3By0UDTzb7rNqTIdOxhKztsgjVZuGkdLD-0y7sZovbI9ShPq5pOXms7SlqvyN6Sfyi5S_4iKe9s5GzB51oeEQa6M6iO_AFnK_92Wrs"/>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
+<span class="material-symbols-outlined absolute -bottom-10 -left-10 text-[180px] text-secondary opacity-50">auto_awesome</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial: High Contrast Box -->
+<section class="py-32 bg-background">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="bg-tertiary border-[10px] border-on-background p-12 md:p-24 relative overflow-hidden">
+<div class="absolute -top-10 -right-10 opacity-20 transform rotate-12">
+<span class="material-symbols-outlined text-[200px] text-on-background">format_quote</span>
+</div>
+<div class="relative z-10 text-center">
+<h4 class="font-display-lg text-3xl md:text-5xl text-on-background uppercase italic mb-12 leading-tight">
+                        "Raquel is a wizard. The lived-in color is <span class="bg-primary text-white px-4">pure magic</span>. I walked out feeling like a disco queen!"
+                    </h4>
+<div class="flex flex-col items-center">
+<div class="bg-secondary text-white w-20 h-20 rounded-full flex items-center justify-center mb-6 border-4 border-on-background">
+<span class="material-symbols-outlined text-4xl">face_5</span>
+</div>
+<p class="font-black text-2xl uppercase text-on-background">Sarah J.</p>
+<p class="text-sm font-black uppercase tracking-widest text-primary">Professional Cool Girl</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Wavy Divider Bottom -->
+<div class="wavy-divider-heavy"></div>
+<!-- CTA Section: Maximalist -->
+<section class="py-32 text-center bg-primary">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative">
+<div class="absolute inset-0 flex justify-center items-center opacity-10 overflow-hidden">
+<span class="material-symbols-outlined text-[600px] text-white">brightness_high</span>
+</div>
+<div class="relative z-10">
+<h2 class="font-display-lg text-6xl md:text-9xl text-white uppercase italic leading-none mb-8">
+                    Ready to <br/><span class="text-tertiary">Sparkle?</span>
+</h2>
+<p class="text-xl md:text-2xl text-white font-medium max-w-2xl mx-auto mb-16 uppercase tracking-tighter">
+                    Join the groove. Book your session today and let's craft your masterpiece.
+                </p>
+<button class="bg-tertiary text-on-background px-20 py-8 font-black text-3xl uppercase groovy-shadow-xl border-4 border-on-background hover:scale-105 transition-transform">
+                    Start Your Ritual
+                </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-on-background text-white py-20 border-t-8 border-secondary">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="text-center md:text-left">
+<h3 class="font-display-lg text-4xl uppercase text-tertiary mb-4">Raquel Nicole</h3>
+<p class="text-sm opacity-60 uppercase tracking-widest">© 2024 Beauty by Raquel Nicole. Keep it Groovy.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-10 font-black uppercase text-sm tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="hover:text-primary transition-colors" href="#">TikTok</a>
+<a class="hover:text-primary transition-colors" href="#">Portfolio</a>
+</div>
+<div class="flex gap-6">
+<div class="bg-secondary p-4 border-2 border-white">
+<span class="material-symbols-outlined text-3xl">flare</span>
+</div>
+<div class="bg-primary p-4 border-2 border-white">
+<span class="material-symbols-outlined text-3xl">brush</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

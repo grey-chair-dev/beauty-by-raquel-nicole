@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Beauty by Raquel Nicole | Lived-In Color & Retro Style</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@100..900&family=DM+Sans:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f6f0e5",
+                    "surface-bright": "#fff9ee",
+                    "inverse-surface": "#323029",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#6f3728",
+                    "tertiary-fixed-dim": "#ffb0cf",
+                    "tertiary-fixed": "#ffd9e5",
+                    "surface-tint": "#a73918",
+                    "surface-container-highest": "#e7e2d7",
+                    "primary-fixed": "#ffdbd1",
+                    "surface-container-low": "#f9f3e8",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#ffb5a0",
+                    "surface-variant": "#e7e2d7",
+                    "surface-container": "#f3ede2",
+                    "tertiary-container": "#b55380",
+                    "on-tertiary-fixed-variant": "#7c2551",
+                    "primary": "#a43716",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#ffb4a1",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#c54f2c",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#793f2f",
+                    "on-surface-variant": "#58423c",
+                    "on-tertiary-container": "#fffbff",
+                    "on-background": "#1d1c15",
+                    "on-primary-container": "#fffbff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#ede8dd",
+                    "secondary-container": "#fdad99",
+                    "on-secondary-fixed": "#380d03",
+                    "surface-dim": "#dfd9cf",
+                    "surface": "#fff9ee",
+                    "on-surface": "#1d1c15",
+                    "outline": "#8b716a",
+                    "tertiary": "#973b67",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#ffdbd2",
+                    "secondary": "#8b4e3e",
+                    "outline-variant": "#dfc0b7",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#3b0900",
+                    "on-tertiary-fixed": "#3d0023",
+                    "on-primary-fixed-variant": "#862201",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "background": "#fff9ee"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Bricolage Grotesque"],
+                    "display-lg": ["Bricolage Grotesque"],
+                    "body-md": ["DM Sans"],
+                    "body-lg": ["DM Sans"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "label-md": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .wavy-border {
+            mask-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 12.5 0 25 10 T 50 10 T 75 10 T 100 10 V 20 H 0 Z' fill='black'/%3E%3C/svg%3E");
+            mask-repeat: repeat-x;
+            mask-position: bottom;
+        }
+        .groovy-shadow {
+            box-shadow: 8px 8px 0px 0px #a43716;
+        }
+        .groovy-shadow-hover:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px 0px #a43716;
+        }
+        .dazzle-icon {
+            font-variation-settings: 'FILL' 1;
+            color: #fdad99;
+        }
+        .wavy-section-divider {
+            height: 60px;
+            width: 100%;
+            background-color: transparent;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff9ee' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .retro-frame {
+            border: 4px solid #a43716;
+            border-radius: 40px 120px 40px 120px;
+            overflow: hidden;
+        }
+        .sparkle-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="full-width top-0 z-50 sticky bg-background dark:bg-inverse-surface shadow-[0_4px_0_0_#a43716]">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tighter" href="#">
+                Beauty by Raquel Nicole
+            </a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 text-label-md font-label-md" href="#gallery">Gallery</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 text-label-md font-label-md" href="#services">Services</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 text-label-md font-label-md" href="#about">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 text-label-md font-label-md" href="#contact">Contact</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full text-label-md font-label-md groovy-shadow active:translate-y-0.5 transition-all">
+                    Book Now
+                </button>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-16 pb-24 md:pt-32 md:pb-40 overflow-hidden">
+<div class="absolute top-0 right-0 -z-10 opacity-20 transform translate-x-1/4 -translate-y-1/4">
+<span class="material-symbols-outlined text-[400px] dazzle-icon sparkle-float">auto_awesome</span>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1 text-center md:text-left">
+<div class="inline-flex items-center gap-2 px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-md font-label-md mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        Modern Retro Specialist
+                    </div>
+<h1 class="font-display-lg text-5xl md:text-7xl lg:text-[100px] text-primary leading-[1.1] mb-8 tracking-tighter">
+                        Lived-In Color <br/>
+<span class="text-secondary">Stay Groovy.</span>
+</h1>
+<p class="text-body-lg text-on-surface-variant max-w-xl mb-10 mx-auto md:mx-0">
+                        Expert coloring and hair maintenance services for those who crave premium results with a 70s-inspired soul. Experience beauty that grows out gracefully and stays vibrant.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full text-label-md font-label-md groovy-shadow hover:translate-y-[-2px] transition-all text-lg">
+                            Schedule Appointment
+                        </button>
+<button class="border-2 border-primary text-primary px-10 py-4 rounded-full text-label-md font-label-md hover:bg-primary-fixed transition-colors text-lg">
+                            View Portfolio
+                        </button>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="retro-frame groovy-shadow">
+<img alt="Before and after transformation of a client's hair showing expert dimensional blonding and lived-in color in a professional salon setting." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLs1ad-EnmY3H0LpMaNl8Cr1ABq0_4Veyyr1RJdekdxjgdcWgCPZUPRUC5l2P3kVg4WmBdz1lS7pLqnCYvWCdAjbusAm0C-4shpGkNRI3_SQ2PeDszPfJBFqy4YXkkPbN_F1uQHwZeg4pFM54dC5WaqotX2AXcnKwq-Osc3ClgPF7Zf4dSPFpxLlIwOWTrEnL6MT_qegOdbz8AczN99tX7G_SSefPaiCSvcTeIbSosDXj4UIL6WrnI42mMM"/>
+</div>
+<!-- Floating Accent -->
+<div class="absolute -bottom-6 -left-6 bg-tertiary-fixed text-on-tertiary-fixed p-6 rounded-full shadow-xl hidden md:block">
+<p class="font-headline-md text-xl leading-tight">Total <br/> Glow Up</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Wavy Divider -->
+<div class="bg-primary-fixed py-12">
+<div class="overflow-hidden whitespace-nowrap py-4 border-y-2 border-primary flex">
+<div class="flex gap-12 animate-marquee items-center text-primary font-headline-md text-2xl">
+<span>LIVED-IN COLOR • DIMENSIONAL BLONDING • CURLY CUTS • HAND-TIED EXTENSIONS • RETRO STYLING •</span>
+<span>LIVED-IN COLOR • DIMENSIONAL BLONDING • CURLY CUTS • HAND-TIED EXTENSIONS • RETRO STYLING •</span>
+</div>
+</div>
+</div>
+<!-- Services Section -->
+<section class="py-24 md:py-32 bg-surface" id="services">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-primary mb-4">Our Groovy Services</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Premium beauty rituals designed to elevate your unique style with high-end techniques and nostalgic charm.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="bg-surface-container-low p-8 rounded-[40px] border-2 border-primary/20 transition-all hover:border-primary groovy-shadow-hover group">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-6 text-on-primary-container">
+<span class="material-symbols-outlined text-4xl">palette</span>
+</div>
+<h3 class="font-headline-md text-primary mb-4">Lived-In Color</h3>
+<p class="text-body-md text-on-surface-variant mb-6">Signature low-maintenance coloring that mimics natural highlights and grows out seamlessly.</p>
+<a class="text-primary font-label-md flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-tertiary-fixed p-8 rounded-[40px] border-2 border-tertiary/20 transition-all hover:border-tertiary groovy-shadow-hover group">
+<div class="w-16 h-16 bg-tertiary-container rounded-2xl flex items-center justify-center mb-6 text-on-tertiary-container">
+<span class="material-symbols-outlined text-4xl">content_cut</span>
+</div>
+<h3 class="font-headline-md text-tertiary mb-4">Retro Styling</h3>
+<p class="text-body-md text-on-tertiary-fixed-variant mb-6">From 70s shags to modern blowouts, we craft cuts that celebrate your hair's natural movement.</p>
+<a class="text-tertiary font-label-md flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-secondary-container p-8 rounded-[40px] border-2 border-secondary/20 transition-all hover:border-secondary groovy-shadow-hover group">
+<div class="w-16 h-16 bg-secondary-fixed-dim rounded-2xl flex items-center justify-center mb-6 text-on-secondary-fixed">
+<span class="material-symbols-outlined text-4xl">auto_fix_high</span>
+</div>
+<h3 class="font-headline-md text-secondary mb-4">Dimensional Blonde</h3>
+<p class="text-body-md text-on-secondary-container mb-6">Premium blonding services that create depth, shine, and the perfect sun-kissed finish.</p>
+<a class="text-secondary font-label-md flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-24 bg-primary-fixed/30 relative overflow-hidden" id="about">
+<div class="absolute -top-10 -right-10 opacity-10">
+<span class="material-symbols-outlined text-[300px]">filter_vintage</span>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-1/2">
+<div class="relative inline-block">
+<div class="retro-frame groovy-shadow">
+<img alt="Professional portrait of Raquel Nicole, a beauty expert and stylist, smiling warmly in her boutique studio environment." class="w-full h-full object-cover grayscale-0 hover:grayscale transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLssi7COOAACIpfFGE5MnUYMrNzl5ilsJFr9bcQ2vXrw7oWGFNCwURavzNa6CDzO24_v_LlHYidox9e4deJPRRu4BKqxTJUa6I84a90JZ_igHWxN9zhf2djArqWUM3hx5eTPq8jtquHjOGO1fNJbB3By0UDTzb7rNqTIdOxhKztsgjVZuGkdLD-0y7sZovbI9ShPq5pOXms7SlqvyN6Sfyi5S_4iKe9s5GzB51oeEQa6M6iO_AFnK_92Wrs"/>
+</div>
+<!-- Sparkles -->
+<span class="material-symbols-outlined absolute -top-4 -right-4 dazzle-icon text-4xl sparkle-float" style="animation-delay: 0.5s;">auto_awesome</span>
+<span class="material-symbols-outlined absolute -bottom-4 -left-4 dazzle-icon text-4xl sparkle-float">auto_awesome</span>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<h2 class="font-headline-lg text-primary mb-6">Meet Raquel Nicole</h2>
+<p class="text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+                        With over a decade of experience in high-end hair design, Raquel combines technical precision with an artistic, retro-inspired eye. She believes beauty should be effortless, empowering, and just a little bit groovy.
+                    </p>
+<p class="text-body-lg text-on-surface-variant mb-10 leading-relaxed italic">
+                        "My mission is to help every client find their inner sparkle through hair that looks good today and even better tomorrow."
+                    </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-background p-4 rounded-3xl border border-primary/10">
+<h4 class="font-headline-md text-primary text-xl">10+ Years</h4>
+<p class="text-label-md">Expertise</p>
+</div>
+<div class="bg-background p-4 rounded-3xl border border-primary/10">
+<h4 class="font-headline-md text-primary text-xl">2.5k+</h4>
+<p class="text-label-md">Happy Clients</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-surface-bright">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="bg-tertiary-container text-on-tertiary-container rounded-[60px] p-12 md:p-24 relative">
+<span class="material-symbols-outlined absolute top-12 left-12 text-6xl opacity-30">format_quote</span>
+<div class="text-center">
+<p class="font-headline-lg text-3xl md:text-5xl mb-12 italic leading-tight">
+                            "Raquel completely transformed my hair! The lived-in color is exactly what I wanted—natural, vibrant, and so easy to maintain. I feel like a 70s icon!"
+                        </p>
+<div class="flex flex-col items-center">
+<div class="w-20 h-20 rounded-full border-4 border-on-tertiary-container mb-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl">face_3</span>
+</div>
+<h4 class="font-headline-md text-2xl">Sarah J.</h4>
+<p class="text-label-md uppercase tracking-widest opacity-80">Regular Client</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 text-center">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-display-lg text-primary text-5xl md:text-7xl mb-8">Ready to Sparkle?</h2>
+<p class="text-body-lg text-on-surface-variant max-w-xl mx-auto mb-12">
+                    Join the beauty revolution. Book your consultation today and let's create something groovy together.
+                </p>
+<div class="inline-block relative">
+<button class="bg-primary text-on-primary px-16 py-6 rounded-full text-headline-md text-2xl groovy-shadow hover:translate-y-[-4px] transition-all">
+                        Book Your Spot
+                    </button>
+<!-- Decorative Stars -->
+<span class="material-symbols-outlined absolute -top-8 -left-12 text-primary text-5xl sparkle-float">star</span>
+<span class="material-symbols-outlined absolute -bottom-8 -right-12 text-secondary text-5xl sparkle-float" style="animation-delay: 1s">filter_vintage</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="full-width mt-16 rounded-t-full bg-primary dark:bg-primary-container">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-12 gap-8 text-center md:text-left max-w-container-max mx-auto">
+<div class="flex flex-col gap-2">
+<a class="text-headline-md font-headline-md text-on-primary dark:text-on-primary-container" href="#">Beauty by Raquel Nicole</a>
+<p class="text-primary-fixed dark:text-on-primary-container/80 text-body-md font-body-md">© 2024 Beauty by Raquel Nicole. Stay Groovy.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-primary-fixed dark:text-on-primary-container/80 font-medium hover:text-tertiary-fixed transition-colors" href="#">Instagram</a>
+<a class="text-primary-fixed dark:text-on-primary-container/80 font-medium hover:text-tertiary-fixed transition-colors" href="#">Pinterest</a>
+<a class="text-primary-fixed dark:text-on-primary-container/80 font-medium hover:text-tertiary-fixed transition-colors" href="#">TikTok</a>
+<a class="text-primary-fixed dark:text-on-primary-container/80 font-medium hover:text-tertiary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="text-primary-fixed dark:text-on-primary-container/80 font-medium hover:text-tertiary-fixed transition-colors" href="#">Terms</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-primary text-3xl">volunteer_activism</span>
+<span class="material-symbols-outlined text-on-primary text-3xl">eco</span>
+</div>
+</div>
+</footer>
+<script>
+        // Simple marquee animation logic if needed, though Tailwind's arbitrary values or keyframes are better
+        const marquee = document.querySelector('.animate-marquee');
+        if (marquee) {
+            marquee.style.display = 'flex';
+            marquee.animate([
+                { transform: 'translateX(0%)' },
+                { transform: 'translateX(-50%)' }
+            ], {
+                duration: 20000,
+                iterations: Infinity
+            });
+        }
+    </script>
+</body></html>
