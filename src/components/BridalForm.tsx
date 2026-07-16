@@ -5,8 +5,11 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import toast from 'react-hot-toast';
-import { Calendar, Clock, User, Mail, Phone, MessageSquare, Heart } from 'lucide-react';
+import { Calendar, Clock, User, Mail, Phone, MessageSquare, Heart, ImagePlus, X } from 'lucide-react';
 import { INSTAGRAM_URL } from '@/lib/constants';
+
+const MAX_INSPO_PHOTOS = 5;
+const MAX_PHOTO_SIZE_MB = 5;
 
 const bridalSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
@@ -15,6 +18,7 @@ const bridalSchema = z.object({
   phone: z.string().min(10, 'Please enter a valid phone number'),
   weddingDate: z.string().min(1, 'Please enter your wedding date'),
   weddingTime: z.string().min(1, 'Please select your wedding time'),
+  readyByTime: z.string().min(1, 'Please enter what time you need to be ready by'),
   venueLocation: z.string().min(1, 'Please provide your venue location'),
   bridalPartySize: z.string().min(1, 'Please select your bridal party size'),
   hairStyle: z.string().min(1, 'Please describe your desired hair style'),
@@ -26,6 +30,8 @@ type BridalFormData = z.infer<typeof bridalSchema>;
 
 const BridalForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [inspoPhotos, setInspoPhotos] = useState<File[]>([]);
+  const [inspoPreviews, setInspoPreviews] = useState<string[]>([]);
 
   const {
     register,
@@ -35,6 +41,42 @@ const BridalForm = () => {
   } = useForm<BridalFormData>({
     resolver: zodResolver(bridalSchema),
   });
+
+  const clearInspoPhotos = () => {
+    inspoPreviews.forEach((url) => URL.revokeObjectURL(url));
+    setInspoPhotos([]);
+    setInspoPreviews([]);
+  };
+
+  const handleInspoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const selected = Array.from(event.target.files ?? []);
+    const maxBytes = MAX_PHOTO_SIZE_MB * 1024 * 1024;
+    const valid = selected.filter((file) => file.type.startsWith('image/') && file.size <= maxBytes);
+    const combined = [...inspoPhotos, ...valid].slice(0, MAX_INSPO_PHOTOS);
+
+    if (valid.length < selected.length || inspoPhotos.length + valid.length > MAX_INSPO_PHOTOS) {
+      toast.error(`Use up to ${MAX_INSPO_PHOTOS} images under ${MAX_PHOTO_SIZE_MB}MB each.`);
+    }
+
+    inspoPreviews.forEach((url) => URL.revokeObjectURL(url));
+    setInspoPhotos(combined);
+    setInspoPreviews(combined.map((file) => URL.createObjectURL(file)));
+    event.target.value = '';
+  };
+
+  const removeInspoPhoto = (index: number) => {
+    URL.revokeObjectURL(inspoPreviews[index]);
+    setInspoPhotos((current) => current.filter((_, i) => i !== index));
+    setInspoPreviews((current) => current.filter((_, i) => i !== index));
+  };
+
+  const formatReadyByTime = (value: string) => {
+    const [hours, minutes] = value.split(':').map(Number);
+    if (Number.isNaN(hours) || Number.isNaN(minutes)) return value;
+    const date = new Date();
+    date.setHours(hours, minutes, 0, 0);
+    return date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  };
 
   const onSubmit = async (data: BridalFormData) => {
     setIsSubmitting(true);
@@ -47,22 +89,46 @@ const BridalForm = () => {
             year: 'numeric',
           })
         : data.weddingDate;
+      const readyByFormatted = formatReadyByTime(data.readyByTime);
       const summary = [
         `Bridal hair inquiry from ${data.firstName} ${data.lastName}`,
         `Email: ${data.email} | Phone: ${data.phone}`,
         `Wedding: ${weddingDateFormatted} at ${data.weddingTime}`,
+        `Need to be ready by: ${readyByFormatted}`,
         `Venue: ${data.venueLocation}`,
         `Bridal party: ${data.bridalPartySize}`,
         `Hair style: ${data.hairStyle}`,
         data.additionalServices ? `Additional: ${data.additionalServices}` : '',
         data.message ? `Message: ${data.message}` : '',
+        inspoPhotos.length > 0
+          ? `Inspo photos: ${inspoPhotos.length} attached with this inquiry`
+          : '',
       ].filter(Boolean).join('\n');
-      await navigator.clipboard.writeText(summary);
-      window.open(INSTAGRAM_URL, '_blank', 'noopener,noreferrer');
-      toast.success("Your message was copied — paste it in a DM to me on Instagram and I'll reply soon!");
+
+      const canShareFiles =
+        inspoPhotos.length > 0 &&
+        typeof navigator.share === 'function' &&
+        typeof navigator.canShare === 'function' &&
+        navigator.canShare({ files: inspoPhotos, text: summary });
+
+      if (canShareFiles) {
+        await navigator.share({ text: summary, files: inspoPhotos });
+        toast.success('Shared your inquiry — choose Instagram to send it to Raquel!');
+      } else {
+        await navigator.clipboard.writeText(summary);
+        window.open(INSTAGRAM_URL, '_blank', 'noopener,noreferrer');
+        toast.success(
+          inspoPhotos.length > 0
+            ? `Message copied — paste in Instagram and attach your ${inspoPhotos.length} inspo photo${inspoPhotos.length === 1 ? '' : 's'}!`
+            : "Your message was copied — paste it in a DM to me on Instagram and I'll reply soon!"
+        );
+      }
+
       reset();
+      clearInspoPhotos();
     } catch (error) {
-      toast.error("Couldn't copy to clipboard. Please DM me on Instagram and send your details there.");
+      if (error instanceof Error && error.name === 'AbortError') return;
+      toast.error("Couldn't send your inquiry. Please DM me on Instagram with your details.");
       window.open(INSTAGRAM_URL, '_blank', 'noopener,noreferrer');
     } finally {
       setIsSubmitting(false);
@@ -190,6 +256,21 @@ const BridalForm = () => {
               )}
             </div>
             
+            <div>
+              <label className="block text-body font-medium text-text mb-2">
+                <Clock className="inline w-4 h-4 mr-2" />
+                What time do you need to be ready by? *
+              </label>
+              <input
+                type="time"
+                {...register('readyByTime')}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+              />
+              {errors.readyByTime && (
+                <p className="text-red-500 text-small mt-1">{errors.readyByTime.message}</p>
+              )}
+            </div>
+            
             <div className="md:col-span-2">
               <label className="block text-body font-medium text-text mb-2">
                 Venue/Location *
@@ -256,6 +337,46 @@ const BridalForm = () => {
                 <p className="text-red-500 text-small mt-1">{errors.hairStyle.message}</p>
               )}
             </div>
+
+            <div>
+              <label className="block text-body font-medium text-text mb-2">
+                <ImagePlus className="inline w-4 h-4 mr-2" />
+                Inspiration Photos (Optional)
+              </label>
+              <p className="text-small text-text/60 mb-3">
+                Attach photos of styles you love — up to {MAX_INSPO_PHOTOS} images, {MAX_PHOTO_SIZE_MB}MB each.
+              </p>
+              <input
+                type="file"
+                accept="image/*"
+                multiple
+                onChange={handleInspoChange}
+                disabled={inspoPhotos.length >= MAX_INSPO_PHOTOS}
+                className="w-full text-body text-text/80 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-accent file:text-white file:font-medium hover:file:bg-accentDark"
+              />
+              {inspoPreviews.length > 0 && (
+                <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {inspoPreviews.map((preview, index) => (
+                    <div key={preview} className="relative aspect-square rounded-lg overflow-hidden border border-gray-200">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={preview}
+                        alt={`Inspiration photo ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => removeInspoPhoto(index)}
+                        className="absolute top-2 right-2 p-1 rounded-full bg-black/60 text-white hover:bg-black/80"
+                        aria-label={`Remove inspiration photo ${index + 1}`}
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
             
             <div>
               <label className="block text-body font-medium text-text mb-2">
@@ -296,7 +417,7 @@ const BridalForm = () => {
           </button>
           
           <p className="text-small text-text/60 mt-4">
-            Your details will be copied and Instagram will open — paste into a DM to me and I&apos;ll reply soon!
+            Your details will be copied and Instagram will open — paste into a DM and attach any inspiration photos you selected.
           </p>
         </div>
       </form>

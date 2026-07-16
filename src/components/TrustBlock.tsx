@@ -1,5 +1,5 @@
 import { Star } from 'lucide-react';
-import { REVIEW_COUNT, BOOK_URL } from '@/lib/constants';
+import { REVIEW_COUNT, BOOK_URL, BUSINESS_LOCATION } from '@/lib/constants';
 
 const heroTestimonial = {
   text: 'Raquel is absolutely amazing! She transformed my hair from dull to vibrant. Her attention to detail and personalized approach made me feel so confident. I get compliments every day!',
@@ -21,7 +21,7 @@ const TrustBlock = () => {
               <span className="text-heading font-bold text-accent">{REVIEW_COUNT}+ reviews</span>
             </div>
             <span className="text-text/50 hidden sm:inline">·</span>
-            <span className="text-body text-text/70">The Beauty Bar, Old Milford</span>
+            <span className="text-body text-text/70">{BUSINESS_LOCATION.salonLabel} · {BUSINESS_LOCATION.area}</span>
           </div>
 
           {/* One killer testimonial — big */}

@@ -22,7 +22,7 @@ const AvailabilityPreview = ({ className = '' }: AvailabilityPreviewProps) => {
 
   const handleBookNow = () => {
     window.open(
-      'https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=000000&color=e8b4b8&locale=en&referrer=so',
+      'https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=000000&color=ff8fab&locale=en&referrer=so',
       '_blank',
       'noopener,noreferrer'
     );

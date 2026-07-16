@@ -42,20 +42,20 @@
     },
     {
       "id": "site-location",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Whole site",
       "href": "/contact",
-      "question": "Is the location correct: The Beauty Bar, 212 Main St, Old Milford / Milford, OH 45150? Any wording you want emphasized (chair rental, downtown, parking)?",
+      "question": "Location: The Beauty Bar, Floor 2 · 212 Main St, Old Milford / Milford, OH 45150. Middle door on front of building; street parking and public lots nearby.",
       "group": "Business & contact"
     },
     {
       "id": "site-hours",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Whole site",
       "href": "/contact",
-      "question": "Are these hours correct? Tue–Fri 10 AM–6 PM, Sat 10 AM–4 PM, closed Sun–Mon. List any holidays or exceptions.",
+      "question": "Are these hours correct? Tue 10–6, Wed 9–5, Thu 12–8, Fri 10–6, Sat 9–3, closed Sun–Mon. List any holidays or exceptions.",
       "group": "Business & contact"
     },
     {
@@ -69,20 +69,20 @@
     },
     {
       "id": "site-social",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Whole site",
       "href": "/",
-      "question": "Are your Instagram (@beauty_by_raquel_nicole) and Facebook links correct? Any other socials to add (TikTok, Pinterest)?",
+      "question": "Social links: Instagram (@beauty_by_raquel_nicole), Facebook, and TikTok (@BeautyByRaquelNicole).",
       "group": "Booking & social"
     },
     {
       "id": "site-design-vibe",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Whole site",
       "href": "/",
-      "question": "Overall look and feel: does the site feel like you — warm, modern, professional? Too formal, too playful, or anything that feels “off”?",
+      "question": "Brighter coral-peach and rose palette applied site-wide — warmer, less plain, still professional.",
       "group": "Design & SEO"
     },
     {
@@ -186,11 +186,11 @@
     },
     {
       "id": "about-page-intro",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "About",
       "href": "/about",
-      "question": "Dedicated About page top intro still mentions “6+ years” in places — should everything say 7 years to match your bio?",
+      "question": "Dedicated About page top intro: all experience copy should say 7 years to match your bio.",
       "group": "Page intro"
     },
     {
@@ -204,65 +204,65 @@
     },
     {
       "id": "gallery-hero",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Gallery",
       "href": "/gallery",
-      "question": "Gallery intro text: does it describe your work the way you want (balayage, cuts, extensions, etc.)?",
+      "question": "Gallery intro updated — no longer claims current photos are hers; Raquel is hand-picking work by service.",
       "group": "Page intro"
     },
     {
       "id": "gallery-photos",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Gallery",
       "href": "/gallery#gallery",
-      "question": "Gallery photos: which folders or shots should we add, remove, or reorder? Send filenames or describe your best work to feature first.",
+      "question": "Gallery photos: Raquel will send Will her photo picks for each service — swap in when assets arrive.",
       "group": "Gallery"
     },
     {
       "id": "gallery-categories",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Gallery",
       "href": "/gallery#gallery",
-      "question": "Gallery categories (balayage, extensions, cuts, etc.): are the labels right? Any category missing that you want highlighted?",
+      "question": "Gallery categories (balayage, extensions, cuts, etc.): approved as shown — no changes needed.",
       "group": "Gallery"
     },
     {
       "id": "bridal-intro",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Bridal",
       "href": "/bridal",
-      "question": "Bridal page intro: does it reflect how you want to present wedding hair (on-site, trials, party size)?",
+      "question": "Bridal intro updated (on-site, trial, party size); bridal styles gallery section added — awaiting Raquel's photo picks.",
       "group": "Page intro"
     },
     {
       "id": "bridal-rates",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Bridal",
       "href": "/bridal",
-      "question": "Bridal rates ($85 bride, $75 party, $50 flower girl): still current? List correct prices if anything changed.",
+      "question": "Bridal rates: $95 bride, $80 bridal party/adults, $45 children 8 and under, $75 trial.",
       "group": "Rates & policies"
     },
     {
       "id": "bridal-policies",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Bridal",
       "href": "/bridal",
-      "question": "Bridal policies (50% deposit, consultation, travel/on-site): accurate? Anything to add about trials, minimum party size, or travel fees?",
+      "question": "Bridal policies: deposit + contract, 4-person minimum, required $75 trial 1+ month out, travel $50 or $2/mile (whichever is greater).",
       "group": "Rates & policies"
     },
     {
       "id": "bridal-form",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Bridal",
       "href": "/bridal",
-      "question": "Bridal inquiry form: are the questions what you need (date, venue, party size, inspiration)? Missing fields?",
+      "question": "Bridal inquiry form: added ready-by time and optional inspiration photo uploads.",
       "group": "Inquiry form"
     },
     {
@@ -294,20 +294,20 @@
     },
     {
       "id": "footer-info",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Footer",
       "href": "/",
-      "question": "Footer (copyright RS C&C LLC, The Beauty Bar | Old Milford, links, hours): all correct?",
+      "question": "Footer (copyright, The Beauty Bar | Old Milford, links, hours): approved as shown — no changes needed.",
       "group": "Footer"
     },
     {
       "id": "seo-titles",
-      "status": "open",
+      "status": "resolved",
       "priority": "low",
       "page": "Whole site",
       "href": "/review",
-      "question": "Search/Google snippets use phrases like “best hair stylist Milford” — comfortable with that marketing language, or prefer softer wording?",
+      "question": "SEO snippets use softer wording: Milford hairstylist, Milford blonding hairstylist, hair extension stylist Milford.",
       "group": "Design & SEO"
     },
     {

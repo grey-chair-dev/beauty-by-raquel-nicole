@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Instagram, ExternalLink, Sparkles } from 'lucide-react';
+import { INSTAGRAM_URL } from '@/lib/constants';
 import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 interface GalleryItem {
@@ -156,7 +157,7 @@ const Gallery = () => {
               on our Instagram page.
             </p>
             <a
-              href="https://www.instagram.com/beauty_by_raquel_nicole/"
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="min-h-[44px] inline-flex items-center justify-center bg-white text-accent font-bold px-8 py-3 rounded-lg hover:bg-accent hover:text-white transition-all duration-300 touch-manipulation"

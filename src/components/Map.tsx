@@ -1,5 +1,5 @@
 import { MapPin, Clock, Phone, MessageCircle } from 'lucide-react';
-import { INSTAGRAM_URL, BOOK_URL, BUSINESS_HOURS } from '@/lib/constants';
+import { INSTAGRAM_URL, BOOK_URL, BUSINESS_HOURS, BUSINESS_LOCATION } from '@/lib/constants';
 import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 const Map = () => {
@@ -23,9 +23,12 @@ const Map = () => {
                   <div>
                     <h4 className="text-heading font-semibold text-text mb-1">Address</h4>
                     <p className="text-body text-text/70">
-                      212 Main St<br />
-                      Milford, OH 45150
+                      {BUSINESS_LOCATION.salonLabel}<br />
+                      {BUSINESS_LOCATION.street}<br />
+                      {BUSINESS_LOCATION.area}, {BUSINESS_LOCATION.city}, {BUSINESS_LOCATION.state} {BUSINESS_LOCATION.zip}
                     </p>
+                    <p className="text-body text-text/70 mt-2">{BUSINESS_LOCATION.entryNote}</p>
+                    <p className="text-body text-text/70 mt-1">{BUSINESS_LOCATION.parkingNote}</p>
                   </div>
                 </div>
 
@@ -47,8 +50,9 @@ const Map = () => {
                   <div>
                     <h4 className="text-heading font-semibold text-text mb-1">Hours</h4>
                     <div className="text-body text-text/70 space-y-1">
-                      <p>{BUSINESS_HOURS.weekdaysLabel}: {BUSINESS_HOURS.weekdays}</p>
-                      <p>{BUSINESS_HOURS.saturdayLabel}: {BUSINESS_HOURS.saturday}</p>
+                      {BUSINESS_HOURS.schedule.map(({ day, hours }) => (
+                        <p key={day}>{day}: {hours}</p>
+                      ))}
                       <p>{BUSINESS_HOURS.closed}</p>
                     </div>
                   </div>
@@ -92,7 +96,11 @@ const Map = () => {
               <div className="space-y-4 text-body text-text/70">
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <p>Free parking available in front of the salon</p>
+                  <p>{BUSINESS_LOCATION.parkingNote}</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                  <p>{BUSINESS_LOCATION.entryNote}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
@@ -104,7 +112,7 @@ const Map = () => {
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <p>Located in downtown Milford, easy to find</p>
+                  <p>Located in downtown {BUSINESS_LOCATION.city}, easy to find</p>
                 </div>
               </div>
             </div>
