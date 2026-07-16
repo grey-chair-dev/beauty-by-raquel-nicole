@@ -20,7 +20,7 @@ const SmartCTA = ({ variant = 'primary', context = 'hero', className = '' }: Sma
   const ctaConfig = useMemo(() => {
     if (!isClient) {
       return {
-        text: 'Book Your Appointment',
+        text: 'Book Appointment',
         icon: <ArrowRight className="w-4 h-4" />,
         url: BOOK_URL
       };
@@ -40,7 +40,7 @@ const SmartCTA = ({ variant = 'primary', context = 'hero', className = '' }: Sma
           };
         }
         return {
-          text: 'Book Your Appointment',
+          text: 'Book Appointment',
           icon: <Calendar className="w-4 h-4" />,
           url: BOOK_URL
         };
@@ -68,7 +68,7 @@ const SmartCTA = ({ variant = 'primary', context = 'hero', className = '' }: Sma
       
       default:
         return {
-          text: 'Book Your Appointment',
+          text: 'Book Appointment',
           icon: <ArrowRight className="w-4 h-4" />,
           url: BOOK_URL
         };

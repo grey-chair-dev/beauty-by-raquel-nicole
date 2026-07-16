@@ -1,7 +1,7 @@
 'use client';
 
-import { Phone, Calendar, MessageCircle } from 'lucide-react';
-import { BOOK_URL, INSTAGRAM_URL } from '@/lib/constants';
+import { Phone, Calendar } from 'lucide-react';
+import { BOOK_URL } from '@/lib/constants';
 
 interface MobileCTAProps {
   variant?: 'floating' | 'inline';
@@ -17,40 +17,32 @@ const MobileCTA = ({ variant = 'floating', className = '' }: MobileCTAProps) => 
     window.open(BOOK_URL, '_blank', 'noopener,noreferrer');
   };
 
-  const handleMessage = () => {
-    window.open(INSTAGRAM_URL, '_blank', 'noopener,noreferrer');
-  };
-
   if (variant === 'floating') {
     return (
       <div
         className={`fixed left-4 right-4 z-50 md:hidden ${className}`}
         style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))' }}
       >
-        <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-4">
-          <div className="flex items-center justify-between">
-            <div className="flex-1">
-              <h3 className="text-heading font-semibold text-text mb-1">
-                Book Your Appointment
-              </h3>
-              <p className="text-small text-text/80">
-                Quick & easy booking
-              </p>
+        <div className="bg-bg rounded-2xl shadow-2xl border-2 border-primary/20 p-4">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex-1 min-w-0">
+              <h3 className="font-heading font-bold text-primary text-sm truncate">Book Appointment</h3>
+              <p className="text-xs text-on-surface-variant">Quick & easy booking</p>
             </div>
-            <div className="flex space-x-2">
+            <div className="flex gap-2 flex-shrink-0">
               <button
                 onClick={handleCall}
-                className="w-12 h-12 min-w-[48px] min-h-[48px] bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 active:scale-95 transition-transform touch-manipulation"
+                className="w-12 h-12 bg-secondary text-on-primary rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform touch-manipulation"
                 aria-label="Call to book"
               >
-                <Phone className="w-5 h-5 text-white" />
+                <Phone className="w-5 h-5" />
               </button>
               <button
                 onClick={handleBook}
-                className="w-12 h-12 min-w-[48px] min-h-[48px] bg-accent rounded-full flex items-center justify-center shadow-lg hover:bg-accentDark active:scale-95 transition-transform touch-manipulation"
+                className="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center groovy-shadow active:scale-95 transition-transform touch-manipulation"
                 aria-label="Book online"
               >
-                <Calendar className="w-5 h-5 text-white" />
+                <Calendar className="w-5 h-5" />
               </button>
             </div>
           </div>
@@ -59,52 +51,7 @@ const MobileCTA = ({ variant = 'floating', className = '' }: MobileCTAProps) => 
     );
   }
 
-  return (
-    <div className={`md:hidden ${className}`}>
-      <div className="bg-white rounded-2xl shadow-lg p-6">
-        <div className="text-center mb-6">
-          <h3 className="text-heading text-xl font-semibold text-text mb-2">
-            Book Your Appointment
-          </h3>
-          <p className="text-body text-text/90">
-            Choose your preferred way to book
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          <button
-            onClick={handleCall}
-            className="w-full bg-green-500 hover:bg-green-600 text-white rounded-xl p-4 flex items-center justify-center space-x-3 transition-colors shadow-lg"
-          >
-            <Phone className="w-5 h-5" />
-            <span className="font-medium">📞 Call to Book (Faster)</span>
-          </button>
-
-          <button
-            onClick={handleBook}
-            className="w-full bg-accent hover:bg-accentDark text-white rounded-xl p-4 flex items-center justify-center space-x-3 transition-colors shadow-lg"
-          >
-            <Calendar className="w-5 h-5" />
-            <span className="font-medium">📅 Book Online</span>
-          </button>
-
-          <button
-            onClick={handleMessage}
-            className="w-full bg-accent hover:bg-accentDark text-white rounded-xl p-4 flex items-center justify-center space-x-3 transition-colors shadow-lg"
-          >
-            <MessageCircle className="w-5 h-5" />
-            <span className="font-medium">💬 DM me on Instagram</span>
-          </button>
-        </div>
-
-        <div className="mt-6 text-center">
-          <p className="text-small text-text/80">
-            📍 Located in Milford, OH • Free parking available
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+  return null;
 };
 
-export default MobileCTA; 
+export default MobileCTA;

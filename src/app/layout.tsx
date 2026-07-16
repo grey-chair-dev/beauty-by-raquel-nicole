@@ -1,21 +1,26 @@
 import type { Metadata } from 'next';
-import { DM_Serif_Display, Lato, Dancing_Script } from 'next/font/google';
+import { Bricolage_Grotesque, DM_Sans, Space_Grotesk, Dancing_Script } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
 import { SiteShell } from '@/components/SiteShell';
-import { SITE_URL, BUSINESS_HOURS, REVIEW_COUNT } from '@/lib/constants';
+import { SITE_URL, BUSINESS_HOURS, REVIEW_COUNT, YEARS_EXPERIENCE, BUSINESS_LOCATION, SOCIAL_SAME_AS, SEO_KEYWORDS, SEO_PHRASES } from '@/lib/constants';
 
-const dmSerif = DM_Serif_Display({
-  weight: '400',
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
-  variable: '--font-dm-serif',
+  variable: '--font-bricolage',
   display: 'swap',
   preload: true,
 });
-const lato = Lato({
-  weight: ['400', '700'],
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-lato',
+  variable: '--font-dm-sans',
+  display: 'swap',
+  preload: true,
+});
+const spaceGrotesk = Space_Grotesk({
+  weight: ['600'],
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
   display: 'swap',
   preload: true,
 });
@@ -39,8 +44,8 @@ export const metadata: Metadata = {
     default: 'Beauty by Raquel Nicole | Hair Stylist & Color Specialist Milford OH',
     template: '%s | Beauty by Raquel Nicole',
   },
-  description: 'Professional hair stylist in Milford, OH. Balayage, highlights, lived-in color, bridal hair & hand-tied extensions at The Beauty Bar. Book with Raquel Nicole — 7+ years experience. DM for inquiries.',
-  keywords: ['hair stylist Milford OH', 'balayage Milford', 'highlights Milford OH', 'hair color specialist', 'Old Milford hair', 'The Beauty Bar Milford', 'bridal hair', 'hand-tied extensions', 'lived-in color', 'hair colorist near me'],
+  description: `${SEO_PHRASES.hairstylist} specializing in blonding, balayage, and hand-tied extensions at The Beauty Bar in Old Milford, OH. Book with Raquel Nicole — ${YEARS_EXPERIENCE} years experience. DM for inquiries.`,
+  keywords: [...SEO_KEYWORDS],
   authors: [{ name: 'Raquel Schmid', url: SITE_URL }],
   creator: 'Beauty by Raquel Nicole',
   publisher: 'Beauty by Raquel Nicole',
@@ -54,8 +59,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Beauty by Raquel Nicole | Hair Stylist & Color Specialist Milford OH',
-    description: 'Professional hair stylist in Milford, OH. Balayage, highlights, bridal hair & extensions at The Beauty Bar. Book with Raquel Nicole.',
+    title: `Beauty by Raquel Nicole | ${SEO_PHRASES.hairstylist}`,
+    description: `${SEO_PHRASES.blonding} and ${SEO_PHRASES.extensions} at The Beauty Bar in Old Milford, OH. Balayage, highlights, bridal hair & extensions. Book with Raquel Nicole.`,
     url: SITE_URL,
     siteName: 'Beauty by Raquel Nicole',
     images: [
@@ -71,8 +76,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Beauty by Raquel Nicole | Hair Stylist Milford OH',
-    description: 'Professional hair stylist in Milford, OH. Balayage, highlights, bridal hair. Book today.',
+    title: `Beauty by Raquel Nicole | ${SEO_PHRASES.hairstylist}`,
+    description: `${SEO_PHRASES.hairstylist} in Milford, OH. Blonding, balayage, highlights, and hand-tied extensions at The Beauty Bar.`,
     images: ['/og-image.svg'],
   },
   robots: {
@@ -97,7 +102,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${dmSerif.variable} ${lato.variable} ${dancingScript.variable}`}>
+    <html lang="en" className={`${bricolage.variable} ${dmSans.variable} ${spaceGrotesk.variable} ${dancingScript.variable}`}>
       <head>
         <link rel="preconnect" href="https://squareup.com" />
         <link rel="preconnect" href="https://book.squareup.com" />
@@ -131,16 +136,17 @@ export default function RootLayout({
                 "@type": "BeautySalon",
                 "@id": `${SITE_URL}/#beautysalon`,
                 "name": "Beauty by Raquel Nicole",
-                "description": "Professional hair styling, lived-in color, dimensional blonding, bridal hair, and hand-tied extensions in Old Milford, OH. Located at The Beauty Bar.",
+                "description": `Professional hair styling, lived-in color, dimensional blonding, bridal hair, and hand-tied extensions in ${BUSINESS_LOCATION.area}, OH. Located at ${BUSINESS_LOCATION.salonLabel}. ${BUSINESS_LOCATION.entryNote}`,
                 "url": SITE_URL,
                 "telephone": "+1-513-330-2277",
                 "email": "beautybyraquelnicole@gmail.com",
+                "floorLevel": "2",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "212 Main St",
-                  "addressLocality": "Milford",
-                  "addressRegion": "OH",
-                  "postalCode": "45150",
+                  "streetAddress": BUSINESS_LOCATION.street,
+                  "addressLocality": BUSINESS_LOCATION.city,
+                  "addressRegion": BUSINESS_LOCATION.state,
+                  "postalCode": BUSINESS_LOCATION.zip,
                   "addressCountry": "US"
                 },
                 "geo": {
@@ -148,10 +154,12 @@ export default function RootLayout({
                   "latitude": 39.1756789,
                   "longitude": -84.2956789
                 },
-                "openingHoursSpecification": [
-                  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": BUSINESS_HOURS.weekdaysOpen, "closes": BUSINESS_HOURS.weekdaysClose },
-                  { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": BUSINESS_HOURS.saturdayOpen, "closes": BUSINESS_HOURS.saturdayClose }
-                ],
+                "openingHoursSpecification": BUSINESS_HOURS.schedule.map(({ day, opens, closes }) => ({
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": day,
+                  "opens": opens,
+                  "closes": closes,
+                })),
                 "priceRange": "$$",
                 "aggregateRating": {
                   "@type": "AggregateRating",
@@ -161,10 +169,7 @@ export default function RootLayout({
                 },
                 "logo": `${SITE_URL}/og-image.svg`,
                 "image": `${SITE_URL}/og-image.svg`,
-                "sameAs": [
-                  "https://www.instagram.com/beauty_by_raquel_nicole/",
-                  "https://www.facebook.com/profile.php?id=100028195435498"
-                ],
+                "sameAs": [...SOCIAL_SAME_AS],
                 "hasOfferCatalog": {
                   "@type": "OfferCatalog",
                   "name": "Hair Services",
@@ -182,22 +187,22 @@ export default function RootLayout({
                 "name": "Raquel Schmid",
                 "jobTitle": "Hair Stylist & Color Specialist",
                 "worksFor": { "@id": `${SITE_URL}/#beautysalon` },
-                "description": "Professional hair stylist with 7+ years experience. Specializes in balayage, highlights, bridal hair, and hand-tied extensions in Milford, OH.",
-                "sameAs": ["https://www.instagram.com/beauty_by_raquel_nicole/", "https://www.facebook.com/profile.php?id=100028195435498"]
+                "description": `Professional hair stylist with ${YEARS_EXPERIENCE} years experience. Specializes in balayage, highlights, bridal hair, and hand-tied extensions in Milford, OH.`,
+                "sameAs": [...SOCIAL_SAME_AS]
               }
             ])
           }}
         />
       </head>
-      <body className={`${lato.className} bg-bg text-text`}>
+      <body className={`${dmSans.className} bg-bg text-text selection:bg-secondary-container selection:text-on-secondary-container`}>
         <SiteShell>{children}</SiteShell>
         <Toaster 
           position="top-right"
           toastOptions={{
             duration: 4000,
             style: {
-              background: '#F4D1C7',
-              color: '#3D3632',
+              background: '#ffdbd1',
+              color: '#1d1c15',
             },
           }}
         />

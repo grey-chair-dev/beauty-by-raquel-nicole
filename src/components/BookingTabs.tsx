@@ -52,7 +52,7 @@ const BookingTabs = ({ selectedService }: BookingTabsProps) => {
           >
             <div className="mb-6">
               <h3 className="text-xl font-semibold text-text mb-2">
-                Book Your Appointment Online
+                Book Appointment Online
               </h3>
               <p className="text-text/90">
                 {selectedService 

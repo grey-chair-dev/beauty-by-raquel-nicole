@@ -5,28 +5,19 @@ import Testimonials from '@/components/Testimonials';
 import TrustBadges from '@/components/TrustBadges';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
+import PageHero from '@/components/PageHero';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
-import { SITE_URL } from '@/lib/constants';
+import { SITE_URL, YEARS_EXPERIENCE, SEO_KEYWORDS, SEO_PHRASES } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Best Hair Stylist Milford OH | Professional Hair Colorist Raquel Nicole',
-  description: 'Meet Raquel Nicole, the best hair stylist in Milford, OH. Professional hair colorist specializing in balayage, highlights, hand-tied extensions, and hair transformations. 7+ years of experience in Old Milford.',
-  keywords: [
-    'best hair stylist Milford',
-    'professional hair colorist Milford OH',
-    'hair color specialist Milford',
-    'Raquel Nicole hair stylist',
-    'Milford hair stylist',
-    'professional hair colorist',
-    'hair extensions specialist',
-    'balayage specialist Milford',
-    'highlights specialist Milford'
-  ],
+  title: `${SEO_PHRASES.hairstylist} | Blonding & Extensions | Raquel Nicole`,
+  description: `Meet Raquel Nicole, a ${SEO_PHRASES.hairstylist} and ${SEO_PHRASES.blonding} at The Beauty Bar in Old Milford. Hand-tied extensions, balayage, highlights, and ${YEARS_EXPERIENCE} years of experience.`,
+  keywords: [...SEO_KEYWORDS, 'Raquel Nicole hair stylist', 'highlights Milford OH'],
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
-    title: 'Best Hair Stylist Milford OH | Professional Hair Colorist Raquel Nicole',
-    description: 'Meet Raquel Nicole, the best hair stylist in Milford, OH. 7+ years experience. Balayage, highlights, hand-tied extensions, and hair transformations.',
+    title: `${SEO_PHRASES.hairstylist} | Raquel Nicole`,
+    description: `${SEO_PHRASES.hairstylist} specializing in blonding, balayage, and hand-tied extensions in Old Milford, OH. ${YEARS_EXPERIENCE} years experience.`,
     url: `${SITE_URL}/about`,
   },
 };
@@ -38,23 +29,13 @@ export default function AboutPage() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section for About */}
-        <section className="py-20 bg-gradient-to-br from-primary/20 to-secondary/20">
-          <div className="container-custom">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-heading text-h1-mobile md:text-h1 font-bold text-text mb-6">
-                Hair Stylist in Milford, OH
-              </h1>
-              <p className="text-body text-body-mobile md:text-body text-text/80 mb-8">
-                Professional hair colorist Raquel Nicole is your trusted hair stylist in Milford, OH with 7+ years of experience 
-                creating beautiful balayage, highlights, hand-tied extensions, and hair transformations. 
-                Building lasting relationships with clients through personalized care and expert techniques.
-              </p>
-              
-              {/* Trust Badges */}
-              <TrustBadges variant="compact" className="mb-8" />
-            </div>
-          </div>
-        </section>
+        <PageHero title="Meet Raquel Nicole">
+          <p className="text-body-lg text-on-surface-variant mb-6">
+            Professional hair colorist in Milford, OH with {YEARS_EXPERIENCE} years creating balayage,
+            highlights, hand-tied extensions, and transformations at The Beauty Bar.
+          </p>
+          <TrustBadges variant="compact" />
+        </PageHero>
 
         {/* About Section */}
         <About />

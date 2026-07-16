@@ -1,7 +1,7 @@
 'use client';
 
 import { Shield, Award, Clock, Star } from 'lucide-react';
-import { CLIENT_COUNT } from '@/lib/constants';
+import { CLIENT_COUNT, YEARS_EXPERIENCE } from '@/lib/constants';
 
 interface TrustBadgesProps {
   variant?: 'compact' | 'detailed';
@@ -18,7 +18,7 @@ const TrustBadges = ({ variant = 'detailed', className = '' }: TrustBadgesProps)
     },
     {
       icon: Award,
-      title: '7+ Years Experience',
+      title: `${YEARS_EXPERIENCE} Years Experience`,
       description: 'Expert hair transformations',
       color: 'text-accent'
     },
@@ -40,7 +40,7 @@ const TrustBadges = ({ variant = 'detailed', className = '' }: TrustBadgesProps)
     return (
       <div className={`flex flex-wrap justify-center gap-2 sm:gap-4 ${className}`}>
         {badges.map((badge, index) => (
-          <div key={index} className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-3 py-2 min-h-[44px]">
+          <div key={index} className="flex items-center space-x-2 bg-surface-container-low rounded-full px-3 py-2 min-h-[44px] border border-primary/10">
             <badge.icon className={`w-4 h-4 flex-shrink-0 ${badge.color}`} />
             <span className="text-small font-medium text-text whitespace-nowrap">{badge.title}</span>
           </div>

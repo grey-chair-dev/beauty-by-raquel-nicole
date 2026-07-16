@@ -1,50 +1,62 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+const PREVIEW_IMAGES = [
+  {
+    src: '/gallery/money-piece-foils/money-piece-foils.png',
+    alt: 'Money piece face frame foils hair color result',
+    label: 'Face frame foils',
+  },
+  {
+    src: '/gallery/toner-gloss/toner-gloss.png',
+    alt: 'Toner and gloss with fresh haircut',
+    label: 'Toner & gloss',
+  },
+  {
+    src: '/gallery/all-over-color/all-over-color.png',
+    alt: 'All over color transformation with haircut',
+    label: 'All-over color',
+  },
+];
+
 const HomepageTransformations = () => {
   return (
-    <section id="transformations" className="py-16 sm:py-24 bg-seamless">
+    <section id="transformations" className="py-20 md:py-28 bg-primary-fixed/30 relative overflow-hidden">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-heading text-3xl sm:text-4xl md:text-h2 font-bold text-text mb-4">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-primary mb-4">
             Real Results
           </h2>
-          <p className="text-body text-text/80 max-w-lg mx-auto">
+          <p className="text-body-lg text-on-surface-variant max-w-lg mx-auto">
             Lived-in color, dimensional blonding, and cuts that grow out beautifully.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-2 ring-primary/30">
-            <Image
-              src="/images/hero/before-after-optimized.jpg"
-              alt="Before and after hair transformation — lived-in color and dimensional blonding"
-              width={800}
-              height={600}
-              className="w-full h-auto object-cover"
-              sizes="(max-width: 768px) 100vw, 800px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute top-4 left-4">
-              <span className="inline-block px-3 py-1.5 rounded-lg bg-white/95 text-text text-sm font-semibold">Before</span>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {PREVIEW_IMAGES.map((item) => (
+            <div key={item.src} className="retro-frame groovy-shadow">
+              <Image
+                src={item.src}
+                alt={item.alt}
+                width={400}
+                height={500}
+                className="w-full h-auto object-cover aspect-[4/5]"
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
+              <p className="text-center font-label text-sm font-semibold text-primary py-3 bg-bg">
+                {item.label}
+              </p>
             </div>
-            <div className="absolute top-4 right-4">
-              <span className="inline-block px-3 py-1.5 rounded-lg bg-white/95 text-text text-sm font-semibold">After</span>
-            </div>
-            <div className="absolute bottom-4 left-4 right-4">
-              <p className="text-white font-semibold text-lg drop-shadow">Full Blonding Transformation · Lived-In Color</p>
-              <p className="text-white/90 text-sm">Hand-painted highlights that grow out soft, not harsh.</p>
-            </div>
-          </div>
+          ))}
+        </div>
 
-          <div className="text-center mt-10">
-            <Link
-              href="/gallery"
-              className="btn-secondary inline-flex items-center justify-center min-h-[48px] px-8"
-            >
-              View More Transformations
-            </Link>
-          </div>
+        <div className="text-center mt-10">
+          <Link
+            href="/gallery"
+            className="btn-secondary inline-flex items-center justify-center min-h-[48px] px-8"
+          >
+            View Full Gallery
+          </Link>
         </div>
       </div>
     </section>

@@ -51,4 +51,4 @@ export const STITCH_DESIGN_OPTIONS: StitchDesignOption[] = [
 ];
 
 export const ACTIVE_SITE_NOTE =
-  'The live preview site still uses the earlier Coral Glow palette until you pick a Stitch direction.';
+  'The live site now uses the Modern Retro Homepage direction (Stitch Option 1).';

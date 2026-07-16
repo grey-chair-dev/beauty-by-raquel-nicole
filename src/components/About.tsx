@@ -1,110 +1,77 @@
 import Image from 'next/image';
-import { Award, Heart, Shield, Users } from 'lucide-react';
+import { Sparkles, Flower2 } from 'lucide-react';
 import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
-import { CLIENT_COUNT } from '@/lib/constants';
+import { CLIENT_COUNT, YEARS_EXPERIENCE, BUSINESS_LOCATION } from '@/lib/constants';
+import SparkleIcon from './SparkleIcon';
 
 const About = () => {
-  const stats = [
-    { icon: Users, value: `${CLIENT_COUNT}+`, label: 'Happy Clients' },
-    { icon: Award, value: '7+', label: 'Years Experience' },
-    { icon: Heart, value: '100%', label: 'Satisfaction Rate' },
-    { icon: Shield, value: 'Licensed', label: 'Professional' },
-  ];
-
   return (
     <ReviewSectionAnchor
       flagIds={['home-about-copy', 'home-about-stats', 'home-about-photo', 'about-page-intro', 'about-page-duplicate']}
       href="/#about"
     >
-    <section id="about" className="py-16 sm:py-24 md:py-28 bg-seamless section-transition relative">
-      <div className="section-divider" />
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            {/* Bold hook — not buried */}
-            <h2 className="text-heading text-2xl sm:text-3xl md:text-4xl font-bold text-text mb-6">
-              More than a hair appointment.
-            </h2>
+      <section id="about" className="py-20 md:py-28 bg-primary-fixed/30 relative overflow-hidden section-transition">
+        <div className="absolute -top-10 -right-10 opacity-10 pointer-events-none" aria-hidden>
+          <Flower2 className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] text-primary" />
+        </div>
 
-            <p className="text-body text-text/80 mb-6 max-w-prose leading-relaxed">
-              When you sit in my chair, it&apos;s a judgment-free space to unwind and leave feeling like yourself again.
-            </p>
-
-            <p className="text-body text-text/80 mb-8 max-w-prose leading-relaxed">
-              I call it being your <strong className="text-accent">&quot;hairapist&quot;</strong> — great hair plus a supportive ear. Mental health matters to me, and so does giving you a place to talk about anything and walk out refreshed.
-            </p>
-
-            {/* Scannable bullets */}
-            <ul className="space-y-3 mb-10">
-              <li className="flex items-start gap-3 text-body text-text/80">
-                <span className="text-accent font-bold mt-0.5">·</span>
-                <span>7+ years in the chair · licensed professional</span>
-              </li>
-              <li className="flex items-start gap-3 text-body text-text/80">
-                <span className="text-accent font-bold mt-0.5">·</span>
-                <span>Lived-in color, blonding, extensions, bridal</span>
-              </li>
-              <li className="flex items-start gap-3 text-body text-text/80">
-                <span className="text-accent font-bold mt-0.5">·</span>
-                <span>The Beauty Bar, Old Milford — one chair, full attention</span>
-              </li>
-            </ul>
-
-            {/* Hobbies — one short line, lower */}
-            <p className="text-body text-small text-text/60 max-w-prose">
-              Off the clock: reading, yoga, crochet, thrifting, plant mom, couch time with my fiancé.
-            </p>
-
-            <div className="grid grid-cols-2 gap-6 mt-10">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="flex justify-center mb-2">
-                    <stat.icon className="w-8 h-8 text-accent" />
-                  </div>
-                  <div className="text-heading text-2xl font-bold text-text">
-                    {stat.value}
-                  </div>
-                  <div className="text-small text-text/60">
-                    {stat.label}
-                  </div>
+        <div className="container-custom">
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+            <div className="w-full md:w-1/2">
+              <div className="relative inline-block">
+                <div className="retro-frame groovy-shadow">
+                  <Image
+                    src="/images/raquel/raquel-profile.jpg"
+                    alt="Raquel Schmid, licensed hairstylist at The Beauty Bar in Milford, OH"
+                    width={400}
+                    height={480}
+                    sizes="(max-width: 768px) 100vw, 400px"
+                    className="w-full h-auto object-cover object-top min-h-[320px] md:min-h-[420px]"
+                  />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="seamless-card rounded-2xl overflow-hidden">
-              <div className="relative">
-                <Image
-                  src="/images/raquel/raquel-profile.jpg"
-                  alt="Raquel Schmid - Licensed Hairstylist"
-                  width={400}
-                  height={384}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
-                  className="w-full h-64 sm:h-80 md:h-96 object-cover object-top -translate-y-6 md:-translate-y-10"
+                <SparkleIcon
+                  className="absolute -top-4 -right-4 sparkle-float hidden sm:block"
+                  size={36}
+                />
+                <Sparkles
+                  className="absolute -bottom-4 -left-4 w-9 h-9 text-secondary-container sparkle-float"
+                  aria-hidden
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-heading text-xl font-semibold text-text mb-1">
-                  Raquel Schmid
-                </h3>
-                <p className="text-body text-text/70 text-sm">
-                  Licensed Hairstylist · The Beauty Bar
-                </p>
+            </div>
+
+            <div className="w-full md:w-1/2">
+              <h2 className="font-heading text-3xl md:text-5xl font-bold text-primary mb-6">
+                Meet Raquel Nicole
+              </h2>
+              <p className="text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+                With {YEARS_EXPERIENCE} years in the chair, I combine technical precision with a
+                retro-inspired eye. When you sit with me, it&apos;s a judgment-free space: great hair
+                plus a supportive ear. I call it being your &ldquo;hairapist.&rdquo;
+              </p>
+              <p className="text-body-lg text-on-surface-variant mb-8 leading-relaxed italic bg-primary-fixed/50 rounded-3xl p-5 border border-primary/15">
+                &ldquo;My mission is to help every client find their inner sparkle through hair that
+                looks good today and even better tomorrow.&rdquo;
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="bg-bg p-4 rounded-3xl border border-primary/10">
+                  <h4 className="font-heading text-xl font-bold text-primary">{YEARS_EXPERIENCE}+ Years</h4>
+                  <p className="font-label text-sm text-on-surface-variant">Expertise</p>
+                </div>
+                <div className="bg-bg p-4 rounded-3xl border border-primary/10">
+                  <h4 className="font-heading text-xl font-bold text-primary">{CLIENT_COUNT}+</h4>
+                  <p className="font-label text-sm text-on-surface-variant">Happy Clients</p>
+                </div>
               </div>
+
+              <p className="text-body text-on-surface-variant/80 text-sm">
+                {BUSINESS_LOCATION.salonLabel} · {BUSINESS_LOCATION.area} · one chair, full attention
+              </p>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-20 overflow-hidden pointer-events-none" aria-hidden>
-        <svg className="absolute bottom-0 w-full h-20" viewBox="0 0 1200 80" preserveAspectRatio="none">
-          <path d="M0 40 Q300 20 600 40 T1200 40 L1200 80 L0 80 Z" fill="#F4D1C7" />
-          <path d="M0 55 Q400 30 800 55 T1200 55 L1200 80 L0 80 Z" fill="#E8B4B8" />
-          <path d="M0 68 Q350 45 1200 68 L1200 80 L0 80 Z" fill="#D96B3B" opacity="0.85" />
-        </svg>
-      </div>
-    </section>
+      </section>
     </ReviewSectionAnchor>
   );
 };

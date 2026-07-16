@@ -3,13 +3,15 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BridalForm from '@/components/BridalForm';
 import MobileCTA from '@/components/MobileCTA';
+import PageHero from '@/components/PageHero';
 import { ReviewSectionAnchor } from '@/components/review/ReviewSectionAnchor';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
-import { SITE_URL } from '@/lib/constants';
+import BridalStylesGallery from '@/components/BridalStylesGallery';
+import { SITE_URL, INSTAGRAM_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Bridal Hair Services Milford OH | Wedding Hair Styling',
-  description: 'Professional bridal hair services in Milford, OH. Wedding hair styling for brides, bridesmaids, and flower girls. Book your wedding hair appointment with Raquel Nicole today.',
+  description: 'On-site bridal hair in Milford, OH and Greater Cincinnati. Required trial, parties of 4+, updos and styling for brides and bridal parties. Inquire with Raquel Nicole.',
   keywords: [
     'bridal hair Milford OH',
     'wedding hair styling',
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/bridal` },
   openGraph: {
     title: 'Bridal Hair Services Milford OH | Wedding Hair Styling',
-    description: 'Professional bridal hair services in Milford, OH. Wedding hair for brides, bridesmaids, and flower girls. Book with Raquel Nicole.',
+    description: 'On-site wedding hair in Milford, OH. Trial required, 4+ guest minimum. Brides, bridal party, and children\'s styling with Raquel Nicole.',
     url: `${SITE_URL}/bridal`,
   },
 };
@@ -36,25 +38,32 @@ export default function BridalPage() {
       <main className="min-h-screen">
         {/* Hero Section */}
         <ReviewSectionAnchor flagIds={['bridal-intro']} href="/bridal">
-        <section className="py-20 bg-gradient-to-br from-primary/20 to-secondary/20">
-          <div className="container-custom">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-heading text-h1-mobile md:text-h1 font-bold text-text mb-6">
-                Bridal Hair Services
-              </h1>
-              <p className="text-body text-body-mobile md:text-body text-text/90 mb-8">
-                Make your wedding day perfect with professional bridal hair styling. 
-                From elegant updos to romantic curls, I specialize in creating the perfect look 
-                for brides, bridesmaids, and flower girls in Milford, OH.
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageHero title="Bridal Hair Services">
+          <p className="text-body-lg text-on-surface-variant mb-4">
+            On-site wedding hair for you and your party at your venue or getting-ready location
+            across Greater Cincinnati and Northern Kentucky. Trial required at least one month
+            before your wedding, with a 4-person minimum including the bride.
+          </p>
+          <p className="text-body text-on-surface-variant/80">
+            Browse styles below or follow{' '}
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-semibold hover:underline"
+            >
+              @beauty_by_raquel_nicole
+            </a>{' '}
+            on Instagram.
+          </p>
+        </PageHero>
+
+        <BridalStylesGallery />
         </ReviewSectionAnchor>
 
         {/* Rates Section */}
         <ReviewSectionAnchor flagIds={['bridal-rates', 'bridal-policies']} href="/bridal">
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-surface">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
@@ -66,43 +75,57 @@ export default function BridalPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 text-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="bg-gradient-to-br from-primary/25 to-secondary/25 rounded-2xl p-8 text-center">
                   <h3 className="text-heading text-2xl font-bold text-text mb-4">Bride</h3>
-                  <div className="text-3xl font-bold text-accent mb-4">$85</div>
+                  <div className="text-3xl font-bold text-accent mb-4">$95</div>
                   <p className="text-body text-text/80">
-                    Complete styling with consultation
+                    Wedding day styling
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 text-center">
-                  <h3 className="text-heading text-2xl font-bold text-text mb-4">Bridesmaids & Family</h3>
+                <div className="bg-gradient-to-br from-primary/25 to-secondary/25 rounded-2xl p-8 text-center">
+                  <h3 className="text-heading text-2xl font-bold text-text mb-4">Bridal Party &amp; Adults</h3>
+                  <div className="text-3xl font-bold text-accent mb-4">$80</div>
+                  <p className="text-body text-text/80">
+                    Bridesmaids, family, and other adult guests
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-primary/25 to-secondary/25 rounded-2xl p-8 text-center">
+                  <h3 className="text-heading text-2xl font-bold text-text mb-4">Children (8 &amp; under)</h3>
+                  <div className="text-3xl font-bold text-accent mb-4">$45</div>
+                  <p className="text-body text-text/80">
+                    Flower girls and younger guests
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-primary/25 to-secondary/25 rounded-2xl p-8 text-center">
+                  <h3 className="text-heading text-2xl font-bold text-text mb-4">Bridal Trial</h3>
                   <div className="text-3xl font-bold text-accent mb-4">$75</div>
                   <p className="text-body text-text/80">
-                    Professional bridal party styling
-                  </p>
-                </div>
-
-                <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 text-center">
-                  <h3 className="text-heading text-2xl font-bold text-text mb-4">Flower Girl</h3>
-                  <div className="text-3xl font-bold text-accent mb-4">$50</div>
-                  <p className="text-body text-text/80">
-                    Sweet styling for little ones
+                    Required at least 1 month before your wedding
                   </p>
                 </div>
               </div>
 
               <div className="mt-12 bg-accent/10 rounded-2xl p-8">
-                <h3 className="text-heading text-xl font-bold text-text mb-4">Important Information</h3>
+                <h3 className="text-heading text-xl font-bold text-text mb-4">Booking &amp; Policies</h3>
                 <div className="space-y-4 text-body text-text/90">
                   <p>
-                    <strong>Deposit Required:</strong> 50% deposit required to secure your booking after consultation.
+                    <strong>Deposit &amp; contract:</strong> A deposit and signed contract are required to secure your wedding date — a professional, organized process from inquiry through day-of.
                   </p>
                   <p>
-                    <strong>Consultation:</strong> We&apos;ll discuss your vision and wedding details to create the perfect look.
+                    <strong>Minimum party size:</strong> 4 people minimum, including the bride.
                   </p>
                   <p>
-                    <strong>Travel:</strong> On-site services available at your venue or location.
+                    <strong>Bridal trial:</strong> A trial is required at least 1 month before the wedding ($75). It makes day-of styling smoother for you and for me.
+                  </p>
+                  <p>
+                    <strong>Travel fee:</strong> On-site services at your venue or location are available. Travel is $50 or $2 per mile, whichever is greater — for example, 30 miles is $60. Distances over 25 miles are billed at $2 per mile.
+                  </p>
+                  <p>
+                    <strong>Consultation:</strong> We&apos;ll discuss your vision, timeline, and wedding details when you inquire.
                   </p>
                 </div>
               </div>

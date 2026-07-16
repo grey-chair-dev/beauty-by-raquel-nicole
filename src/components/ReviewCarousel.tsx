@@ -92,20 +92,13 @@ const ReviewCarousel = ({ className = '' }: ReviewCarouselProps) => {
   };
 
   return (
-    <div className={`bg-white rounded-2xl shadow-lg p-8 ${className}`}>
-      {/* Header */}
+    <div className={`bg-surface-container-low rounded-[2rem] border-2 border-primary/15 p-8 ${className}`}>
       <div className="text-center mb-8">
-        <div className="flex items-center justify-center space-x-2 mb-4">
-          <Star className="w-6 h-6 text-accent fill-current" />
-          <span className="text-heading text-2xl font-bold text-text">5.0</span>
-          <span className="text-body text-text/60">({REVIEW_COUNT}+ reviews)</span>
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <Star className="w-6 h-6 text-primary fill-current" />
+          <span className="font-heading text-2xl font-bold text-primary">5.0</span>
+          <span className="text-body text-on-surface-variant">({REVIEW_COUNT}+ reviews)</span>
         </div>
-        <h3 className="text-heading text-xl font-semibold text-text mb-2">
-          What Our Clients Say
-        </h3>
-        <p className="text-body text-text/70">
-          Real transformations from real clients
-        </p>
       </div>
 
       {/* Review Carousel */}
@@ -157,13 +150,15 @@ const ReviewCarousel = ({ className = '' }: ReviewCarouselProps) => {
         {/* Navigation Arrows */}
         <button
           onClick={prevReview}
-          className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+          aria-label="Previous review"
+          className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-surface-container-lowest rounded-full shadow-lg flex items-center justify-center hover:bg-surface-container-low transition-colors"
         >
           <ChevronLeft className="w-5 h-5 text-text" />
         </button>
         <button
           onClick={nextReview}
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+          aria-label="Next review"
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-surface-container-lowest rounded-full shadow-lg flex items-center justify-center hover:bg-surface-container-low transition-colors"
         >
           <ChevronRight className="w-5 h-5 text-text" />
         </button>

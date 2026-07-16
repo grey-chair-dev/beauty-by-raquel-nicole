@@ -308,12 +308,12 @@ const Services = () => {
                 </ul>
 
                 <a
-                  href={`https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services/${service.squareServiceId}?buttonTextColor=000000&color=e8b4b8&locale=en&referrer=so`}
+                  href={`https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services/${service.squareServiceId}?buttonTextColor=000000&color=ff8fab&locale=en&referrer=so`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary w-full group whitespace-nowrap flex items-center justify-center mt-auto"
                 >
-                  <span>Book Now</span>
+                  <span>Book Appointment</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>

@@ -9,20 +9,20 @@ interface WavyDividerProps {
 const WavyDivider = ({ variant = 'cream-peach', className = '', flip = false }: WavyDividerProps) => {
   const paths = {
     'cream-peach': {
-      top: '#FBF6F2',
-      bottom: '#F4D1C7',
+      top: '#fff9ee',
+      bottom: '#ffdbd1',
     },
     'peach-pink': {
-      top: '#F4D1C7',
-      bottom: '#E8B4B8',
+      top: '#ffdbd1',
+      bottom: '#ffd9e5',
     },
-    'single': {
+    single: {
       top: 'transparent',
-      bottom: '#E8B4B8',
+      bottom: '#fdad99',
     },
     'cream-dark': {
-      top: '#FBF6F2',
-      bottom: '#3D3632',
+      top: '#fff9ee',
+      bottom: '#a43716',
     },
   };
   const { top, bottom } = paths[variant];
@@ -40,10 +40,7 @@ const WavyDivider = ({ variant = 'cream-peach', className = '', flip = false }: 
           fill={top}
           d="M0,64 C300,120 600,0 900,64 C1050,96 1125,80 1200,64 L1200,120 L0,120 Z"
         />
-        <path
-          fill={bottom}
-          d="M0,80 C400,20 800,100 1200,80 L1200,120 L0,120 Z"
-        />
+        <path fill={bottom} d="M0,80 C400,20 800,100 1200,80 L1200,120 L0,120 Z" />
       </svg>
     </div>
   );
