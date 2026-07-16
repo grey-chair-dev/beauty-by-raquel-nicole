@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <ReviewSectionAnchor flagIds={['footer-info', 'site-social', 'site-hours', 'site-location']}>
-      <footer id="contact" className="mt-8 rounded-t-[3rem] md:rounded-t-full bg-primary text-on-primary section-transition">
+      <footer id="contact" className="mt-8 rounded-t-[2rem] md:rounded-t-[2.5rem] bg-primary text-on-primary section-transition">
         <div className="container-custom py-10 md:py-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
             <div>
@@ -42,7 +42,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="bg-white/10 rounded-3xl p-4 mt-6">
+              <div className="bg-white/10 rounded-2xl p-4 mt-6">
                 <h4 className="font-heading font-semibold mb-3 flex items-center gap-2">
                   <Clock className="w-4 h-4" />
                   Business Hours
@@ -62,7 +62,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="bg-white/10 rounded-[2rem] p-6 md:p-8 text-center flex flex-col items-center justify-center">
+            <div className="bg-white/10 rounded-2xl p-6 md:p-8 text-center flex flex-col items-center justify-center">
               <div className="w-16 h-16 bg-white/20 rounded-full mb-4 flex items-center justify-center">
                 <Calendar className="w-8 h-8 text-on-primary" />
               </div>
