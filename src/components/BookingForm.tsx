@@ -109,12 +109,12 @@ const BookingForm = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="bg-white rounded-2xl shadow-xl p-8"
+      className="form-card"
     >
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
         {/* Personal Information */}
         <div>
-          <h3 className="text-heading text-xl font-semibold text-text mb-6">
+          <h3 className="theme-heading text-xl mb-6">
             Personal Information
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -126,7 +126,7 @@ const BookingForm = () => {
               <input
                 type="text"
                 {...register('name')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
                 placeholder="Enter your full name"
               />
               {errors.name && (
@@ -142,7 +142,7 @@ const BookingForm = () => {
               <input
                 type="email"
                 {...register('email')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
                 placeholder="Enter your email"
               />
               {errors.email && (
@@ -158,7 +158,7 @@ const BookingForm = () => {
               <input
                 type="tel"
                 {...register('phone')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
                 placeholder="Enter your phone number"
               />
               {errors.phone && (
@@ -170,17 +170,17 @@ const BookingForm = () => {
 
         {/* Service Selection */}
         <div>
-          <h3 className="text-heading text-xl font-semibold text-text mb-6">
+          <h3 className="theme-heading text-xl mb-6">
             Select Your Service
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((service) => (
               <div
                 key={service.id}
-                className={`p-4 border-2 rounded-lg cursor-pointer transition-all duration-300 ${
+                className={`p-4 border-2 rounded-xl cursor-pointer transition-colors ${
                   selectedService === service.id
-                    ? 'border-accent bg-accent/10'
-                    : 'border-gray-200 hover:border-accent/50'
+                    ? 'border-primary bg-primary-fixed/30'
+                    : 'border-primary/15 hover:border-primary/40 bg-surface-container-low'
                 }`}
                 onClick={() => setSelectedService(service.id)}
               >
@@ -211,7 +211,7 @@ const BookingForm = () => {
 
         {/* Appointment Details */}
         <div>
-          <h3 className="text-heading text-xl font-semibold text-text mb-6">
+          <h3 className="theme-heading text-xl mb-6">
             Appointment Details
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -222,7 +222,7 @@ const BookingForm = () => {
               </label>
               <select
                 {...register('date')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
               >
                 <option value="">Select a date</option>
                 {availableDates.map((date) => (
@@ -247,7 +247,7 @@ const BookingForm = () => {
               </label>
               <select
                 {...register('time')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
               >
                 <option value="">Select a time</option>
                 {timeSlots.map((time) => (
@@ -272,7 +272,7 @@ const BookingForm = () => {
           <textarea
             {...register('message')}
             rows={4}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+            className="form-input"
             placeholder="Any special requests or questions..."
           />
         </div>

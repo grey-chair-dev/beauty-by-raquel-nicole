@@ -138,11 +138,11 @@ const BridalForm = () => {
   const today = new Date().toISOString().split('T')[0];
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8">
+    <div className="form-card">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
         {/* Personal Information */}
         <div>
-          <h3 className="text-heading text-xl font-semibold text-text mb-6 flex items-center">
+          <h3 className="theme-heading text-xl mb-6 flex items-center">
             <Heart className="w-5 h-5 mr-2 text-accent" />
             Bride Information
           </h3>
@@ -155,7 +155,7 @@ const BridalForm = () => {
               <input
                 type="text"
                 {...register('firstName')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
                 placeholder="Enter your first name"
               />
               {errors.firstName && (
@@ -171,7 +171,7 @@ const BridalForm = () => {
               <input
                 type="text"
                 {...register('lastName')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
                 placeholder="Enter your last name"
               />
               {errors.lastName && (
@@ -187,7 +187,7 @@ const BridalForm = () => {
               <input
                 type="email"
                 {...register('email')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
                 placeholder="Enter your email"
               />
               {errors.email && (
@@ -203,7 +203,7 @@ const BridalForm = () => {
               <input
                 type="tel"
                 {...register('phone')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
                 placeholder="Enter your phone number"
               />
               {errors.phone && (
@@ -215,7 +215,7 @@ const BridalForm = () => {
 
         {/* Wedding Details */}
         <div>
-          <h3 className="text-heading text-xl font-semibold text-text mb-6 flex items-center">
+          <h3 className="theme-heading text-xl mb-6 flex items-center">
             <Calendar className="w-5 h-5 mr-2 text-accent" />
             Wedding Details
           </h3>
@@ -229,7 +229,7 @@ const BridalForm = () => {
                 type="date"
                 {...register('weddingDate')}
                 min={today}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
               />
               {errors.weddingDate && (
                 <p className="text-red-500 text-small mt-1">{errors.weddingDate.message}</p>
@@ -243,7 +243,7 @@ const BridalForm = () => {
               </label>
               <select
                 {...register('weddingTime')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
               >
                 <option value="">Select your wedding time</option>
                 <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
@@ -264,7 +264,7 @@ const BridalForm = () => {
               <input
                 type="time"
                 {...register('readyByTime')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
               />
               {errors.readyByTime && (
                 <p className="text-red-500 text-small mt-1">{errors.readyByTime.message}</p>
@@ -278,7 +278,7 @@ const BridalForm = () => {
               <input
                 type="text"
                 {...register('venueLocation')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
                 placeholder="Enter your wedding venue or location"
               />
               {errors.venueLocation && (
@@ -290,7 +290,7 @@ const BridalForm = () => {
 
         {/* Bridal Party */}
         <div>
-          <h3 className="text-heading text-xl font-semibold text-text mb-6">
+          <h3 className="theme-heading text-xl mb-6">
             Bridal Party Information
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -300,7 +300,7 @@ const BridalForm = () => {
               </label>
               <select
                 {...register('bridalPartySize')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
               >
                 <option value="">Select your bridal party size</option>
                 <option value="Bride only">Bride only</option>
@@ -319,7 +319,7 @@ const BridalForm = () => {
 
         {/* Hair Style */}
         <div>
-          <h3 className="text-heading text-xl font-semibold text-text mb-6">
+          <h3 className="theme-heading text-xl mb-6">
             Hair Style Preferences
           </h3>
           <div className="space-y-6">
@@ -330,7 +330,7 @@ const BridalForm = () => {
               <textarea
                 {...register('hairStyle')}
                 rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
                 placeholder="Describe your desired hair style (e.g., elegant updo, romantic curls, half-up half-down, etc.)"
               />
               {errors.hairStyle && (
@@ -343,8 +343,8 @@ const BridalForm = () => {
                 <ImagePlus className="inline w-4 h-4 mr-2" />
                 Inspiration Photos (Optional)
               </label>
-              <p className="text-small text-text/60 mb-3">
-                Attach photos of styles you love — up to {MAX_INSPO_PHOTOS} images, {MAX_PHOTO_SIZE_MB}MB each.
+              <p className="text-small text-on-surface-variant/70 mb-3">
+                Attach photos of styles you love. Up to {MAX_INSPO_PHOTOS} images, {MAX_PHOTO_SIZE_MB}MB each.
               </p>
               <input
                 type="file"
@@ -352,7 +352,7 @@ const BridalForm = () => {
                 multiple
                 onChange={handleInspoChange}
                 disabled={inspoPhotos.length >= MAX_INSPO_PHOTOS}
-                className="w-full text-body text-text/80 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-accent file:text-white file:font-medium hover:file:bg-accentDark"
+                className="w-full text-body text-on-surface-variant file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-primary file:text-on-primary file:font-semibold hover:file:bg-accentDark"
               />
               {inspoPreviews.length > 0 && (
                 <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -385,7 +385,7 @@ const BridalForm = () => {
               <textarea
                 {...register('additionalServices')}
                 rows={3}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                className="form-input"
                 placeholder="Any additional services you're interested in (hair extensions, hair accessories, etc.)"
               />
             </div>
@@ -401,7 +401,7 @@ const BridalForm = () => {
           <textarea
             {...register('message')}
             rows={4}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+            className="form-input"
             placeholder="Any special requests, questions, or additional information..."
           />
         </div>

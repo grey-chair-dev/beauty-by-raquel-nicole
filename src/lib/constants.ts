@@ -12,7 +12,10 @@ export const TIKTOK_URL = 'https://www.tiktok.com/@BeautyByRaquelNicole';
 export const SOCIAL_SAME_AS = [INSTAGRAM_URL, FACEBOOK_URL, TIKTOK_URL] as const;
 
 export const BOOK_URL =
-  'https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=FFFFFF&color=FF5C32&locale=en&referrer=so';
+  'https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services?buttonTextColor=FFFFFF&color=a43716&locale=en&referrer=so';
+
+/** Client contact email — single source for footer, schema, and review fallbacks */
+export const BUSINESS_EMAIL = 'raquel.pmts2019@gmail.com';
 
 /** Single source for address, Map, Footer, schema — update here only */
 export const BUSINESS_LOCATION = {
@@ -26,7 +29,7 @@ export const BUSINESS_LOCATION = {
   area: 'Old Milford',
   compactLine: 'The Beauty Bar, Floor 2 · 212 Main St, Milford, OH 45150',
   entryNote: 'Enter through the middle door on the front of the building.',
-  parkingNote: 'Street parking and a few public lots nearby — just a short walk to the salon.',
+  parkingNote: 'Street parking and a few public lots nearby. Just a short walk to the salon.',
 } as const;
 
 /** Single source for schema, Map, Footer — update here only */

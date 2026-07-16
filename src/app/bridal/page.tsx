@@ -63,69 +63,54 @@ export default function BridalPage() {
 
         {/* Rates Section */}
         <ReviewSectionAnchor flagIds={['bridal-rates', 'bridal-policies']} href="/bridal">
-        <section className="py-16 bg-surface">
+        <section className="theme-section-alt">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-heading text-3xl font-bold text-text mb-6">
-                  Bridal Hair Rates
-                </h2>
-                <p className="text-body text-text/80">
+                <h2 className="theme-heading text-3xl mb-4">Bridal Hair Rates</h2>
+                <p className="text-body text-on-surface-variant">
                   Professional wedding hair styling for your special day
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div className="bg-gradient-to-br from-primary/25 to-secondary/25 rounded-2xl p-8 text-center">
-                  <h3 className="text-heading text-2xl font-bold text-text mb-4">Bride</h3>
-                  <div className="text-3xl font-bold text-accent mb-4">$95</div>
-                  <p className="text-body text-text/80">
-                    Wedding day styling
-                  </p>
-                </div>
-
-                <div className="bg-gradient-to-br from-primary/25 to-secondary/25 rounded-2xl p-8 text-center">
-                  <h3 className="text-heading text-2xl font-bold text-text mb-4">Bridal Party &amp; Adults</h3>
-                  <div className="text-3xl font-bold text-accent mb-4">$80</div>
-                  <p className="text-body text-text/80">
-                    Bridesmaids, family, and other adult guests
-                  </p>
-                </div>
-
-                <div className="bg-gradient-to-br from-primary/25 to-secondary/25 rounded-2xl p-8 text-center">
-                  <h3 className="text-heading text-2xl font-bold text-text mb-4">Children (8 &amp; under)</h3>
-                  <div className="text-3xl font-bold text-accent mb-4">$45</div>
-                  <p className="text-body text-text/80">
-                    Flower girls and younger guests
-                  </p>
-                </div>
-
-                <div className="bg-gradient-to-br from-primary/25 to-secondary/25 rounded-2xl p-8 text-center">
-                  <h3 className="text-heading text-2xl font-bold text-text mb-4">Bridal Trial</h3>
-                  <div className="text-3xl font-bold text-accent mb-4">$75</div>
-                  <p className="text-body text-text/80">
-                    Required at least 1 month before your wedding
-                  </p>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  { title: 'Bride', price: '$95', note: 'Wedding day styling' },
+                  { title: 'Bridal Party & Adults', price: '$80', note: 'Bridesmaids, family, and other adult guests' },
+                  { title: 'Children (8 & under)', price: '$45', note: 'Flower girls and younger guests' },
+                  { title: 'Bridal Trial', price: '$75', note: 'Required at least 1 month before your wedding' },
+                ].map((rate) => (
+                  <div key={rate.title} className="theme-card p-6 text-center bg-primary-fixed/35">
+                    <h3 className="font-heading font-bold text-on-surface text-lg mb-3">{rate.title}</h3>
+                    <div className="text-3xl font-bold text-primary mb-3">{rate.price}</div>
+                    <p className="text-body text-on-surface-variant text-sm">{rate.note}</p>
+                  </div>
+                ))}
               </div>
 
-              <div className="mt-12 bg-accent/10 rounded-2xl p-8">
-                <h3 className="text-heading text-xl font-bold text-text mb-4">Booking &amp; Policies</h3>
-                <div className="space-y-4 text-body text-text/90">
+              <div className="mt-12 theme-card p-6 md:p-8 bg-primary-fixed/25">
+                <h3 className="theme-heading text-xl mb-4">Booking & Policies</h3>
+                <div className="space-y-4 text-body text-on-surface-variant">
                   <p>
-                    <strong>Deposit &amp; contract:</strong> A deposit and signed contract are required to secure your wedding date — a professional, organized process from inquiry through day-of.
+                    <strong className="text-on-surface">Deposit & contract:</strong> A deposit and signed contract are
+                    required to secure your wedding date. Organized from inquiry through day-of.
                   </p>
                   <p>
-                    <strong>Minimum party size:</strong> 4 people minimum, including the bride.
+                    <strong className="text-on-surface">Minimum party size:</strong> 4 people minimum, including the
+                    bride.
                   </p>
                   <p>
-                    <strong>Bridal trial:</strong> A trial is required at least 1 month before the wedding ($75). It makes day-of styling smoother for you and for me.
+                    <strong className="text-on-surface">Bridal trial:</strong> Required at least 1 month before the
+                    wedding ($75). It makes day-of styling smoother for you and for me.
                   </p>
                   <p>
-                    <strong>Travel fee:</strong> On-site services at your venue or location are available. Travel is $50 or $2 per mile, whichever is greater — for example, 30 miles is $60. Distances over 25 miles are billed at $2 per mile.
+                    <strong className="text-on-surface">Travel fee:</strong> On-site services at your venue or location
+                    are available. Travel is $50 or $2 per mile, whichever is greater. For example, 30 miles is $60.
+                    Distances over 25 miles are billed at $2 per mile.
                   </p>
                   <p>
-                    <strong>Consultation:</strong> We&apos;ll discuss your vision, timeline, and wedding details when you inquire.
+                    <strong className="text-on-surface">Consultation:</strong> We&apos;ll discuss your vision,
+                    timeline, and wedding details when you inquire.
                   </p>
                 </div>
               </div>
@@ -136,19 +121,17 @@ export default function BridalPage() {
 
         {/* Contact Form Section */}
         <ReviewSectionAnchor flagIds={['bridal-form']} href="/bridal">
-        <section className="py-20 bg-seamless">
+        <section className="theme-section pb-24">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-heading text-3xl font-bold text-text mb-6">
-                  Inquire About Bridal Hair
-                </h2>
-                <p className="text-body text-text/90">
-                  Please fill out this form to inquire about bridal hair services. 
-                  Your responses will help me tailor the perfect look to your needs.
+                <h2 className="theme-heading text-3xl mb-4">Inquire About Bridal Hair</h2>
+                <p className="text-body text-on-surface-variant max-w-2xl mx-auto">
+                  Fill out this form to inquire about bridal hair services. Your responses help me tailor the perfect
+                  look to your needs.
                 </p>
               </div>
-              
+
               <BridalForm />
             </div>
           </div>

@@ -121,7 +121,7 @@ const ReviewCarousel = ({ className = '' }: ReviewCarouselProps) => {
                   {/* Quote */}
                   <div className="relative mb-6">
                     <Quote className="w-8 h-8 text-accent/30 mx-auto mb-4" />
-                    <blockquote className="text-body text-text/80 italic leading-relaxed">
+                    <blockquote className="text-body text-on-surface-variant italic leading-relaxed">
                       &ldquo;{review.text}&rdquo;
                     </blockquote>
                   </div>
@@ -139,7 +139,7 @@ const ReviewCarousel = ({ className = '' }: ReviewCarouselProps) => {
                       )}
                     </div>
                     <p className="text-small text-accent font-medium">{review.service}</p>
-                    <p className="text-small text-text/60">{review.date}</p>
+                    <p className="text-small text-on-surface-variant/70">{review.date}</p>
                   </div>
                 </div>
               </div>

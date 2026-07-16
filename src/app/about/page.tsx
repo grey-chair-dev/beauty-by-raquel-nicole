@@ -44,7 +44,7 @@ export default function AboutPage() {
         <Testimonials />
 
         {/* Additional Trust Section */}
-        <section className="py-20 bg-white">
+        <section className="theme-section-alt">
           <div className="container-custom">
             <TrustBadges variant="detailed" />
           </div>

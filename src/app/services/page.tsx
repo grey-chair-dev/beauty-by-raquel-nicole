@@ -11,7 +11,7 @@ import { SITE_URL, SEO_KEYWORDS, SEO_PHRASES } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: `${SEO_PHRASES.blonding} | Extensions & Color Services`,
-  description: `${SEO_PHRASES.hairstylist} Raquel Nicole offers balayage, blonding, hand-tied extensions, and hair color at The Beauty Bar in Milford, OH. View pricing and book online.`,
+  description: `${SEO_PHRASES.hairstylist} Raquel Nicole offers balayage, blonding, hand-tied extensions, bridal updos, formal occasion styling, and hair color at The Beauty Bar in Milford, OH. View pricing and book online.`,
   keywords: [...SEO_KEYWORDS, 'highlights Milford OH', 'money piece highlights Milford'],
   alternates: { canonical: `${SITE_URL}/services` },
   openGraph: {
@@ -31,8 +31,8 @@ export default function ServicesPage() {
         <ReviewSectionAnchor flagIds={['services-intro']} href="/services">
         <PageHero title="Our Groovy Services">
           <p className="text-body-lg text-on-surface-variant mb-6">
-            Balayage, lived-in color, hand-tied extensions, cuts, and bridal styling at The Beauty
-            Bar in Old Milford. View pricing and book online.
+            Balayage, lived-in color, hand-tied extensions, cuts, bridal updos, and formal occasion
+            styling at The Beauty Bar in Old Milford. View pricing and book online.
           </p>
           <TrustBadges variant="compact" />
         </PageHero>
@@ -42,7 +42,7 @@ export default function ServicesPage() {
         <Services />
 
         {/* Trust Section */}
-        <section className="py-20 bg-surface">
+        <section className="theme-section-alt">
           <div className="container-custom">
             <TrustBadges variant="detailed" />
           </div>

@@ -1,4 +1,3 @@
-// src/components/InstagramEmbed.tsx
 'use client';
 
 import { motion } from 'framer-motion';
@@ -15,45 +14,38 @@ const InstagramEmbed = ({ postUrl, className = '' }: InstagramEmbedProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`bg-white rounded-2xl shadow-lg overflow-hidden ${className}`}
+      className={`theme-card overflow-hidden ${className}`}
     >
       <div className="p-6">
         <div className="flex items-center mb-4">
-          <Instagram className="w-6 h-6 text-accent mr-2" />
-          <h3 className="text-heading font-semibold text-text">
-            Instagram Transformation
-          </h3>
+          <Instagram className="w-6 h-6 text-primary mr-2" aria-hidden />
+          <h3 className="theme-heading text-lg">Instagram Transformation</h3>
         </div>
-        <p className="text-body text-text/90 mb-6">
-          Real client transformation from our Instagram
-        </p>
-        
-        {/* Instagram Post Preview */}
-        <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-6 text-center">
-          <div className="w-16 h-16 bg-accent/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <Instagram className="w-8 h-8 text-accent" />
+        <p className="text-body text-on-surface-variant mb-6">Real client transformation from our Instagram</p>
+
+        <div className="bg-primary-fixed/30 rounded-xl p-6 text-center border-2 border-primary/10">
+          <div className="w-16 h-16 bg-primary-fixed/50 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <Instagram className="w-8 h-8 text-primary" aria-hidden />
           </div>
-          
-          <h4 className="text-heading font-semibold text-text mb-2">
-            Beautiful Hair Transformation
-          </h4>
-          <p className="text-body text-text/90 mb-4">
-            See this amazing before & after transformation on our Instagram
+
+          <h4 className="font-heading font-bold text-on-surface mb-2">Beautiful Hair Transformation</h4>
+          <p className="text-body text-on-surface-variant mb-4">
+            See this amazing before and after transformation on our Instagram
           </p>
-          
+
           <a
             href={postUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-accent/90 transition-colors"
+            className="btn-primary inline-flex items-center"
           >
-            <ExternalLink className="w-4 h-4 mr-2" />
+            <ExternalLink className="w-4 h-4 mr-2" aria-hidden />
             View on Instagram
           </a>
         </div>
-        
+
         <div className="mt-4 text-center">
-          <p className="text-small text-text/80">
+          <p className="text-small text-on-surface-variant">
             Click to see the full transformation and more amazing work
           </p>
         </div>

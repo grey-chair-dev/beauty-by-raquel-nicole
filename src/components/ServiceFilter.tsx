@@ -63,13 +63,13 @@ const ServiceFilter = ({ onFilterChange, activeFilters }: ServiceFilterProps) =>
       {/* Filter Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-2">
-          <Filter className="w-5 h-5 text-accent" />
-          <h3 className="text-heading font-semibold text-text">Filter Services</h3>
+          <Filter className="w-5 h-5 text-primary" aria-hidden />
+          <h3 className="font-heading font-semibold text-on-surface">Filter Services</h3>
         </div>
         {hasActiveFilters && (
           <button
             onClick={clearFilters}
-            className="text-small text-accent hover:text-text transition-colors flex items-center space-x-1"
+            className="text-small text-primary hover:text-accentDark transition-colors flex items-center gap-1"
           >
             <X className="w-4 h-4" />
             <span>Clear All</span>
@@ -84,7 +84,7 @@ const ServiceFilter = ({ onFilterChange, activeFilters }: ServiceFilterProps) =>
           placeholder="Search services..."
           value={activeFilters.search}
           onChange={(e) => handleFilterChange('search', e.target.value)}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+          className="form-input"
         />
       </div>
 
@@ -98,10 +98,8 @@ const ServiceFilter = ({ onFilterChange, activeFilters }: ServiceFilterProps) =>
               <button
                 key={category.id}
                 onClick={() => handleFilterChange('category', category.id)}
-                className={`px-4 py-2 rounded-full text-small font-medium transition-all ${
-                  activeFilters.category === category.id
-                    ? 'bg-accent text-white shadow-lg'
-                    : 'bg-gray-100 text-text hover:bg-gray-200'
+                className={`min-h-[40px] px-4 py-2 rounded-full text-small font-semibold transition-colors ${
+                  activeFilters.category === category.id ? 'filter-pill-active' : 'filter-pill-inactive'
                 }`}
               >
                 {category.name}
@@ -118,10 +116,8 @@ const ServiceFilter = ({ onFilterChange, activeFilters }: ServiceFilterProps) =>
               <button
                 key={range.id}
                 onClick={() => handleFilterChange('priceRange', range.id)}
-                className={`px-4 py-2 rounded-full text-small font-medium transition-all ${
-                  activeFilters.priceRange === range.id
-                    ? 'bg-accent text-white shadow-lg'
-                    : 'bg-gray-100 text-text hover:bg-gray-200'
+                className={`min-h-[40px] px-4 py-2 rounded-full text-small font-semibold transition-colors ${
+                  activeFilters.priceRange === range.id ? 'filter-pill-active' : 'filter-pill-inactive'
                 }`}
               >
                 {range.name}
@@ -138,10 +134,8 @@ const ServiceFilter = ({ onFilterChange, activeFilters }: ServiceFilterProps) =>
               <button
                 key={duration.id}
                 onClick={() => handleFilterChange('duration', duration.id)}
-                className={`px-4 py-2 rounded-full text-small font-medium transition-all ${
-                  activeFilters.duration === duration.id
-                    ? 'bg-accent text-white shadow-lg'
-                    : 'bg-gray-100 text-text hover:bg-gray-200'
+                className={`min-h-[40px] px-4 py-2 rounded-full text-small font-semibold transition-colors ${
+                  activeFilters.duration === duration.id ? 'filter-pill-active' : 'filter-pill-inactive'
                 }`}
               >
                 {duration.name}
@@ -155,7 +149,7 @@ const ServiceFilter = ({ onFilterChange, activeFilters }: ServiceFilterProps) =>
       <div className="md:hidden">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full mt-4 px-4 py-2 bg-gray-100 text-text rounded-lg font-medium hover:bg-gray-200 transition-colors"
+          className="w-full mt-4 px-4 py-3 filter-pill-inactive rounded-xl font-semibold min-h-[44px]"
         >
           {isExpanded ? 'Hide Filters' : 'Show Filters'}
         </button>

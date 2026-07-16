@@ -59,7 +59,7 @@ export default function GalleryPage() {
 
         {/* Gallery Section */}
         <section aria-labelledby="gallery-results-heading">
-          <h2 id="gallery-results-heading" className="font-heading text-2xl sm:text-3xl font-bold text-primary text-center mb-8 pt-8">
+          <h2 id="gallery-results-heading" className="theme-heading text-2xl sm:text-3xl text-center mb-4 pt-4">
             Featured Work
           </h2>
           <Gallery />

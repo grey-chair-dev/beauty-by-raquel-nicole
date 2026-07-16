@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Instagram, Facebook, Clock, Calendar, MessageCircle } from 'lucide-react';
-import { BOOK_URL, INSTAGRAM_URL, FACEBOOK_URL, TIKTOK_URL, BUSINESS_HOURS, BUSINESS_LOCATION } from '@/lib/constants';
+import { BOOK_URL, INSTAGRAM_URL, FACEBOOK_URL, TIKTOK_URL, BUSINESS_HOURS, BUSINESS_LOCATION, BUSINESS_EMAIL } from '@/lib/constants';
 import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 const Footer = () => {
@@ -32,9 +32,9 @@ const Footer = () => {
                   <Phone className="w-5 h-5 flex-shrink-0" />
                   <span>(513) 330-2277</span>
                 </a>
-                <a href="mailto:beautybyraquelnicole@gmail.com" className="flex items-center gap-3 min-h-[44px] text-primary-fixed hover:text-white transition-colors touch-manipulation break-all">
+                <a href={`mailto:${BUSINESS_EMAIL}`} className="flex items-center gap-3 min-h-[44px] text-primary-fixed hover:text-white transition-colors touch-manipulation break-all">
                   <Mail className="w-5 h-5 flex-shrink-0" />
-                  <span>beautybyraquelnicole@gmail.com</span>
+                  <span>{BUSINESS_EMAIL}</span>
                 </a>
                 <div className="flex items-start gap-3 py-2 text-primary-fixed">
                   <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />

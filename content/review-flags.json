@@ -24,20 +24,20 @@
     },
     {
       "id": "site-phone",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Whole site",
       "href": "/contact",
-      "question": "Is (513) 330-2277 the correct phone number everywhere on the site?",
+      "question": "(513) 330-2277 approved — footer, header, map, mobile CTA, and schema.",
       "group": "Business & contact"
     },
     {
       "id": "site-email",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Whole site",
       "href": "/contact",
-      "question": "Is beautybyraquelnicole@gmail.com the correct email for clients to reach you?",
+      "question": "Client email: raquel.pmts2019@gmail.com (updated site-wide).",
       "group": "Business & contact"
     },
     {
@@ -150,38 +150,38 @@
     },
     {
       "id": "services-intro",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Services",
       "href": "/services",
-      "question": "Services page intro (balayage, highlights, extensions in Milford): accurate summary of what you offer?",
+      "question": "Services intro includes balayage, color, extensions, cuts, bridal updos, and formal occasion styling in Milford.",
       "group": "Page intro"
     },
     {
       "id": "services-pricing",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Services",
       "href": "/services#services",
-      "question": "Service names, durations, and prices: do they match your current Square menu? List anything wrong, missing, or discontinued.",
+      "question": "Service names, durations, and prices approved as shown (Jun 28). Re-sync with Square when Raquel applies her planned price increase.",
       "group": "Services list"
     },
     {
       "id": "services-descriptions",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Services",
       "href": "/services#services",
-      "question": "Service descriptions and bullet points: anything misleading or that you would word differently for clients?",
+      "question": "All over color description clarified: solid color only, not highlights or foils. Other descriptions approved unless Raquel sends more edits.",
       "group": "Services list"
     },
     {
       "id": "services-categories",
-      "status": "open",
+      "status": "resolved",
       "priority": "low",
       "page": "Services",
       "href": "/services#services",
-      "question": "Service filters/categories (haircuts, color, extensions, styling, treatments): do these groupings make sense for how you book?",
+      "question": "Color filter includes root retouch, The Full/Half and haircut, and money piece foils per Raquel's booking groups.",
       "group": "Services list"
     },
     {

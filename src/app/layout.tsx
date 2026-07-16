@@ -3,7 +3,7 @@ import { Bricolage_Grotesque, DM_Sans, Dancing_Script } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
 import { SiteShell } from '@/components/SiteShell';
-import { SITE_URL, BUSINESS_HOURS, REVIEW_COUNT, YEARS_EXPERIENCE, BUSINESS_LOCATION, SOCIAL_SAME_AS, SEO_KEYWORDS, SEO_PHRASES } from '@/lib/constants';
+import { SITE_URL, BUSINESS_HOURS, REVIEW_COUNT, YEARS_EXPERIENCE, BUSINESS_LOCATION, BUSINESS_EMAIL, SOCIAL_SAME_AS, SEO_KEYWORDS, SEO_PHRASES } from '@/lib/constants';
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -132,7 +132,7 @@ export default function RootLayout({
                 "description": `Professional hair styling, lived-in color, dimensional blonding, bridal hair, and hand-tied extensions in ${BUSINESS_LOCATION.area}, OH. Located at ${BUSINESS_LOCATION.salonLabel}. ${BUSINESS_LOCATION.entryNote}`,
                 "url": SITE_URL,
                 "telephone": "+1-513-330-2277",
-                "email": "beautybyraquelnicole@gmail.com",
+                "email": BUSINESS_EMAIL,
                 "floorLevel": "2",
                 "address": {
                   "@type": "PostalAddress",

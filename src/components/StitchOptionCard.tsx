@@ -30,11 +30,11 @@ const StitchOptionCard = ({ option, index, hasAssets }: StitchOptionCardProps) =
       initial={reduceMotion ? false : { opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, delay: index * 0.06, ease: [0.16, 1, 0.3, 1] }}
-      className="rounded-2xl overflow-hidden border border-text/10 shadow-lg bg-white flex flex-col"
+      className="theme-card overflow-hidden flex flex-col groovy-shadow"
     >
       <div className="relative border-b border-text/5 bg-bg">
         <div className="flex items-center justify-between gap-3 px-4 pt-4">
-          <span className="text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-accent text-white">
+          <span className="text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-primary text-on-primary">
             Option {index + 1}
           </span>
           {showImage && (
@@ -80,24 +80,24 @@ const StitchOptionCard = ({ option, index, hasAssets }: StitchOptionCardProps) =
 
       <div className="p-6 flex flex-col gap-4 flex-1">
         <div>
-          <h2 className="font-serif text-2xl font-bold text-text mb-1">{option.name}</h2>
-          <p className="text-sm font-medium text-text/80">{option.tagline}</p>
+          <h2 className="font-heading text-2xl font-bold text-primary mb-1">{option.name}</h2>
+          <p className="text-sm font-medium text-on-surface-variant">{option.tagline}</p>
         </div>
 
-        <p className="text-sm leading-relaxed text-text/75">{option.bestFor}</p>
+        <p className="text-sm leading-relaxed text-on-surface-variant">{option.bestFor}</p>
 
         <ul className="flex flex-wrap gap-2">
           {option.styleTraits.map((trait) => (
             <li
               key={trait}
-              className="text-[10px] font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full bg-primary/40 text-text"
+              className="text-[10px] font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full bg-primary-fixed/50 text-on-surface"
             >
               {trait}
             </li>
           ))}
         </ul>
 
-        <p className="mt-auto text-center text-sm font-semibold pt-3 border-t border-text/10 text-accent">
+        <p className="mt-auto text-center text-sm font-semibold pt-3 border-t border-primary/15 text-primary">
           Reply with <span className="font-bold">{index + 1}</span> to choose this direction
         </p>
       </div>

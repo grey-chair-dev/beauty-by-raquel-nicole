@@ -23,7 +23,7 @@ const Hero = () => {
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
             <div className="flex-1 text-center md:text-left">
               <p className="text-sm font-semibold text-on-surface-variant mb-6 max-w-md mx-auto md:mx-0">
-                {BUSINESS_LOCATION.salonLabel}, Floor 2 · {BUSINESS_LOCATION.area} ·{' '}
+                {BUSINESS_LOCATION.salonLabel} · {BUSINESS_LOCATION.area} ·{' '}
                 {REVIEW_COUNT}+ five-star reviews
               </p>
 

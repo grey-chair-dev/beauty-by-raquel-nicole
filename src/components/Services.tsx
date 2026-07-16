@@ -30,7 +30,7 @@ const services = [
   {
     id: 3,
     name: 'All over color and haircut',
-    description: 'Full color application with haircut.',
+    description: 'All over one solid color and haircut (this does not mean highlights or foils).',
     duration: '2 hr',
     price: '$130.00',
     features: ['Full color', 'Includes haircut', 'Professional application'],
@@ -209,12 +209,29 @@ const Services = () => {
 
   // Service categorization for filtering
   const categorizedServices = services.map(service => {
+    const nameLower = service.name.toLowerCase();
     let category = 'haircuts';
-    if (service.name.toLowerCase().includes('color') || service.name.toLowerCase().includes('highlight') || service.name.toLowerCase().includes('toner') || service.name.toLowerCase().includes('gloss')) {
+    if (
+      nameLower.includes('color') ||
+      nameLower.includes('highlight') ||
+      nameLower.includes('toner') ||
+      nameLower.includes('gloss') ||
+      nameLower.includes('foil') ||
+      nameLower.includes('retouch') ||
+      nameLower.includes('the full') ||
+      nameLower.includes('the half') ||
+      nameLower.includes('money piece') ||
+      nameLower.includes('face frame')
+    ) {
       category = 'color';
-    } else if (service.name.toLowerCase().includes('extension')) {
+    } else if (nameLower.includes('extension')) {
       category = 'extensions';
-    } else if (service.name.toLowerCase().includes('style') || service.name.toLowerCase().includes('updo') || service.name.toLowerCase().includes('event')) {
+    } else if (
+      nameLower.includes('style') ||
+      nameLower.includes('updo') ||
+      nameLower.includes('event') ||
+      nameLower.includes('tinsel')
+    ) {
       category = 'styling';
     }
 
@@ -251,7 +268,7 @@ const Services = () => {
       flagIds={['services-pricing', 'services-descriptions', 'services-categories']}
       href="/services#services"
     >
-    <section id="services" className="py-20 bg-seamless section-transition">
+    <section id="services" className="theme-section pb-24">
       <div className="section-divider"></div>
       <div className="container-custom">
         {/* Service Filter */}

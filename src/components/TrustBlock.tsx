@@ -9,28 +9,29 @@ const heroTestimonial = {
 
 const TrustBlock = () => {
   return (
-    <section className="py-12 sm:py-16 bg-white border-y border-primary/30">
+    <section className="py-12 sm:py-16 bg-primary-fixed/25 border-y-2 border-primary/15">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">
-          {/* Hard trust line */}
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-10">
             <div className="flex items-center gap-2">
-              <Star className="w-6 h-6 text-accent fill-current" aria-hidden />
-              <span className="text-heading text-xl font-bold text-text">5.0</span>
-              <span className="text-body text-text/80">rating from</span>
-              <span className="text-heading font-bold text-accent">{REVIEW_COUNT}+ reviews</span>
+              <Star className="w-6 h-6 text-primary fill-current" aria-hidden />
+              <span className="font-heading text-xl font-bold text-on-surface">5.0</span>
+              <span className="text-body text-on-surface-variant">rating from</span>
+              <span className="font-heading font-bold text-primary">{REVIEW_COUNT}+ reviews</span>
             </div>
-            <span className="text-text/50 hidden sm:inline">·</span>
-            <span className="text-body text-text/70">{BUSINESS_LOCATION.salonLabel} · {BUSINESS_LOCATION.area}</span>
+            <span className="text-on-surface-variant/50 hidden sm:inline">·</span>
+            <span className="text-body text-on-surface-variant">
+              {BUSINESS_LOCATION.salonLabel} · {BUSINESS_LOCATION.area}
+            </span>
           </div>
 
-          {/* One killer testimonial — big */}
           <blockquote className="text-center">
-            <p className="text-heading text-xl sm:text-2xl md:text-3xl font-medium text-text leading-snug max-w-2xl mx-auto mb-6">
+            <p className="font-heading text-xl sm:text-2xl md:text-3xl font-medium text-on-surface leading-snug max-w-2xl mx-auto mb-6">
               &ldquo;{heroTestimonial.text}&rdquo;
             </p>
-            <footer className="text-body text-text/80">
-              — {heroTestimonial.name}, <span className="text-accent font-medium">{heroTestimonial.service}</span>
+            <footer className="text-body text-on-surface-variant">
+              {heroTestimonial.name},{' '}
+              <span className="text-primary font-semibold">{heroTestimonial.service}</span>
             </footer>
           </blockquote>
 

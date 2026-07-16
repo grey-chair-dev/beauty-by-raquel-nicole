@@ -10,6 +10,7 @@ import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 import { isActionItem } from "@/lib/review-flags";
 import { resolveReviewComment, resolveReviewerName } from "@/lib/review-comment-text";
 import { reviewCommentSchema } from "@/lib/validations";
+import { BUSINESS_EMAIL } from "@/lib/constants";
 
 export async function POST(request: Request) {
   const ip = getClientIp(request);
@@ -77,7 +78,7 @@ export async function POST(request: Request) {
       {
         success: false,
         message:
-          "We could not send your answer right now. Please email beautybyraquelnicole@gmail.com instead.",
+          `We could not send your answer right now. Please email ${BUSINESS_EMAIL} instead.`,
       },
       { status: 503 },
     );
