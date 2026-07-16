@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Star, Sparkles } from 'lucide-react';
-import { BOOK_URL, REVIEW_COUNT, YEARS_EXPERIENCE, BUSINESS_LOCATION } from '@/lib/constants';
+import { Sparkles } from 'lucide-react';
+import { BOOK_URL, REVIEW_COUNT, BUSINESS_LOCATION } from '@/lib/constants';
 import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 import SparkleIcon from './SparkleIcon';
 
@@ -22,12 +22,9 @@ const Hero = () => {
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
             <div className="flex-1 text-center md:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-sm font-label font-semibold mb-4">
-                <Star className="w-4 h-4 fill-current" aria-hidden />
-                Modern Retro Specialist · {YEARS_EXPERIENCE} Years
-              </div>
-              <p className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full bg-bg border border-primary/20 text-xs font-label font-semibold text-primary">
-                {BUSINESS_LOCATION.salonLabel} · Floor 2 · {BUSINESS_LOCATION.area}
+              <p className="text-sm font-semibold text-on-surface-variant mb-6 max-w-md mx-auto md:mx-0">
+                {BUSINESS_LOCATION.salonLabel}, Floor 2 · {BUSINESS_LOCATION.area} ·{' '}
+                {REVIEW_COUNT}+ five-star reviews
               </p>
 
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold text-primary leading-[1.08] mb-6 tracking-tighter">

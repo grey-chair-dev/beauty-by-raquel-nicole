@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Bricolage_Grotesque, DM_Sans, Space_Grotesk, Dancing_Script } from 'next/font/google';
+import { Bricolage_Grotesque, DM_Sans, Dancing_Script } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
 import { SiteShell } from '@/components/SiteShell';
@@ -14,13 +14,6 @@ const bricolage = Bricolage_Grotesque({
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-dm-sans',
-  display: 'swap',
-  preload: true,
-});
-const spaceGrotesk = Space_Grotesk({
-  weight: ['600'],
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
   display: 'swap',
   preload: true,
 });
@@ -102,7 +95,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${dmSans.variable} ${spaceGrotesk.variable} ${dancingScript.variable}`}>
+    <html lang="en" className={`${bricolage.variable} ${dmSans.variable} ${dancingScript.variable}`}>
       <head>
         <link rel="preconnect" href="https://squareup.com" />
         <link rel="preconnect" href="https://book.squareup.com" />

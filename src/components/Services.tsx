@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Clock, Star, ArrowRight } from 'lucide-react';
+import { Clock, ArrowRight } from 'lucide-react';
 import ServiceFilter, { FilterState } from './ServiceFilter';
 import { useState } from 'react';
 import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
@@ -268,53 +268,44 @@ const Services = () => {
           {filteredServices.map((service, index) => (
             <div
               key={service.id}
-              className={`relative seamless-card rounded-2xl overflow-hidden flex flex-col floating-element ${
-                service.popular ? 'ring-2 ring-accent' : ''
+              className={`relative bg-surface-container-lowest rounded-2xl border-2 border-primary/15 overflow-hidden flex flex-col ${
+                service.popular ? 'border-primary groovy-shadow' : ''
               }`}
             >
               <div className="p-6 flex-1 flex flex-col">
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-heading text-h3 font-semibold text-text flex-1 pr-4">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <h3 className="font-heading text-xl font-bold text-primary flex-1">
                     {service.name}
                   </h3>
                   {service.popular && (
-                    <div className="bg-accent text-white px-3 py-1 rounded-full text-small font-medium flex-shrink-0">
-                      Most Popular
-                    </div>
+                    <span className="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-semibold flex-shrink-0">
+                      Popular
+                    </span>
                   )}
                 </div>
-                
-                <p className="text-body text-text/70 mb-4">
+
+                <p className="text-body text-on-surface-variant mb-5 leading-relaxed">
                   {service.description}
                 </p>
 
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-2 text-small text-text/60 flex-1">
-                    <Clock className="w-4 h-4 flex-shrink-0" />
-                    <span className="whitespace-nowrap">{service.duration}</span>
+                <div className="flex items-center justify-between mb-6 mt-auto pt-4 border-t border-primary/10">
+                  <div className="flex items-center gap-2 text-sm text-on-surface-variant">
+                    <Clock className="w-4 h-4 flex-shrink-0" aria-hidden />
+                    <span>{service.duration}</span>
                   </div>
-                  <div className="text-heading text-xl font-bold text-accent flex-shrink-0 whitespace-nowrap">
+                  <div className="font-heading text-xl font-bold text-primary tabular-nums">
                     {service.price}
                   </div>
                 </div>
 
-                <ul className="space-y-2 mb-6 flex-1">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-2 text-small text-text/70">
-                      <Star className="w-3 h-3 text-accent fill-current flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
                 <a
-                  href={`https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services/${service.squareServiceId}?buttonTextColor=000000&color=ff8fab&locale=en&referrer=so`}
+                  href={`https://book.squareup.com/appointments/dliuybdwgxv87d/location/L81AYV9NYYW19/services/${service.squareServiceId}?buttonTextColor=ffffff&color=a43716&locale=en&referrer=so`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary w-full group whitespace-nowrap flex items-center justify-center mt-auto"
+                  className="btn-primary w-full group whitespace-nowrap flex items-center justify-center"
                 >
                   <span>Book Appointment</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" aria-hidden />
                 </a>
               </div>
             </div>

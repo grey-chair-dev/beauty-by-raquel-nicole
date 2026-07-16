@@ -53,7 +53,7 @@ module.exports = {
         display: ['var(--font-bricolage)', 'Bricolage Grotesque', 'sans-serif'],
         heading: ['var(--font-bricolage)', 'Bricolage Grotesque', 'sans-serif'],
         body: ['var(--font-dm-sans)', 'DM Sans', 'sans-serif'],
-        label: ['var(--font-space-grotesk)', 'Space Grotesk', 'sans-serif'],
+        label: ['var(--font-bricolage)', 'Bricolage Grotesque', 'sans-serif'],
         script: ['var(--font-dancing)', 'Dancing Script', 'cursive'],
       },
       fontSize: {

@@ -69,7 +69,7 @@ const StitchOptionCard = ({ option, index, hasAssets }: StitchOptionCardProps) =
               className="relative rounded-xl overflow-hidden border border-primary/20 shadow-inner min-h-[280px] flex items-end p-6"
               style={{ background: PLACEHOLDER_GRADIENTS[option.id] }}
             >
-              <p className="text-sm font-medium text-text/80 bg-white/75 backdrop-blur-sm rounded-lg px-3 py-2">
+              <p className="text-sm font-medium text-on-surface-variant bg-surface-container-low rounded-lg px-3 py-2">
                 Stitch screenshot pending. Run <code className="text-xs">npm run stitch:fetch-options</code> with
                 your API key.
               </p>

@@ -47,7 +47,7 @@ Success looks like: a visitor understands the specialty in under 5 seconds, find
 
 2. **Show the work.** Photography and transformations carry trust. Copy supports the images; it does not replace them.
 
-3. **Bright but disciplined.** Color is committed (coral, rose, orange CTA) across the site. One accent system, no random section palettes.
+3. **Bright but disciplined.** Color is committed (maroon, peach, cream) across the site. One accent system, no random section palettes.
 
 4. **Local and honest.** Hours, floor, parking, and service scope are stated plainly. No fake precision or inflated claims.
 
@@ -59,4 +59,4 @@ Success looks like: a visitor understands the specialty in under 5 seconds, find
 - **Focus:** Visible 2px accent outline with offset on links, buttons, and inputs (`globals.css`).
 - **Touch:** Minimum 44–48px tap targets on mobile CTAs and nav.
 - **Motion:** Framer Motion used sparingly; must degrade under `prefers-reduced-motion`.
-- **Color:** CTA orange (`#FF5C32`) on white must maintain readable contrast; audit ghost and tinted buttons over photographic backgrounds.
+- **Color:** Maroon primary (#a43716) on cream must maintain WCAG AA contrast; audit ghost buttons over tinted backgrounds.

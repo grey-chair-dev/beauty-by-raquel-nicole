@@ -56,7 +56,7 @@ const AvailabilityPreview = ({ className = '' }: AvailabilityPreviewProps) => {
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="text-small text-green-600 font-medium">Available</span>
+              <span className="text-small text-primary font-semibold">Available</span>
             </div>
           </div>
         ))}
