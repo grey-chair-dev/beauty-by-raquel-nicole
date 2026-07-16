@@ -60,11 +60,11 @@
     },
     {
       "id": "site-booking",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Whole site",
       "href": "/book",
-      "question": "Is Square online booking the only way you want clients to book, or should we also push phone/text? Is your Square service list complete and priced correctly?",
+      "question": "Square is primary booking; text/call and Instagram OK for questions. Re-sync prices when Raquel increases Square menu.",
       "group": "Booking & social"
     },
     {
@@ -276,20 +276,20 @@
     },
     {
       "id": "contact-map",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Contact",
       "href": "/contact#contact",
-      "question": "Map and directions: does the pin land on the right building/entrance? Parking tips to add?",
+      "question": "Map uses live Google embed for 212 Main St with directions link and middle-door entry note.",
       "group": "Location & directions"
     },
     {
       "id": "book-page",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Book",
       "href": "/book",
-      "question": "Book page: does the Square booking widget load and show the right services? Any instructions clients need before booking?",
+      "question": "Book page: Square widget, what-to-expect copy, and text/call/Instagram for pre-booking questions.",
       "group": "Online booking"
     },
     {

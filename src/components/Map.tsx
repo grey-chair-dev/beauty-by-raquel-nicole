@@ -1,5 +1,5 @@
 import { MapPin, Clock, Phone, MessageCircle } from 'lucide-react';
-import { INSTAGRAM_URL, BOOK_URL, BUSINESS_HOURS, BUSINESS_LOCATION } from '@/lib/constants';
+import { INSTAGRAM_URL, BOOK_URL, BUSINESS_HOURS, BUSINESS_LOCATION, MAP_EMBED_URL, MAP_DIRECTIONS_URL } from '@/lib/constants';
 import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
 
 const Map = () => {
@@ -110,17 +110,29 @@ const Map = () => {
             <div className="theme-card overflow-hidden retro-frame groovy-shadow">
               <div className="aspect-square w-full">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.1234567890123!2d-84.2956789!3d39.1756789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841aab5e756d8ff9%3A0xcc80f8cfede579de!2s212%20Main%20St%2C%20Milford%2C%20OH%2045150!5e0!3m2!1sen!2sus!4v1234567890123"
+                  src={MAP_EMBED_URL}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Beauty by Raquel Nicole - Milford, OH"
+                  title={`${BUSINESS_LOCATION.salonLabel} — ${BUSINESS_LOCATION.street}, ${BUSINESS_LOCATION.city}, ${BUSINESS_LOCATION.state}`}
                   className="w-full h-full"
                 />
               </div>
+              <p className="p-4 text-sm text-on-surface-variant border-t-2 border-primary/10">
+                <a
+                  href={MAP_DIRECTIONS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-semibold hover:text-accentDark"
+                >
+                  Open directions in Google Maps
+                </a>
+                {' '}
+                · {BUSINESS_LOCATION.entryNote}
+              </p>
             </div>
           </div>
         </div>

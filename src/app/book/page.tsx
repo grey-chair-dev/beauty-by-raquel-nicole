@@ -5,7 +5,12 @@ import SquareBooking from '@/components/SquareBooking';
 import PageHero from '@/components/PageHero';
 import { ReviewSectionAnchor } from '@/components/review/ReviewSectionAnchor';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
-import { SITE_URL } from '@/lib/constants';
+import {
+  SITE_URL,
+  INSTAGRAM_URL,
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_PHONE_TEL,
+} from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Book Hair Appointment Online | Balayage & Highlights Milford OH',
@@ -45,10 +50,26 @@ export default function BookPage() {
             </p>
             <div className="max-w-2xl mx-auto theme-card p-6 text-left bg-primary-fixed/30">
               <h2 className="theme-heading text-lg mb-3">What to expect</h2>
-              <p className="text-body text-on-surface-variant">
+              <p className="text-body text-on-surface-variant mb-4">
                 Choose your service and preferred date and time below. You&apos;ll get a confirmation once your
                 appointment is set. Need to reschedule? Message me on Instagram. New clients: mention any allergies or
                 sensitivities so we can plan your service.
+              </p>
+              <p className="text-body text-on-surface-variant">
+                <strong className="text-on-surface">Questions before you book?</strong> Text or call{' '}
+                <a href={`tel:${BUSINESS_PHONE_TEL}`} className="text-primary font-semibold hover:text-accentDark">
+                  {BUSINESS_PHONE_DISPLAY}
+                </a>
+                , or{' '}
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-semibold hover:text-accentDark"
+                >
+                  DM me on Instagram
+                </a>
+                . Online booking through Square is the fastest way to grab a spot.
               </p>
             </div>
           </PageHero>

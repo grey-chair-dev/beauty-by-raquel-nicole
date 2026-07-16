@@ -17,6 +17,16 @@ export const BOOK_URL =
 /** Client contact email — single source for footer, schema, and review fallbacks */
 export const BUSINESS_EMAIL = 'raquel.pmts2019@gmail.com';
 
+export const BUSINESS_PHONE_DISPLAY = '(513) 330-2277';
+export const BUSINESS_PHONE_TEL = '+15133302277';
+
+/** Google Maps embed for The Beauty Bar — 212 Main St, Milford OH */
+export const MAP_EMBED_URL =
+  'https://www.google.com/maps?q=212+Main+St,+Milford,+OH+45150&hl=en&z=17&output=embed';
+
+export const MAP_DIRECTIONS_URL =
+  'https://www.google.com/maps/dir/?api=1&destination=212+Main+St,+Milford,+OH+45150';
+
 /** Single source for address, Map, Footer, schema — update here only */
 export const BUSINESS_LOCATION = {
   salonName: 'The Beauty Bar',
