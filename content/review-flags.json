@@ -15,11 +15,11 @@
     },
     {
       "id": "site-business-name",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Whole site",
       "href": "/",
-      "question": "Should the public brand stay “Beauty by Raquel Nicole,” show “RS C&C LLC” anywhere, or use a different name on the site?",
+      "question": "Public brand stays Beauty by Raquel Nicole (Jul 29, 2026). No RS C&C LLC on site.",
       "group": "Business & contact"
     },
     {
@@ -87,47 +87,47 @@
     },
     {
       "id": "home-hero-headline",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Home",
       "href": "/#home",
-      "question": "Home hero headline: does “My passion is making you feel like YOU again” sound right, or would you like different wording?",
+      "question": "Hero headline (Jul 29, 2026): My passion is helping you feel like the best version of yourself.",
       "group": "Hero"
     },
     {
       "id": "home-hero-intro",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Home",
       "href": "/#home",
-      "question": "Home hero intro (RS C&C LLC, 7 years, The Beauty Bar, specialties, bridal updos): accurate and complete? Anything to add or remove?",
+      "question": "Hero intro specialties (Jul 29, 2026): lived-in color, blonding, and bridal updos at The Beauty Bar.",
       "group": "Hero"
     },
     {
       "id": "home-hero-image",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Home",
       "href": "/#home",
-      "question": "Home before/after photo: is this the transformation you want featured, or do you have a different image to use?",
+      "question": "Hero before/after kept (Jul 29, 2026). Label: 18\" Hand tied install and full highlight.",
       "group": "Hero"
     },
     {
       "id": "home-about-copy",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "page": "Home",
       "href": "/#about",
-      "question": "About section on the home page (hairapist, mental health, hobbies): does this sound like you? Any edits to tone or details?",
+      "question": "About bio updated with Raquel's copy (Jul 29, 2026): 7 years, judgement-free chair, supportive ear.",
       "group": "About section"
     },
     {
       "id": "home-about-stats",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Home",
       "href": "/#about",
-      "question": "Stats shown (500+ clients, 7+ years, 100% satisfaction, Licensed): are these numbers accurate and okay to publish?",
+      "question": "Stats approved as shown (Jul 29, 2026): 500+ clients, 7+ years, licensed.",
       "group": "About section"
     },
     {
@@ -141,11 +141,11 @@
     },
     {
       "id": "home-testimonials",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Home",
       "href": "/#testimonials",
-      "question": "Testimonials/reviews section: are these representative of real clients? Should we link to Google reviews only, or add/remove quotes?",
+      "question": "Use real Square reviews only (Jul 29, 2026). Removed placeholder quotes; empty state until Raquel sends quotes from Square/regulars.",
       "group": "Testimonials"
     },
     {
@@ -195,11 +195,11 @@
     },
     {
       "id": "about-page-duplicate",
-      "status": "open",
+      "status": "resolved",
       "priority": "low",
       "page": "About",
       "href": "/about",
-      "question": "About page repeats home content (about + testimonials). Keep as-is for SEO, or trim so it feels less repetitive?",
+      "question": "Trim about page (Jul 29, 2026): removed testimonials and duplicate trust badges; kept bio + link to homepage reviews.",
       "group": "Page layout"
     },
     {

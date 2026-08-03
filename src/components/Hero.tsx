@@ -7,10 +7,7 @@ import SparkleIcon from './SparkleIcon';
 
 const Hero = () => {
   return (
-    <ReviewSectionAnchor
-      flagIds={['home-hero-headline', 'home-hero-intro', 'home-hero-image']}
-      href="/#home"
-    >
+    <ReviewSectionAnchor flagIds={[]} href="/#home">
       <section id="home" className="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden">
         <div
           className="absolute top-0 right-0 -z-10 opacity-20 transform translate-x-1/4 -translate-y-1/4 pointer-events-none"
@@ -27,16 +24,14 @@ const Hero = () => {
                 {REVIEW_COUNT}+ five-star reviews
               </p>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold text-primary leading-[1.08] mb-6 tracking-tighter">
-                Lived-In Color
-                <br />
-                <span className="text-secondary">Stay Groovy.</span>
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary leading-[1.12] mb-6 tracking-tighter max-w-xl mx-auto md:mx-0">
+                My passion is helping you feel like the{' '}
+                <span className="text-secondary">best version of yourself</span>
               </h1>
 
               <p className="text-body-lg text-on-surface-variant max-w-xl mb-8 mx-auto md:mx-0 leading-relaxed">
-                Balayage, blonding, and hand-tied extensions at {BUSINESS_LOCATION.salonLabel} in{' '}
-                {BUSINESS_LOCATION.area}. Color that grows out soft, not stripey, with{' '}
-                {REVIEW_COUNT}+ five-star reviews.
+                Specialties: lived-in color, blonding, and bridal updos at {BUSINESS_LOCATION.salonLabel}{' '}
+                in {BUSINESS_LOCATION.area}.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -61,7 +56,7 @@ const Hero = () => {
               <div className="retro-frame groovy-shadow">
                 <Image
                   src="/images/hero/before-after-optimized.jpg"
-                  alt="Before and after hair transformation, lived-in color and dimensional blonding"
+                  alt={'Before and after: 18" hand-tied extension install and full highlight'}
                   width={800}
                   height={600}
                   className="w-full h-auto object-cover"
@@ -70,11 +65,9 @@ const Hero = () => {
                   quality={85}
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-tertiary-fixed text-on-tertiary-fixed-variant p-5 md:p-6 rounded-full border-2 border-primary groovy-shadow hidden sm:block">
-                <p className="font-heading text-lg md:text-xl font-bold leading-tight">
-                  Tonal
-                  <br />
-                  Refresh
+              <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-tertiary-fixed text-on-tertiary-fixed-variant px-5 py-4 md:px-6 md:py-5 rounded-2xl border-2 border-primary groovy-shadow hidden sm:block max-w-[220px]">
+                <p className="font-heading text-sm md:text-base font-bold leading-snug">
+                  18&quot; Hand tied install and full highlight
                 </p>
               </div>
               <SparkleIcon

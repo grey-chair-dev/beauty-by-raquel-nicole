@@ -1,14 +1,21 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Sparkles, Flower2 } from 'lucide-react';
 import { ReviewSectionAnchor } from './review/ReviewSectionAnchor';
-import { CLIENT_COUNT, YEARS_EXPERIENCE, BUSINESS_LOCATION } from '@/lib/constants';
+import { CLIENT_COUNT, YEARS_EXPERIENCE, BUSINESS_LOCATION, BOOK_URL } from '@/lib/constants';
 import SparkleIcon from './SparkleIcon';
 
-const About = () => {
+type AboutProps = {
+  variant?: 'home' | 'page';
+};
+
+const About = ({ variant = 'home' }: AboutProps) => {
+  const isPage = variant === 'page';
+
   return (
     <ReviewSectionAnchor
-      flagIds={['home-about-copy', 'home-about-stats', 'home-about-photo', 'about-page-intro', 'about-page-duplicate']}
-      href="/#about"
+      flagIds={['home-about-copy', 'home-about-stats', 'home-about-photo', 'about-page-intro']}
+      href={isPage ? '/about' : '/#about'}
     >
       <section id="about" className="py-20 md:py-28 bg-primary-fixed/30 relative overflow-hidden">
         <div className="absolute -top-10 -right-10 opacity-10 pointer-events-none" aria-hidden>
@@ -42,17 +49,12 @@ const About = () => {
 
             <div className="w-full md:w-1/2">
               <h2 className="font-heading text-3xl md:text-5xl font-bold text-primary mb-6">
-                Meet Raquel Nicole
+                {isPage ? 'My story' : 'Meet Raquel Nicole'}
               </h2>
-              <p className="text-body-lg text-on-surface-variant mb-6 leading-relaxed">
-                I&apos;ve been doing hair for {YEARS_EXPERIENCE} years. I like clean color, lived-in
-                blonding, and cuts that still look good a month out. In my chair it&apos;s a judgment-free
-                zone: good hair and someone who will actually listen. I call it being your
-                &ldquo;hairapist.&rdquo;
-              </p>
-              <p className="text-body-lg text-on-surface-variant mb-8 leading-relaxed italic bg-primary-fixed/50 rounded-2xl p-5 border-2 border-primary/15">
-                &ldquo;I want every client to leave feeling like themselves, just with hair they&apos;re
-                excited to live in.&rdquo;
+              <p className="text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                With {YEARS_EXPERIENCE} years behind the chair, I&apos;ve developed a keen eye for detail
+                and a passion for creating hair you will love. My chair is a judgement-free space where
+                you can hopefully relax, be yourself, and always have my supportive ear :)
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -69,6 +71,25 @@ const About = () => {
               <p className="text-body text-on-surface-variant/80 text-sm">
                 {BUSINESS_LOCATION.salonLabel} · {BUSINESS_LOCATION.area} · one chair, full attention
               </p>
+
+              {isPage && (
+                <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                  <a
+                    href={BOOK_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex items-center justify-center min-h-[48px] px-8"
+                  >
+                    Book Appointment
+                  </a>
+                  <Link
+                    href="/#testimonials"
+                    className="btn-secondary inline-flex items-center justify-center min-h-[48px] px-8"
+                  >
+                    Client reviews
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -12,7 +12,7 @@ const Testimonials = () => {
               What Clients Say
             </h2>
             <p className="text-body-lg text-on-surface-variant max-w-lg mx-auto">
-              What clients have booked lately: color, blonding, and cuts.
+              Feedback from Square appointments. Real quotes only.
             </p>
           </div>
 

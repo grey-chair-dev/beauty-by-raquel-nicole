@@ -1,23 +1,16 @@
 import { Star } from 'lucide-react';
 import { REVIEW_COUNT, BOOK_URL, BUSINESS_LOCATION } from '@/lib/constants';
 
-const heroTestimonial = {
-  text: 'Raquel nailed my color and highlights. My hair had been flat for months and she got it looking alive again without making it high-maintenance.',
-  name: 'Sarah M.',
-  service: 'Full Color & Highlights',
-};
-
 const TrustBlock = () => {
   return (
     <section className="py-12 sm:py-16 bg-primary-fixed/25 border-y-2 border-primary/15">
       <div className="container-custom">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-10">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-6">
             <div className="flex items-center gap-2">
               <Star className="w-6 h-6 text-primary fill-current" aria-hidden />
               <span className="font-heading text-xl font-bold text-on-surface">5.0</span>
-              <span className="text-body text-on-surface-variant">rating from</span>
-              <span className="font-heading font-bold text-primary">{REVIEW_COUNT}+ reviews</span>
+              <span className="text-body text-on-surface-variant">from {REVIEW_COUNT}+ Square reviews</span>
             </div>
             <span className="text-on-surface-variant/50 hidden sm:inline">·</span>
             <span className="text-body text-on-surface-variant">
@@ -25,26 +18,19 @@ const TrustBlock = () => {
             </span>
           </div>
 
-          <blockquote className="text-center">
-            <p className="font-heading text-xl sm:text-2xl md:text-3xl font-medium text-on-surface leading-snug max-w-2xl mx-auto mb-6">
-              &ldquo;{heroTestimonial.text}&rdquo;
-            </p>
-            <footer className="text-body text-on-surface-variant">
-              {heroTestimonial.name},{' '}
-              <span className="text-primary font-semibold">{heroTestimonial.service}</span>
-            </footer>
-          </blockquote>
+          <p className="text-body text-on-surface-variant max-w-xl mx-auto mb-8">
+            Client feedback comes from Square after each appointment. Featured quotes are added as
+            Raquel collects them from real clients.
+          </p>
 
-          <div className="text-center mt-8">
-            <a
-              href={BOOK_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center justify-center min-h-[48px] px-6"
-            >
-              Book Appointment
-            </a>
-          </div>
+          <a
+            href={BOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-flex items-center justify-center min-h-[48px] px-6"
+          >
+            Book Appointment
+          </a>
         </div>
       </div>
     </section>

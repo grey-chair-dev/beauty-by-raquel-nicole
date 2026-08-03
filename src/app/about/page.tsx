@@ -1,14 +1,13 @@
 import { Metadata } from 'next';
 import Header from '@/components/Header';
 import About from '@/components/About';
-import Testimonials from '@/components/Testimonials';
 import TrustBadges from '@/components/TrustBadges';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
 import PageHero from '@/components/PageHero';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
-import { SITE_URL, YEARS_EXPERIENCE, SEO_KEYWORDS, SEO_PHRASES } from '@/lib/constants';
+import { SITE_URL, YEARS_EXPERIENCE, SEO_KEYWORDS, SEO_PHRASES, BUSINESS_LOCATION } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: `${SEO_PHRASES.hairstylist} | Blonding & Extensions | Raquel Nicole`,
@@ -28,23 +27,16 @@ export default function AboutPage() {
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]} />
       <Header />
       <main className="min-h-screen">
-        {/* Hero Section for About */}
         <PageHero title="Meet Raquel Nicole">
-          <p className="text-body-lg text-on-surface-variant mb-6">
-            Hair colorist in Milford, OH. {YEARS_EXPERIENCE} years doing balayage, highlights,
-            hand-tied extensions, and color at The Beauty Bar.
+          <p className="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+            Licensed hair colorist at {BUSINESS_LOCATION.salonLabel} in {BUSINESS_LOCATION.area}. Balayage,
+            blonding, extensions, and cuts with one chair and full attention.
           </p>
-          <TrustBadges variant="compact" />
         </PageHero>
 
-        {/* About Section */}
-        <About />
+        <About variant="page" />
 
-        {/* Testimonials Section */}
-        <Testimonials />
-
-        {/* Additional Trust Section */}
-        <section className="theme-section-alt">
+        <section className="theme-section-alt pb-24">
           <div className="container-custom">
             <TrustBadges variant="detailed" />
           </div>
@@ -54,4 +46,4 @@ export default function AboutPage() {
       <MobileCTA variant="floating" />
     </>
   );
-} 
+}
