@@ -312,11 +312,11 @@
     },
     {
       "id": "page-other-home",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "page": "Home",
       "href": "/",
-      "question": "Home page — is there anything else you need on this page? (more photos, a new section, different wording, links, pricing callouts, etc.)",
+      "question": "Home page approved as shown (Jul 29, 2026). No changes requested.",
       "group": "Anything else needed"
     },
     {
