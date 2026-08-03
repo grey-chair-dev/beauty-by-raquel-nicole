@@ -26,7 +26,7 @@ const services = [
   },
   {
     name: 'Hand-Tied Extensions',
-    description: 'Seamless volume with natural movement. Move-ups available.',
+    description: 'Hand-tied wefts with natural movement. Move-ups available.',
     href: '/services#extensions',
     kicker: 'Extensions',
     bg: 'bg-tertiary-fixed/80',

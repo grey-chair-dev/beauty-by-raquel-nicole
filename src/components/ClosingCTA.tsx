@@ -10,7 +10,7 @@ const ClosingCTA = () => {
           Ready to Sparkle?
         </h2>
         <p className="text-body-lg text-on-surface-variant max-w-xl mx-auto mb-10 leading-relaxed">
-          Book your consultation at The Beauty Bar. One chair, full attention, real results.
+          Pick a time at The Beauty Bar. It&apos;s one chair, so you get my full attention.
         </p>
         <div className="inline-block relative">
           <a

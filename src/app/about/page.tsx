@@ -31,8 +31,8 @@ export default function AboutPage() {
         {/* Hero Section for About */}
         <PageHero title="Meet Raquel Nicole">
           <p className="text-body-lg text-on-surface-variant mb-6">
-            Professional hair colorist in Milford, OH with {YEARS_EXPERIENCE} years creating balayage,
-            highlights, hand-tied extensions, and transformations at The Beauty Bar.
+            Hair colorist in Milford, OH. {YEARS_EXPERIENCE} years doing balayage, highlights,
+            hand-tied extensions, and color at The Beauty Bar.
           </p>
           <TrustBadges variant="compact" />
         </PageHero>

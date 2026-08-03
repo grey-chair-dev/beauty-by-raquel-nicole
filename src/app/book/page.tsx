@@ -45,8 +45,8 @@ export default function BookPage() {
         <ReviewSectionAnchor flagIds={['book-page', 'site-booking']} href="/book">
           <PageHero title="Book Your Appointment">
             <p className="text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8">
-              Ready to transform your look? Book balayage, highlights, hand-tied extensions, and color with Raquel
-              Nicole at The Beauty Bar in Milford, OH.
+              Book balayage, highlights, hand-tied extensions, or color with Raquel Nicole at The
+              Beauty Bar in Milford, OH.
             </p>
             <div className="max-w-2xl mx-auto theme-card p-6 text-left bg-primary-fixed/30">
               <h2 className="theme-heading text-lg mb-3">What to expect</h2>

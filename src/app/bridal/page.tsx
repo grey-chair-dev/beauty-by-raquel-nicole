@@ -69,7 +69,7 @@ export default function BridalPage() {
               <div className="text-center mb-12">
                 <h2 className="theme-heading text-3xl mb-4">Bridal Hair Rates</h2>
                 <p className="text-body text-on-surface-variant">
-                  Professional wedding hair styling for your special day
+                  Wedding day hair for brides, bridal parties, and kids
                 </p>
               </div>
 

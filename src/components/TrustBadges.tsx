@@ -13,13 +13,13 @@ const TrustBadges = ({ variant = 'detailed', className = '' }: TrustBadgesProps)
     {
       icon: Shield,
       title: 'Licensed Professional',
-      description: 'State-licensed cosmetologist',
+      description: 'State-licensed cosmetologist in Ohio',
       color: 'text-primary',
     },
     {
       icon: Award,
       title: `${YEARS_EXPERIENCE} Years Experience`,
-      description: 'Expert hair transformations',
+      description: 'Balayage, color, extensions, and cuts',
       color: 'text-secondary',
     },
     {
@@ -56,7 +56,7 @@ const TrustBadges = ({ variant = 'detailed', className = '' }: TrustBadgesProps)
     <div className={`bg-surface-container-lowest rounded-2xl p-6 border-2 border-primary/15 ${className}`}>
       <div className="text-center mb-6">
         <h3 className="font-heading text-xl font-bold text-primary mb-2">Why clients book with Raquel</h3>
-        <p className="text-body text-on-surface-variant">Licensed, experienced, and local to Old Milford</p>
+        <p className="text-body text-on-surface-variant">Licensed in Ohio, {YEARS_EXPERIENCE} years in the chair, based in Old Milford</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

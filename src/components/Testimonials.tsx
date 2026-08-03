@@ -5,14 +5,14 @@ import { BOOK_URL } from '@/lib/constants';
 const Testimonials = () => {
   return (
     <ReviewSectionAnchor flagIds={['home-testimonials']} href="/#testimonials">
-      <section id="testimonials" className="py-20 md:py-28 bg-surface-bright section-transition">
+      <section id="testimonials" className="py-20 md:py-28 bg-surface-bright">
         <div className="container-custom">
           <div className="text-center mb-10">
             <h2 className="font-heading text-3xl md:text-5xl font-bold text-primary mb-3">
               What Clients Say
             </h2>
             <p className="text-body-lg text-on-surface-variant max-w-lg mx-auto">
-              Real results, real reviews. See why clients keep coming back.
+              What clients have booked lately: color, blonding, and cuts.
             </p>
           </div>
 

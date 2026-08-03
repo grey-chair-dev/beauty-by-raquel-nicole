@@ -35,7 +35,7 @@ export default async function DesignOptionsPage() {
   const allAssetsReady = assetChecks.every((a) => a.hasAssets);
 
   return (
-    <main className="min-h-[100dvh] bg-bg section-transition">
+    <main className="min-h-[100dvh] bg-bg">
       <div className="container-custom py-10 md:py-14">
         <header className="max-w-2xl mb-8 md:mb-10">
           <p className="font-label text-primary font-semibold text-sm mb-3">For Raquel</p>

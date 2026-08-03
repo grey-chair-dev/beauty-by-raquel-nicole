@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <ReviewSectionAnchor flagIds={['footer-info', 'site-social', 'site-hours', 'site-location']}>
-      <footer id="contact" className="mt-8 rounded-t-[2rem] md:rounded-t-[2.5rem] bg-primary text-on-primary section-transition">
+      <footer id="contact" className="mt-8 rounded-t-[2rem] md:rounded-t-[2.5rem] bg-primary text-on-primary">
         <div className="container-custom py-10 md:py-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
             <div>
@@ -68,7 +68,7 @@ const Footer = () => {
               </div>
               <h3 className="font-heading text-xl font-bold mb-3">Book Online Now</h3>
               <p className="text-primary-fixed text-body mb-6 max-w-sm">
-                Schedule your appointment today and experience professional lived-in color and styling.
+                Pick a service and time online. Balayage, color, cuts, and more at The Beauty Bar.
               </p>
               <a
                 href={BOOK_URL}
@@ -85,7 +85,7 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <h3 className="font-heading text-xl font-bold mb-3">Beauty by Raquel Nicole</h3>
               <p className="text-primary-fixed text-body mb-5 max-w-md">
-                Professional hair styling and color in Milford, OH. Stay groovy.
+                Hair color and styling in Milford, OH. Stay groovy.
               </p>
               <div className="flex items-center gap-4">
                 <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-primary-fixed hover:text-white transition-colors" aria-label="Instagram">

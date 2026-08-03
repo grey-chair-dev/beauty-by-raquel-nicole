@@ -80,7 +80,7 @@ const SmartCTA = ({ variant = 'primary', context = 'hero', className = '' }: Sma
   const variantClasses = {
     primary: "btn-primary",
     secondary: "btn-secondary", 
-    urgent: "bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+    urgent: 'btn-primary groovy-shadow'
   };
 
   const handleClick = () => {

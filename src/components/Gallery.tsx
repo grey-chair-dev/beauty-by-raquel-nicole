@@ -10,7 +10,7 @@ const galleryItems = [
   {
     id: '1',
     title: 'Money Piece/Face Frame Foils',
-    description: 'Face-framing highlights transformation',
+    description: 'Face-framing foils',
     imageUrl: '/gallery/money-piece-foils/money-piece-foils.png',
     category: 'color',
   },
@@ -24,7 +24,7 @@ const galleryItems = [
   {
     id: '3',
     title: 'All Over Color and Haircut',
-    description: 'Complete color transformation',
+    description: 'All-over color with cut',
     imageUrl: '/gallery/all-over-color/all-over-color.png',
     category: 'color',
   },
@@ -45,7 +45,7 @@ const galleryItems = [
   {
     id: '6',
     title: 'Womens Haircut',
-    description: "Professional women's haircut and styling",
+    description: "Women's cut and style",
     imageUrl: '/gallery/womens-haircut/womens-haircut.png',
     category: 'styling',
   },
@@ -113,7 +113,7 @@ const Gallery = () => {
                 <h3 className="theme-heading text-xl">Follow on Instagram</h3>
               </div>
               <p className="text-on-surface-variant mb-6 max-w-md mx-auto">
-                More transformations and behind-the-scenes on @beauty_by_raquel_nicole.
+                More work and day-of posts on @beauty_by_raquel_nicole.
               </p>
               <a
                 href={INSTAGRAM_URL}

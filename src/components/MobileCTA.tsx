@@ -23,7 +23,7 @@ const MobileCTA = ({ variant = 'floating', className = '' }: MobileCTAProps) => 
         className={`fixed left-4 right-4 z-50 md:hidden ${className}`}
         style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))' }}
       >
-        <div className="bg-bg rounded-2xl shadow-2xl border-2 border-primary/20 p-4">
+        <div className="bg-bg rounded-2xl border-2 border-primary/20 p-4">
           <div className="flex items-center justify-between gap-3">
             <div className="flex-1 min-w-0">
               <h3 className="font-heading font-bold text-primary text-sm truncate">Book Appointment</h3>
@@ -32,7 +32,7 @@ const MobileCTA = ({ variant = 'floating', className = '' }: MobileCTAProps) => 
             <div className="flex gap-2 flex-shrink-0">
               <button
                 onClick={handleCall}
-                className="w-12 h-12 bg-secondary text-on-primary rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform touch-manipulation"
+                className="w-12 h-12 bg-secondary text-on-primary rounded-full flex items-center justify-center border-2 border-primary/20 active:scale-95 motion-safe:transition-transform touch-manipulation"
                 aria-label="Call to book"
               >
                 <Phone className="w-5 h-5" />

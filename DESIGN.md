@@ -151,7 +151,7 @@ components:
 
 ## Slop audit
 
-**Date:** 2026-07-16 | **Score:** 8/10 (post-deslop pass)
+**Date:** 2026-08-03 | **Score:** 9/10 (second deslop pass)
 
 | Check | Status |
 |-------|--------|
@@ -160,16 +160,21 @@ components:
 | Distinct type pairing (Bricolage + DM Sans) | Pass |
 | No icon-tile service grid | Pass (bento layout) |
 | No side-stripe borders | Pass |
-| Radius ≤16px on cards | Pass |
+| Radius ≤16px on cards | Pass (fixed About stat cards + carousel) |
+| No border + diffuse shadow on same element | Pass (removed seamless-card, MobileCTA shadow-2xl, carousel shadow-lg) |
 | No decorative glassmorphism | Pass |
 | Signature move present | Pass (groovy shadow) |
-| Reduced motion honored | Pass |
-| Semantic green/blue trust icons | Fixed |
+| Reduced motion honored | Pass (carousel auto-advance paused; sparkle/marquee disabled) |
+| No semantic green/red UI chrome | Pass (verified badge → primary) |
 | Cream bg intentional not reflex | Pass (committed brand) |
+| No section transition-all reflex | Pass (removed `.section-transition`) |
+| No hover:scale-105 reflex | Pass (removed btn-seamless; SmartCTA urgent fixed) |
+| Real imagery | Pass (Raquel profile updated) |
 
-**Remaining watch:** Marquee ticker is Stitch-derived decoration; keep unless Raquel finds it noisy. DM Sans is common but acceptable as body workhorse paired with distinctive Bricolage.
+**Remaining watch:** Marquee ticker is Stitch-derived decoration; keep unless Raquel finds it noisy. DM Sans is common but acceptable as body workhorse paired with distinctive Bricolage. Inner `PageHero` sections stay centered (appropriate for subpages). Services page uses uniform 3-col grid (functional for 19 SKUs, not homepage).
 
 ## Changelog
 
+- **2026-08-03:** Second deslop pass. Removed dead slop utilities (seamless-card, floating-element, btn-seamless, section-transition). Fixed shadow+border stacking, blob radii, semantic green verified badge, carousel motion tokens. Profile photo crop/fit fix.
 - **2026-07-16:** Deslop pass. Removed Space Grotesk, icon-tile services, hero pills, 40px blob cards, star feature lists, semantic trust colors. Added bento services, slop audit section.
 - **2026-07-15:** Modern Retro (Stitch Option 1) applied site-wide.

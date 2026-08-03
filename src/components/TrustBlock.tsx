@@ -2,7 +2,7 @@ import { Star } from 'lucide-react';
 import { REVIEW_COUNT, BOOK_URL, BUSINESS_LOCATION } from '@/lib/constants';
 
 const heroTestimonial = {
-  text: 'Raquel is absolutely amazing! She transformed my hair from dull to vibrant. Her attention to detail and personalized approach made me feel so confident. I get compliments every day!',
+  text: 'Raquel nailed my color and highlights. My hair had been flat for months and she got it looking alive again without making it high-maintenance.',
   name: 'Sarah M.',
   service: 'Full Color & Highlights',
 };

@@ -11,7 +11,7 @@ const Hero = () => {
       flagIds={['home-hero-headline', 'home-hero-intro', 'home-hero-image']}
       href="/#home"
     >
-      <section id="home" className="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden section-transition">
+      <section id="home" className="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden">
         <div
           className="absolute top-0 right-0 -z-10 opacity-20 transform translate-x-1/4 -translate-y-1/4 pointer-events-none"
           aria-hidden
@@ -34,9 +34,9 @@ const Hero = () => {
               </h1>
 
               <p className="text-body-lg text-on-surface-variant max-w-xl mb-8 mx-auto md:mx-0 leading-relaxed">
-                Expert balayage, dimensional blonding, and hand-tied extensions at{' '}
-                {BUSINESS_LOCATION.salonLabel} in {BUSINESS_LOCATION.area}. Color that grows out
-                gracefully, with {REVIEW_COUNT}+ five-star reviews.
+                Balayage, blonding, and hand-tied extensions at {BUSINESS_LOCATION.salonLabel} in{' '}
+                {BUSINESS_LOCATION.area}. Color that grows out soft, not stripey, with{' '}
+                {REVIEW_COUNT}+ five-star reviews.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -70,7 +70,7 @@ const Hero = () => {
                   quality={85}
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-tertiary-fixed text-on-tertiary-fixed-variant p-5 md:p-6 rounded-full shadow-xl hidden sm:block">
+              <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-tertiary-fixed text-on-tertiary-fixed-variant p-5 md:p-6 rounded-full border-2 border-primary groovy-shadow hidden sm:block">
                 <p className="font-heading text-lg md:text-xl font-bold leading-tight">
                   Tonal
                   <br />

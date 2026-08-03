@@ -174,10 +174,6 @@ select:focus {
     color: #fdad99;
   }
 
-  .section-transition {
-    @apply transition-all duration-700 ease-in-out;
-  }
-
   .gradient-overlay {
     background: linear-gradient(
       135deg,
@@ -185,10 +181,6 @@ select:focus {
       rgba(255, 255, 255, 0.05) 50%,
       rgba(255, 217, 229, 0.2) 100%
     );
-  }
-
-  .seamless-card {
-    @apply bg-surface-container-lowest border-2 border-primary/20 shadow-lg hover:shadow-xl transition-all duration-500;
   }
 
   .bg-seamless {
@@ -212,18 +204,6 @@ select:focus {
     );
   }
 
-  .floating-element {
-    @apply shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1;
-  }
-
-  .btn-seamless {
-    @apply transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-lg;
-  }
-
-  .text-seamless {
-    @apply transition-colors duration-300 ease-in-out;
-  }
-
   .touch-manipulation {
     touch-action: manipulation;
   }
@@ -241,11 +221,11 @@ select:focus {
   }
 
   .theme-section {
-    @apply py-16 md:py-20 bg-surface section-transition;
+    @apply py-16 md:py-20 bg-surface;
   }
 
   .theme-section-alt {
-    @apply py-16 md:py-20 bg-primary-fixed/25 section-transition;
+    @apply py-16 md:py-20 bg-primary-fixed/25;
   }
 
   .theme-card {
@@ -283,7 +263,12 @@ select:focus {
 
   .btn-primary,
   .btn-secondary,
-  .groovy-shadow-hover {
+  .groovy-shadow-hover,
+  .service-card {
     transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }
